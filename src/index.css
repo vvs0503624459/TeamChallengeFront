@@ -13,10 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 } */
-img {
+/* img {
   display: block;
   width: 100%;
-}
+} */
 
 ul {
   list-style: none;

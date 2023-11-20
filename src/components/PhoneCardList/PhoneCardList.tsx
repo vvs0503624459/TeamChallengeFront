@@ -1,4 +1,4 @@
-import phone from './phone.json';
+import phone from '../../data/phone.json';
 
 import {
     CardList,
