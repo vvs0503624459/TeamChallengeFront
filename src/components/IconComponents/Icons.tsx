@@ -20,17 +20,17 @@
 // import { ReactComponent as Charge } from '../../../assets/icons/charge.svg';
 // import styles from './Icon.module.scss';
 
-import {
-    IconPhone,
-    IconLaptop,
-    HeadPhones,
-    Charge,
-    IconTV,
-    IconCamera,
-    IconWatch,
-    IconWashing,
-    IconPercentage
-} from './IconsCatalogue';
+// import {
+//     IconPhone,
+//     IconLaptop,
+//     HeadPhones,
+//     Charge,
+//     IconTV,
+//     IconCamera,
+//     IconWatch,
+//     IconWashing,
+//     IconPercentage
+// } from './IconsCatalogue';
 
 import { forwardRef  } from 'react';
 
@@ -42,34 +42,34 @@ type Props = {
 
 export const Icons = forwardRef(({type}: Props ) => {
 
-    const list = {
-        // like: <Like />,
-        // compare: <Compare />,
-        // user: <User />,
-        // cart: <Cart />,
-        // ['arrow-right']: <ArrowRight />,
-        // map: <Map />,
-        // office: <Office />,
-        // truck: <Truck />,
-        // wallet: <Wallet />,
-        // shield: <Shield />,
-        // ['help-circle']: <HelpCircle />,
-        // plus: <Plus />,
-        // minus: <Minus />,
-        // slash: <Slash />,
-        // ['thumb-up']: <ThumbUp />,
-        // ['star-review']: <StarReview />,
-        phone: <IconPhone />,
-        laptop: <IconLaptop />,
-        headphones: <HeadPhones />,
-        charge: <Charge />,
-        iconTV: <IconTV />,
-        iconCamera: <IconCamera />,
-        iconWatch: <IconWatch />,
-        iconWashing: <IconWashing />,
-        iconPercentage: <IconPercentage />
+    // const list = {
+    //     // like: <Like />,
+    //     // compare: <Compare />,
+    //     // user: <User />,
+    //     // cart: <Cart />,
+    //     // ['arrow-right']: <ArrowRight />,
+    //     // map: <Map />,
+    //     // office: <Office />,
+    //     // truck: <Truck />,
+    //     // wallet: <Wallet />,
+    //     // shield: <Shield />,
+    //     // ['help-circle']: <HelpCircle />,
+    //     // plus: <Plus />,
+    //     // minus: <Minus />,
+    //     // slash: <Slash />,
+    //     // ['thumb-up']: <ThumbUp />,
+    //     // ['star-review']: <StarReview />,
+    //     phone: <IconPhone />,
+    //     laptop: <IconLaptop />,
+    //     headphones: <HeadPhones />,
+    //     charge: <Charge />,
+    //     iconTV: <IconTV />,
+    //     iconCamera: <IconCamera />,
+    //     iconWatch: <IconWatch />,
+    //     iconWashing: <IconWashing />,
+    //     iconPercentage: <IconPercentage />
 
-    };
+    // };
 
 		// const [isClicked, setIsClicked] = useState(false);
 
@@ -83,7 +83,8 @@ export const Icons = forwardRef(({type}: Props ) => {
 
 		return (
 			<div>
-		{list[type]}
+		{/* {list[type]} */}
+        {type}
 			</div>
 		);
 	},
