@@ -13,15 +13,36 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 } */
-/* img {
+
+ body {
+ /* background: linear-gradient(#E0E4F0 6.06%, #FFFFFF 99.8%); */
+  background-color: #FFFFFF;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  margin: 0;
+  
+ }
+img {
   display: block;
-  width: 100%;
-} */
+
+} 
 
 ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
 }
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+

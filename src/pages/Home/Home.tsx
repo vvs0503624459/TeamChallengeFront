@@ -1,41 +1,35 @@
 import MenuCatalogue from "../../components/MenuCatalogue/MenuCatalogue";
+
+import CurrentOffer from "../../components/CurrentOffer/CurrentOffer";
 import BrandList from "../../components/BrandList/BrandList";
 import PhoneCardList from "../../components/PhoneCardList/PhoneCardList";
 
-import { Container } from "../../components/Container/Container.styled";
+import {
+  MainSection,
+  Section,
+  Container,
+} from "../../components/Container/Container.styled";
 import PageTitle from "../../components/PageTitle/PageTitle";
 
-export const Home = () => {
+const Home = () => {
   return (
-    <>
+    <MainSection>
       <Container>
-        <section>
-          <MenuCatalogue />
-        </section>
-        <section>
-          <PageTitle title={"Current offers"} />
-          <BrandList />
-        </section>
+        <MenuCatalogue />
+        <CurrentOffer />
+        <BrandList />
+
+        <Section>
+          <PageTitle title={"The best price offers"} />
+          <PhoneCardList />
+        </Section>
 
         <section>
-          <PageTitle title={"Popular brands"} />
-          <BrandList />
-        </section>
-
-        <section>
-          <Container>
-            <PageTitle title={"The best price offers"} />
-            <PhoneCardList />
-          </Container>
-        </section>
-
-        <section>
-          <Container>
-            <PageTitle title={"Sales leaders"} />
-            <PhoneCardList />
-          </Container>
+          <PageTitle title={"Sales leaders"} />
+          <PhoneCardList />
         </section>
       </Container>
-    </>
+    </MainSection>
   );
 };
+export default Home;
