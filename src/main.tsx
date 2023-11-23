@@ -5,13 +5,18 @@ import { Provider } from "react-redux";
 import App from "./App.tsx";
 import "./index.css";
 import { store } from "./redux/store.ts";
+// import 'modern-normalize/modern-normalize.css';
+// import { persistor } from "./redux/store.ts";
+// import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
+    <Provider store={store}>
+      {/* <PersistGate loading{null} persistor={persistor}> */}
+      <BrowserRouter basename="/electronic-heaven/">
         <App />
-      </Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+      {/* </PersistGate> */}
+    </Provider>
   </React.StrictMode>
 );

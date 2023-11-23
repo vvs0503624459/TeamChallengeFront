@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+
+export const MainSection = styled.section`
+  margin-top: 100px;
+  margin-bottom: 100px;
+`; 
+
+export const Section = styled.section`
+  margin-bottom: 70px;
+`;
 
 export const Container = styled.div`
   margin-left: auto;

@@ -1,91 +1,83 @@
-// import { ReactComponent as Like } from '../../../assets/icons/like.svg';
-// import { ReactComponent as Compare } from '../../../assets/icons/compare.svg';
-// import { ReactComponent as User } from '../../../assets/icons/user.svg';
-// import { ReactComponent as Cart } from '../../../assets/icons/cart.svg';
-// import { ReactComponent as ArrowRight } from '../../../assets/icons/arrow-right.svg';
-// import { ReactComponent as Map } from '../../../assets/icons/map-pin.svg';
-// import { ReactComponent as Office } from '../../../assets/icons/office.svg';
-// import { ReactComponent as Truck } from '../../../assets/icons/truck.svg';
-// import { ReactComponent as Wallet } from '../../../assets/icons/wallet.svg';
-// import { ReactComponent as Shield } from '../../../assets/icons/shield.svg';
-// import { ReactComponent as HelpCircle } from '../../../assets/icons/help-circle.svg';
-// import { ReactComponent as Plus } from '../../../assets/icons/plus.svg';
-// import { ReactComponent as Minus } from '../../../assets/icons/minus.svg';
-// import { ReactComponent as Slash } from '../../../assets/icons/slash.svg';
-// import { ReactComponent as ThumbUp } from '../../../assets/icons/thumbs-up.svg';
-// import { ReactComponent as StarReview } from '../../../assets/icons/star-review.svg';
-// import { ReactComponent as Phone } from '../../../assets/icons/phone.svg';
-// import { ReactComponent as Laptop } from '../../../assets/icons/laptop.svg';
-// import { ReactComponent as HeadPhones } from '../../../assets/icons/headphones.svg';
-// import { ReactComponent as Charge } from '../../../assets/icons/charge.svg';
-// import styles from './Icon.module.scss';
+import {
+    IconPhone,
+    IconLaptop,
+    HeadPhones,
+    Charge,
+    IconTV,
+    IconCamera,
+    IconWatch,
+    IconWashing,
+    IconPercentage,
+    IconRight
+} from './IconsCatalogue';
 
-// import {
-//     IconPhone,
-//     IconLaptop,
-//     HeadPhones,
-//     Charge,
-//     IconTV,
-//     IconCamera,
-//     IconWatch,
-//     IconWashing,
-//     IconPercentage
-// } from './IconsCatalogue';
+// import { forwardRef  } from 'react';
 
-import { forwardRef  } from 'react';
+// type Props = {
+//     name: "phone" | "laptop" | "headphones" | "charge" | "iconTV" | "iconCamera" | "iconWatch" | "iconWashing" | "iconPercentage" | "iconRight";
+// };
 
-type Props = {
-    type: string;
-};
+// type Props = {
+//     name: Element | string
+// };
+export const Icons = (() => {
+// export const Icons = forwardRef<HTMLButtonElement, Props>(({ name }: Props, ref) => {
+  const name = 'phone';
+const style = {
+        display: 'flex',
+        border: 'none',
+        background: '#FFFFFF',
+    };
+
+    const obj = {
+        phone: <IconPhone />,
+        laptop: <IconLaptop />,
+        headphones: <HeadPhones />,
+        charge: <Charge />,
+        iconTV: <IconTV />,
+        iconCamera: <IconCamera />,
+        iconWatch: <IconWatch />,
+        iconWashing: <IconWashing />,
+        iconPercentage: <IconPercentage />,
+        iconRight: <IconRight />
+    };
+
+    return (
+        <button style={style}>
+            {obj[name]}
+        </button>
+    );
+});
 
 
+// type Props = {
+//     [name:string] : string;
+// };
 
-export const Icons = forwardRef(({type}: Props ) => {
+// export const Icons = forwardRef(({name}:Props) => {
+//     const style = {
+//         display: 'flex',
+//         border: 'none',
+//         background: '#FFFFFF', 
+//       };
 
-    // const list = {
-    //     // like: <Like />,
-    //     // compare: <Compare />,
-    //     // user: <User />,
-    //     // cart: <Cart />,
-    //     // ['arrow-right']: <ArrowRight />,
-    //     // map: <Map />,
-    //     // office: <Office />,
-    //     // truck: <Truck />,
-    //     // wallet: <Wallet />,
-    //     // shield: <Shield />,
-    //     // ['help-circle']: <HelpCircle />,
-    //     // plus: <Plus />,
-    //     // minus: <Minus />,
-    //     // slash: <Slash />,
-    //     // ['thumb-up']: <ThumbUp />,
-    //     // ['star-review']: <StarReview />,
-    //     phone: <IconPhone />,
-    //     laptop: <IconLaptop />,
-    //     headphones: <HeadPhones />,
-    //     charge: <Charge />,
-    //     iconTV: <IconTV />,
-    //     iconCamera: <IconCamera />,
-    //     iconWatch: <IconWatch />,
-    //     iconWashing: <IconWashing />,
-    //     iconPercentage: <IconPercentage />
+//     const obj  = {
+//         phone: <IconPhone />,
+//         laptop: <IconLaptop />,
+//         headphones: <HeadPhones />,
+//         charge: <Charge />,
+//         iconTV: <IconTV />,
+//         iconCamera: <IconCamera />,
+//         iconWatch: <IconWatch />,
+//         iconWashing: <IconWashing />,
+//         iconPercentage: <IconPercentage />,
+//         iconRight: <IconRight />
+//     };
 
-    // };
-
-		// const [isClicked, setIsClicked] = useState(false);
-
-		// const handleClick = () => {
-		// 	if (onClick) {
-		// 		onClick();
-		// 	}
-
-		// 	setIsClicked((prevState) => !prevState);
-		// };
-
-		return (
-			<div>
-		{/* {list[type]} */}
-        {type}
-			</div>
-		);
-	},
-);
+// 		return (
+// 			<button style={style}>
+// 		{obj[name]}
+// 			</button>
+// 		);
+// 	},
+// );
