@@ -4,30 +4,26 @@ import { Icons } from "../IconComponents/Icons";
 
 import Slider from "../Slider/Slider";
 import { Section } from "../../components/Container/Container.styled";
-import { 
-  DIV, 
+import {
+  DIV,
   MenuList,
-   MenuItem, 
-   TextDiv,
-   MenuTitle
-   } from "./MenuCatalogue.styled";
+  MenuItem,
+  TextDiv,
+  MenuTitle,
+} from "./MenuCatalogue.styled";
 
-
-const MenuCatalogue = ( ) => {
-
+const MenuCatalogue = () => {
   return (
     <Section>
       <DIV>
         <div>
           <MenuList>
-            {MENU_CATEGORIES.map(({ id, title }) => ( //icon, right
-              <MenuItem key={id}>
-                {/* <Icons name={icon}  />  */}
-                   <Icons  /> 
+            {MENU_CATEGORIES.map((category) => (
+              <MenuItem key={category.id}>
+                <Icons name={category.icon} />
                 <TextDiv>
-                <MenuTitle>{title}</MenuTitle>
-                {/* <Icons name={right}  /> */}
-                <Icons  /> 
+                  <MenuTitle>{category.title}</MenuTitle>
+                  <Icons name={category.right} />
                 </TextDiv>
               </MenuItem>
             ))}
@@ -39,7 +35,6 @@ const MenuCatalogue = ( ) => {
   );
 };
 export default MenuCatalogue;
-
 
 //    type MenuCategory = {
 //     id: string;
@@ -68,7 +63,8 @@ export default MenuCatalogue;
 //   }
 // ]
 
-                {/* <Select
+{
+  /* <Select
                 classNamePrefix="Select"
                 closeMenuOnSelect={true}
                 isClearable={true}
@@ -85,4 +81,5 @@ export default MenuCatalogue;
 
                 // }}
                 placeholder=""
-              /> */}
+              /> */
+}
