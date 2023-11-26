@@ -1,4 +1,5 @@
 import phone from "../../data/phone.json";
+import StarRating from "../StarRating/StarRating";
 import { Like, Compare, Cart } from "../IconComponents/IconsCatalogue";
 import {
   CardList,
@@ -9,8 +10,10 @@ import {
   BUTTON,
   CardDiv,
   TitleLink,
+  StarsDiv,
   Comments,
   Price,
+  DiscountContainer,
   DiscountDiv,
   Discountprice,
   Deal,
@@ -35,16 +38,21 @@ const PhoneCardList = () => {
                 </BUTTONDIV>
               </DIVIMG>
               <TitleLink to={`/product/${id}`}>{title}</TitleLink>
-
-              <Comments>{comments}</Comments>
+              <StarsDiv>
+                <StarRating />
+                <Comments>({comments})</Comments>
+              </StarsDiv>
               <Price>{price}</Price>
-              <DiscountDiv>
-                <Discountprice>{discountprice}</Discountprice>
-                <Deal>{deal}</Deal>
+              <DiscountContainer>
+                <DiscountDiv>
+                  <Discountprice>{discountprice}</Discountprice>
+                  <Deal>{deal}</Deal>
+                </DiscountDiv>
                 <BUTTON>
                   <Cart />
                 </BUTTON>
-              </DiscountDiv>
+              </DiscountContainer>
+
             </CardDiv>
           </CardItem>
         )

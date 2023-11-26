@@ -58,7 +58,10 @@ export const TitleLink = styled(Link)`
   letter-spacing: 0em;
   text-align: left;
 `;
-
+export const StarsDiv = styled.div`
+  display: flex;
+  gap: 8px;
+`;
 export const Comments = styled.p`
   margin-bottom: 16px;
   color: #69657b;
@@ -77,6 +80,13 @@ export const Price = styled.p`
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
+  text-decoration: line-through;
+`;
+
+export const DiscountContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 38px;
 `;
 
 export const DiscountDiv = styled.div`
@@ -84,6 +94,7 @@ export const DiscountDiv = styled.div`
   align-items: center;
   gap: 8px;
 `;
+
 export const Discountprice = styled.p`
   color: #1e1d21;
   font-family: Inter;
