@@ -1,5 +1,5 @@
 import phone from "../../data/phone.json";
-import { Like, Compare, Card } from "../IconComponents/IconsCatalogue";
+import { Like, Compare, Cart } from "../IconComponents/IconsCatalogue";
 import {
   CardList,
   CardItem,
@@ -26,27 +26,24 @@ const PhoneCardList = () => {
               <DIVIMG>
                 <IMG src={image} alt={title} />
                 <BUTTONDIV>
-                <BUTTON>
-                  <Like />
-                </BUTTON>
-                <BUTTON>
-                  <Compare />
-                </BUTTON>
+                  <BUTTON>
+                    <Like />
+                  </BUTTON>
+                  <BUTTON>
+                    <Compare />
+                  </BUTTON>
                 </BUTTONDIV>
-
               </DIVIMG>
-              <TitleLink to={`/product/${id}`}>
-              {title}
-                </TitleLink>
-           
+              <TitleLink to={`/product/${id}`}>{title}</TitleLink>
+
               <Comments>{comments}</Comments>
               <Price>{price}</Price>
               <DiscountDiv>
                 <Discountprice>{discountprice}</Discountprice>
                 <Deal>{deal}</Deal>
                 <BUTTON>
-                <Card />
-              </BUTTON>
+                  <Cart />
+                </BUTTON>
               </DiscountDiv>
             </CardDiv>
           </CardItem>
