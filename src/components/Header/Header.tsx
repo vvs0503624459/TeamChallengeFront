@@ -1,19 +1,66 @@
-import { Link } from 'react-router-dom';
-import { Container } from '../Container/Container.styled';
+import { Link } from "react-router-dom";
+import { Container } from "../Container/Container.styled";
+import {
+  Logo,
+  Compare,
+  Like,
+  User,
+  Cart,
+  Catalogue,
+} from "../IconComponents/IconsCatalogue";
+import SearchBar from "../SearchBar/SearchBar";
+import {
+  HeaderInnerWrapper,
+  HeaderWrapper,
+  HeaderIconsWrapper,
+  DivLogoCatalogue,
+  CatalogueButton,
+  CatalogueBtnText,
+  LogoLink,
+  IconsLink,
+} from "./Header.styled";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 const Header = () => {
-    return (
-        <>
-            <Container>
-                <Link to="/home">
-                    TechEase
-                </Link>
-            </Container>
-        </>
-    )
-}
-export default Header;
 
+  return (
+    <HeaderWrapper>
+      <Container>
+        <HeaderInnerWrapper>
+          <DivLogoCatalogue>
+            <LogoLink to="/home">
+              <Logo />
+            </LogoLink>
+            <Link to="/home">
+              <CatalogueButton>
+                <Catalogue />
+                <CatalogueBtnText>Catalogue</CatalogueBtnText>
+              </CatalogueButton>
+            </Link>
+          </DivLogoCatalogue>
+
+          <SearchBar />
+<LanguageSwitcher />
+          <HeaderIconsWrapper>
+            <IconsLink to="/#">
+              <User />
+            </IconsLink>
+            <IconsLink to="/#">
+              <Like />
+            </IconsLink>
+            <IconsLink to="/#">
+              <Compare />
+            </IconsLink>
+            <IconsLink to="/#">
+              <Cart />
+            </IconsLink>
+          </HeaderIconsWrapper>
+        </HeaderInnerWrapper>
+      </Container>
+    </HeaderWrapper>
+  );
+};
+export default Header;
 
 // import styles from './Header.module.scss';
 // import { useState } from 'react';

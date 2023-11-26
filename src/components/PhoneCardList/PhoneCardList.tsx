@@ -37,13 +37,11 @@ const PhoneCardList = () => {
                   </BUTTON>
                 </BUTTONDIV>
               </DIVIMG>
-
               <TitleLink to={`/product/${id}`}>{title}</TitleLink>
               <StarsDiv>
                 <StarRating />
                 <Comments>({comments})</Comments>
               </StarsDiv>
-
               <Price>{price}</Price>
               <DiscountContainer>
                 <DiscountDiv>
@@ -54,6 +52,7 @@ const PhoneCardList = () => {
                   <Cart />
                 </BUTTON>
               </DiscountContainer>
+
             </CardDiv>
           </CardItem>
         )
