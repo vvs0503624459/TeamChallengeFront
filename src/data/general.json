@@ -1,68 +1,80 @@
 [
-    {
-    "id": "skdl;askdasd",
-    "maintitle": "Apple iPhone 14 Pro Max 512GB Deep Purple (MQ9X3)", 
-    "stars": "2",
-    "comments": "244",
-    "price": "75000",
-    "discount": "8",
+  {
+    "id": "skdlaskdasd",
+    "icon": "phone",
+    "maintitle": "Apple iPhone 14 Pro Max 512GB Deep Purple (MQ9X3)",
+    "stars": "5",
+    "comments": "312",
+    "price": "75 999",
+    "discountprice": "69 999",
+    "deal": "-8%",
     "skuCode": "dsadsd",
-    "sameColor": [{
+    "sameColor": [
+      {
         "deviceId": "asdasdas",
         "color": "red"
-    }, {
+      },
+      {
         "deviceId": "asddasdasasdas",
         "color": "blue"
-    }],
+      }
+    ],
     "sameInternalMemory": [
-        {
-            "id": "abc",
-            "memory": "128 GB"
-        },
-        {
-            "id": "abcd",
-            "memory": "256 GB"
-        },
-        {
+      {
+        "id": "abc",
+        "memory": "128 GB"
+      },
+      {
+        "id": "abcd",
+        "memory": "256 GB"
+      },
+      {
         "id": "abcdf",
         "memory": "512 GB"
-    }, 
-    {
+      },
+      {
         "id": "abcdfg",
         "memory": "1 T"
-    }
-],
-    "photoURIs": [{
+      }
+    ],
+    "photoURIs": [
+      {
         "uri": "uri1"
-    }, {
+      },
+      {
         "uri": "uri2"
-    }],
-    "presentation": [{
+      }
+    ],
+    "presentation": [
+      {
         "desription": "texttext",
         "photoURI": "uri"
-    }],
-    "specificationGroups": [{
+      }
+    ],
+    "specificationGroups": [
+      {
         "title": "Main",
-        "specifications": [{
+        "specifications": [
+          {
             "title": "Main",
             "series": "Iphone 14 Pro Max",
             "year": "2022",
             "color": "Deep Purple",
             "isMain": true
-        },
-        {
+          },
+          {
             "title": "Operating system",
             "system": "iOS 16",
             "isMain": false
-        },
-        {
+          },
+          {
             "title": "Memory",
             "Intermemory": "512 GB",
             "RAM": "6 GB",
             "volume": "None",
             "isMain": false
-        },
-        {
+          },
+          {
             "title": "Display",
             "diagonal": "6.7",
             "resolution": "2796x1290",
@@ -70,8 +82,8 @@
             "refreshrate": "120 Hz",
             "material": "Ceramic Shield",
             "isMain": false
-        },
-        {
+          },
+          {
             "title": "Processor",
             "diagonal": "6.7",
             "resolution": "2796x1290",
@@ -79,8 +91,9 @@
             "refreshrate": "120 Hz",
             "material": "Ceramic Shield",
             "isMain": false
-        }
+          }
+        ]
+      }
     ]
-    }]
-}
+  }
 ]

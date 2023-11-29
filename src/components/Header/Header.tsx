@@ -40,9 +40,9 @@ const Header = () => {
           </DivLogoCatalogue>
 
           <SearchBar />
-<LanguageSwitcher />
+          <LanguageSwitcher />
           <HeaderIconsWrapper>
-            <IconsLink to="/#">
+            <IconsLink to="/signin">
               <User />
             </IconsLink>
             <IconsLink to="/#">
@@ -51,7 +51,7 @@ const Header = () => {
             <IconsLink to="/#">
               <Compare />
             </IconsLink>
-            <IconsLink to="/#">
+            <IconsLink to="/">
               <Cart />
             </IconsLink>
           </HeaderIconsWrapper>

@@ -11,6 +11,8 @@ import {
   IconRight,
 } from "./IconsCatalogue";
 
+import {Button} from './Icons.styled';
+
 import { forwardRef } from "react";
 
 type Props = {
@@ -22,7 +24,7 @@ export const Icons = forwardRef<HTMLButtonElement, Props>(
     const style = {
       display: "flex",
       border: "none",
-      background: "#FFFFFF",
+      background: "transparent",
     };
 
     const obj: { [key: string]: JSX.Element } = {
@@ -39,41 +41,9 @@ export const Icons = forwardRef<HTMLButtonElement, Props>(
     };
 
     return (
-      <button ref={ref} style={style}>
+      <Button ref={ref} style={style}>
         {obj[name]}
-      </button>
+      </Button>
     );
   }
 );
-
-// type Props = {
-//     [name:string] : string;
-// };
-
-// export const Icons = forwardRef(({name}:Props) => {
-//     const style = {
-//         display: 'flex',
-//         border: 'none',
-//         background: '#FFFFFF',
-//       };
-
-//     const obj  = {
-//         phone: <IconPhone />,
-//         laptop: <IconLaptop />,
-//         headphones: <HeadPhones />,
-//         charge: <Charge />,
-//         iconTV: <IconTV />,
-//         iconCamera: <IconCamera />,
-//         iconWatch: <IconWatch />,
-//         iconWashing: <IconWashing />,
-//         iconPercentage: <IconPercentage />,
-//         iconRight: <IconRight />
-//     };
-
-// 		return (
-// 			<button style={style}>
-// 		{obj[name]}
-// 			</button>
-// 		);
-// 	},
-// );
