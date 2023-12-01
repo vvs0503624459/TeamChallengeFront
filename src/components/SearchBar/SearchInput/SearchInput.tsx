@@ -1,62 +1,53 @@
+import { useState, useEffect } from "react";
 import { SearchInputField } from "./SearchInput.styled";
+import { useDebounce } from "../../../redux/hooks/useDebounce";
+interface ItemSearch {
+  name: string;
+}
+type Props = {
+  setResults: React.Dispatch<React.SetStateAction<ItemSearch[]>>;
+};
+export const SearchInput = ({ setResults }: Props) => {
+  const [input, setInput] = useState("");
+  const searchDebounce = useDebounce({ value: input, delay: 500 });
 
+  useEffect(() => {
+    const fetchData = async (value: string) => {
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/users"
+        );
+        const json = await response.json();
+        const results = json.filter((item: ItemSearch) => {
+          return (
+            value &&
+            item &&
+            item.name &&
+            item.name.toLowerCase().includes(value.toLowerCase())
+          );
+        });
+        setResults(results);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    if (input !== "" && searchDebounce) {
+      fetchData(input);
+    } else {
+      setResults([]);
+    }
+  }, [input, searchDebounce]);
 
-export const SearchInput = () => {
-  return <SearchInputField type="text" placeholder="Search.." />;
+  return (
+    <SearchInputField
+      type="text"
+      placeholder="Search.."
+      value={input}
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+        setInput(e.target.value)
+      }
+    />
+  );
 };
 
-
-
-
 export default SearchInput;
-
-
-// import styles from "./SearchInput.module.scss";
-// import { useDebounce } from "../../../../hooks/useDebounce";
-// import { useEffect, useState } from "react";
-// import cs from "classnames";
-
-// export const SearchInput = ({ setResults, className, openResults }) => {
-//   const [searchTerm, setSearchTerm] = useState("");
-
-//   const debouncedSearchTerm = useDebounce(searchTerm, 500);
-
-//   useEffect(() => {
-//     // search the api
-
-//     async function fetchData() {
-//       // setLoading(true);
-//       console.log("Fetch data");
-
-//       setResults([]);
-
-//       const data = await fetch(
-//         "https://jsonplaceholder.typicode.com/users"
-//       ).then((response) => response.json());
-
-//       setResults(data);
-//       console.log(data);
-//       // setLoading(false);
-//     }
-
-//     console.log(debouncedSearchTerm);
-//     if (debouncedSearchTerm) {
-//       fetchData();
-//     } else {
-//       setResults([]);
-//     }
-//   }, [debouncedSearchTerm]);
-
-//   return (
-//     <input
-//       type="text"
-//       placeholder="Search.."
-//       className={cs(styles.input, className)}
-//       value={searchTerm}
-//       onChange={(e) => setSearchTerm(e.target.value)}
-//       onClick={openResults}
-//     />
-//   );
-// };
-
-

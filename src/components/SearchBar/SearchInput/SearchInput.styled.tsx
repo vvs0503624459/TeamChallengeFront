@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SearchInputField = styled.input`
-  position: relative;
   width: calc(100% - 34px);
   border: none;
   padding: 0;
