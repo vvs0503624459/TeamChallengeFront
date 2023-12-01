@@ -43,6 +43,33 @@ const StyledButtonUa = styled.button<StyledButtonProps>`
 //   border-image-slice: 1;
 //   border-radius: 12px;
 // `;
+// const LanguageSwitcherWrapper = styled.div<StyledButtonProps>`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 8px;
+//   border: 1px solid transparent;
+//   border-radius: 12px;
+//   border-color: ${(props) => (props.clicked ? "#5826da" : "none")};
+//   background: ${(props) => (props.clicked ? "none" : "#ffffff")};
+
+//   position: relative;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: -2.5px;
+//     bottom: -2px;
+//     left: -2.5px;
+//     right: -3px;
+//     background: ${(props) =>
+//       props.clicked
+//         ? "none"
+//         : "linear-gradient(to bottom, #2356B1 50%, #F7D849 50%)"};
+//     border-radius: 12px;
+//     z-index: -1;
+//   }
+// `;
 const LanguageSwitcherWrapper = styled.div<StyledButtonProps>`
   display: flex;
   justify-content: center;
@@ -50,24 +77,13 @@ const LanguageSwitcherWrapper = styled.div<StyledButtonProps>`
   padding: 8px;
   border: 1px solid transparent;
   border-radius: 12px;
-  border-color: ${(props) => (props.clicked ? "#5826da" : "none")};
-  background: ${(props) => (props.clicked ? "none" : "#ffffff")};
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: -2.5px;
-    bottom: -2px;
-    left: -2.5px;
-    right: -3px;
-    background: ${(props) =>
-      props.clicked
-        ? "none"
-        : "linear-gradient(to bottom, #2356B1 50%, #F7D849 50%)"};
-    border-radius: 12px;
-    z-index: -1;
-  }
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(
+        to bottom,
+        ${(props) => (props.clicked ? "#5826da 50%" : "#2356B1 50%")},
+        ${(props) => (props.clicked ? "#5826da 50%" : "#F7D849 50%")}
+      )
+      border-box;
 `;
 
 const LanguageSwitcher: React.FC = () => {
@@ -81,17 +97,15 @@ const LanguageSwitcher: React.FC = () => {
   };
 
   return (
-    <LanguageSwitcherWrapper
-      clicked={currentLanguage === "en" ? true : false}
-    >
+    <LanguageSwitcherWrapper clicked={currentLanguage === "en"}>
       <StyledButtonEn
-        clicked={currentLanguage === "en" ? true : false}
+        clicked={currentLanguage === "en"}
         onClick={() => LanguageToggle("en")}
       >
         EN
       </StyledButtonEn>
       <StyledButtonUa
-        clicked={currentLanguage === "ua" ? true : false}
+        clicked={currentLanguage === "ua"}
         onClick={() => LanguageToggle("ua")}
       >
         UA
