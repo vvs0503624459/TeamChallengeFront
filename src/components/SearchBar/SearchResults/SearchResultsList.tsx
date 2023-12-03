@@ -16,6 +16,15 @@ type Props = {
   results: ItemSearch[];
 };
 interface ItemSearch {
+  title: string;
+  diagonal: string;
+  resolution: string;
+  matrix: string;
+  refreshrate: string;
+  material: string;
+  series: string;
+  year: string;
+  color: string;
   maintitle: string;
 }
 const SearchResultsList = ({ results }: Props) => {
