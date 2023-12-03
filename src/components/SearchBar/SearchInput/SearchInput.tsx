@@ -25,7 +25,7 @@ export const SearchInput = ({ setResults }: Props) => {
     const fetchData = async (value: string) => {
       try {
         // const jsonPath = "https://jsonplaceholder.typicode.com/users";
-        const jsonPath = "/src/data/general.json";
+        const jsonPath = "./src/data/general.json";
 
         const response = await fetch(jsonPath);
 
