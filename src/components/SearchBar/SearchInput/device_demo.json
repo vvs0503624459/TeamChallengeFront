@@ -1,0 +1,44 @@
+[{
+    "id": "skdl;askdasd",
+    "title": "", 
+    "price": 75000,
+    "discount": 8,
+    "skuCode": "dsadsd",
+    "sameColor": [{
+        "deviceId": "asdasdas",
+        "color": "red"
+    }, {
+        "deviceId": "asddasdasasdas",
+        "color": "blue"
+    }],
+    "sameInternalMemory": [{
+        "deviceId": "asdasdas",
+        "memory": "512 GB"
+    }, {
+        "deviceId": "asddasdasasdas",
+        "color": "1 T"
+    }],
+    "photoURIs": [{
+        "uri": "uri1"
+    }, {
+        "uri": "uri2"
+    }],
+    "presentation": [{
+        "desription": "texttext",
+        "photoURI": "uri"
+    }],
+    "specificationGroups": [{
+        "title": "Main",
+        "specifications": [{
+            "title": "series",
+            "value": "Iphone 14 Pro Max",
+            "description": "text",
+            "isMain": true
+        },{
+            "title": "screen diagonal",
+            "value": "6.7",
+            "description": "text",
+            "isMain": false
+        }]
+    }]
+}]
