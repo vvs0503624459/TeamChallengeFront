@@ -18,18 +18,6 @@ export const SearchLink = styled(Link)`
 `;
 
 interface ItemSearch {
-  name: string;
-  email: string;
-  phone: string;
-  title: string;
-  diagonal: string;
-  resolution: string;
-  matrix: string;
-  refreshrate: string;
-  material: string;
-  series: string;
-  year: string;
-  color: string;
   maintitle: string;
 }
 type Props = {
