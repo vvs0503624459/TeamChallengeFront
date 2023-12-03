@@ -40,7 +40,7 @@ type Props = {
 const SearchResult = ({ id, result }: Props) => {
   return (
     <SearchLink to={`/product/${id}`}>
-      <SearchResultDiv>{result.name}</SearchResultDiv>
+      <SearchResultDiv>{result.maintitle}</SearchResultDiv>
     </SearchLink>
   );
 };
