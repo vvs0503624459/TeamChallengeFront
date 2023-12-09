@@ -1,23 +1,33 @@
 import { useState, useEffect } from "react";
 import { SearchInputField } from "./SearchInput.styled";
 import { useDebounce } from "../../../redux/hooks/useDebounce";
+import SearchResultsList from "../SearchResults/SearchResultsList";
+interface Specification {
+  title: string;
+  specifications: {
+    title: string;
+    value: string;
+    diagonal: string;
+    resolution: string;
+    matrix: string;
+    refreshrate: string;
+    material: string;
+    series: string;
+    year: string;
+    color: string;
+    maintitle: string;
+  }[];
+}
 
 interface ItemSearch {
   title: string;
-  diagonal: string;
-  resolution: string;
-  matrix: string;
-  refreshrate: string;
-  material: string;
-  series: string;
-  year: string;
-  color: string;
   maintitle: string;
+  id: string;
+  specificationGroups: Specification[];
 }
-type Props = {
-  setResults: React.Dispatch<React.SetStateAction<ItemSearch[]>>;
-};
-export const SearchInput = ({ setResults }: Props) => {
+
+export const SearchInput = () => {
+  const [results, setResults] = useState<ItemSearch[]>([]);
   const [input, setInput] = useState("");
   const searchDebounce = useDebounce({ value: input, delay: 500 });
 
@@ -25,7 +35,8 @@ export const SearchInput = ({ setResults }: Props) => {
     const fetchData = async (value: string) => {
       try {
         // const jsonPath = "https://jsonplaceholder.typicode.com/users";
-        const jsonPath = "/src/data/general.json";
+        const jsonPath = "../../src/data/general.json";
+        // const jsonPath = "./device_demo.json";
 
         const response = await fetch(jsonPath);
 
@@ -35,10 +46,14 @@ export const SearchInput = ({ setResults }: Props) => {
             .toLowerCase()
             .split(" ")
             .every((word) =>
-              Object.values(obj).some(
-                (propValue) =>
-                  typeof propValue === "string" &&
-                  propValue.toLowerCase().includes(word)
+              obj.specificationGroups.some((group) =>
+                group.specifications.some((spec) =>
+                  Object.values(spec).some(
+                    (value) =>
+                      typeof value === "string" &&
+                      value.toLowerCase().includes(word)
+                  )
+                )
               )
             )
         );
@@ -54,16 +69,21 @@ export const SearchInput = ({ setResults }: Props) => {
       setResults([]);
     }
   }, [input, searchDebounce]);
-
+  const searchClick = () => {
+        setInput("");
+  };
   return (
-    <SearchInputField
-      type="text"
-      placeholder="Search.."
-      value={input}
-      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-        setInput(e.target.value)
-      }
-    />
+    <>
+      <SearchInputField
+        type="text"
+        placeholder="Search.."
+        value={input}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setInput(e.target.value)
+        }
+      />
+      <SearchResultsList results={results} clearInput={searchClick} />
+    </>
   );
 };
 
