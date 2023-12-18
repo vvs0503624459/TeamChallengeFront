@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import App from "./App.tsx";
 import "./index.css";
-import { store } from "./redux/store.ts";
+import { store } from "./redux/store.js";
 // import 'modern-normalize/modern-normalize.css';
 // import { persistor } from "./redux/store.ts";
 // import { PersistGate } from 'redux-persist/integration/react';
