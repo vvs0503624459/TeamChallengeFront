@@ -3,25 +3,38 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'http://demo-java-sp.eu-north-1.elasticbeanstalk.com';
 
-interface Product {
-  // Описуйте тип Product на основі даних, які ви отримуєте від API
-  id: number;
-  name: string;
-  // Інші поля продукту
-}
-
-export const getMainProduct = createAsyncThunk<Product[], void, { rejectValue: string }>(
+export const getMainProduct = createAsyncThunk(
   'products/getAll',
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/api/v1/devises');
       console.log("getMainProduct", response);
-      return response.data as Product[];
+      return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
+
+// interface Product {
+//   // Описуйте тип Product на основі даних, які ви отримуєте від API
+//   id: number;
+//   name: string;
+//   // Інші поля продукту
+// }
+
+// export const getMainProduct = createAsyncThunk<Product[], void, { rejectValue: string }>(
+//   'products/getAll',
+//   async (_, thunkAPI) => {
+//     try {
+//       const response = await axios.get('/api/v1/devises');
+//       console.log("getMainProduct", response);
+//       return response.data as Product[];
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
 
 // const fetchTodos = createAsyncThunk('todos/fetchTodos', 
 // async () => {
