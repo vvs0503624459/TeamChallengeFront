@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+interface ResultsListProps {
+  hasResults: boolean;
+}
 export const SearchResultDiv = styled.div`
   font-family: Inter;
   font-size: 14px;
@@ -16,7 +19,7 @@ export const SearchLink = styled(Link)`
   text-decoration: none;
   text-align: left;
 `;
-export const ResultsList = styled.div<{ hasResults: boolean }>`
+export const ResultsList = styled.div<ResultsListProps>`
   display: ${(props) => (props.hasResults ? "block" : "none")};
   position: absolute;
   top: 100%;
