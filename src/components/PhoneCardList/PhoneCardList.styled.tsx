@@ -41,7 +41,7 @@ export const BUTTONDIV = styled.div`
 export const BUTTON = styled.button`
   width: 36px;
   height: 36px;
-  // padding: 6px;
+  padding: 0;
   background: #ffffff;
   border-radius: 8px;
   border: none;
