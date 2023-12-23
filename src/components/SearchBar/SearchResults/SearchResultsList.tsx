@@ -31,7 +31,7 @@ interface ItemSearch {
   specificationGroups: Specification[];
 }
 const SearchResultsList = ({ results, clearInput }: Props) => {
-  const hasResults = results.length > 0;
+  const hasResults = results.length > 0 ? true : false;
   return (
     <ResultsList hasResults={hasResults}>
       {results.map((result, i) => (

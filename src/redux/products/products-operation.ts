@@ -1,13 +1,19 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-axios.defaults.baseURL = 'http://demo-java-sp.eu-north-1.elasticbeanstalk.com';
+export type Product = {
+  id: number;
+  title: string;
+  // треба буде додати Інші поля продукту
+};
 
-export const getMainProduct = createAsyncThunk(
-  'products/getAll',
+axios.defaults.baseURL = "http://demo-java-sp.eu-north-1.elasticbeanstalk.com";
+
+export const getMainProduct = createAsyncThunk<Product[], undefined>(
+  "products/getAll",
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/api/v1/devises');
+      const response = await axios.get("/api/v1/devises");
       console.log("getMainProduct", response);
       return response.data;
     } catch (error) {
@@ -36,7 +42,7 @@ export const getMainProduct = createAsyncThunk(
 //   }
 // );
 
-// const fetchTodos = createAsyncThunk('todos/fetchTodos', 
+// const fetchTodos = createAsyncThunk('todos/fetchTodos',
 // async () => {
 //   // Just make the async request here, and return the response.
 //   // This will automatically dispatch a `pending` action first,

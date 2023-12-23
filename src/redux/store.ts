@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 // import likeReducer from "./likeReducer";
 // import cartReducer from "./cartReducer";
 import productsReducer from "./products/products-slice.js";
+import cartReducer from "./products/cartReducer.js";
+import likeReducer from "./products/likeReducer.js";
 
 export const store = configureStore({
   reducer: {
-    // productsLikeState: likeReducer,
-    // productsInCart: cartReducer,
+    productsLikeState: likeReducer,
+    productsInCart: cartReducer,
     products: productsReducer,
   },
 });

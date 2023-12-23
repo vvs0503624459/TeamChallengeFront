@@ -29,47 +29,7 @@ const StyledButtonUa = styled.button<StyledButtonProps>`
   border: none;
   border-radius: 8px;
 `;
-// const LanguageSwitcherWrapper = styled.div<StyledButtonProps>`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 8px;
-//   border: 1px solid;
-//   border-color: ${(props) => (props.clicked ? "#5826da" : "none")};
-//   border-image-source: ${(props) =>
-//     props.clicked
-//       ? "#5826da"
-//       : "linear-gradient(to bottom, #2356B1 50%, #F7D849 50%)"};
-//   border-image-slice: 1;
-//   border-radius: 12px;
-// `;
-// const LanguageSwitcherWrapper = styled.div<StyledButtonProps>`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 8px;
-//   border: 1px solid transparent;
-//   border-radius: 12px;
-//   border-color: ${(props) => (props.clicked ? "#5826da" : "none")};
-//   background: ${(props) => (props.clicked ? "none" : "#ffffff")};
 
-//   position: relative;
-
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     top: -2.5px;
-//     bottom: -2px;
-//     left: -2.5px;
-//     right: -3px;
-//     background: ${(props) =>
-//       props.clicked
-//         ? "none"
-//         : "linear-gradient(to bottom, #2356B1 50%, #F7D849 50%)"};
-//     border-radius: 12px;
-//     z-index: -1;
-//   }
-// `;
 const LanguageSwitcherWrapper = styled.div<StyledButtonProps>`
   display: flex;
   justify-content: center;
