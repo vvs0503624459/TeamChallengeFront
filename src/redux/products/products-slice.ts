@@ -65,7 +65,8 @@ export const productsSlice = createSlice({
   extraReducers(builder) {
     builder.addCase(getMainProduct.fulfilled, (state, { payload }) => {
       // state.status = 'succeeded';
-      state = payload;
+      // state = payload;
+      state.splice(0, state.length, ...payload);
     })
       .addCase(getMainProduct.rejected, (state, action) => {
 
