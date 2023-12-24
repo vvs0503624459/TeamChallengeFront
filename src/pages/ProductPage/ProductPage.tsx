@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 import { Outlet } from "react-router-dom";
 import PageTitle from "../../components/PageTitle/PageTitle";
@@ -15,18 +15,20 @@ import general from "../../data/general.json";
 
 const ProductCard = () => {
   const location = useLocation();
-
+  const { id } = useParams();
   return (
     <MainSection>
       <Container>
         <div>
-          {general.map(({ maintitle, comments }) => (
-            <div>
-              <h1>{maintitle}</h1>
-              <StarRating />
-              <p>{comments}</p>
-            </div>
-          ))}
+          {general
+            .filter((obj) => obj.id === id)
+            .map(({ maintitle, comments }) => (
+              <div key={id}>
+                <h1>{maintitle}</h1>
+                <StarRating />
+                <p>{comments}</p>
+              </div>
+            ))}
         </div>
 
         <div>

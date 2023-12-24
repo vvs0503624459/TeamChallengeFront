@@ -1,6 +1,6 @@
 import phone from "../../data/phone.json";
 import StarRating from "../StarRating/StarRating";
-import { Like, Compare, Cart } from "../IconComponents/IconsCatalogue";
+import { Like, Compare, Cart, NotLike } from "../IconComponents/IconsCatalogue";
 import {
   CardList,
   CardItem,
@@ -18,8 +18,15 @@ import {
   Discountprice,
   Deal,
 } from "./PhoneCardList.styled";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { toggleLike } from "../../redux/products/likeReducer";
+import { addProductToCart } from "../../redux/products/cartReducer";
 
 const PhoneCardList = () => {
+  // const phone = useAppSelector((state) => state.products);
+  const isLiked = useAppSelector((state) => state.productsLikeState ?? false);
+  const dispatch = useAppDispatch();
+
   return (
     <CardList>
       {phone.map(
@@ -29,8 +36,12 @@ const PhoneCardList = () => {
               <DIVIMG>
                 <IMG src={image} alt={title} />
                 <BUTTONDIV>
-                  <BUTTON>
-                    <Like />
+                  <BUTTON
+                    onClick={() => {
+                      dispatch(toggleLike(id));
+                    }}
+                  >
+                    {isLiked[id] ? <Like /> : <NotLike />}
                   </BUTTON>
                   <BUTTON>
                     <Compare />
@@ -48,11 +59,10 @@ const PhoneCardList = () => {
                   <Discountprice>{discountprice}</Discountprice>
                   <Deal>{deal}</Deal>
                 </DiscountDiv>
-                <BUTTON>
+                <BUTTON onClick={() => dispatch(addProductToCart({ id }))}>
                   <Cart />
                 </BUTTON>
               </DiscountContainer>
-
             </CardDiv>
           </CardItem>
         )
