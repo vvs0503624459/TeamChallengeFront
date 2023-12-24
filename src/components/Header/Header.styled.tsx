@@ -14,7 +14,6 @@ export const HeaderInnerWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 `;
 export const DivLogoCatalogue = styled.div`
   display: flex;
@@ -53,6 +52,10 @@ export const CatalogueBtnText = styled.div`
 `;
 export const HeaderIconsWrapper = styled.div`
   display: flex;
- gap: 24px;
+  gap: 24px;
+`;
 
+export const OpenModalButton = styled.button`
+  border: none;
+  background-color: transparent;
 `;
