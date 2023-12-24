@@ -2,8 +2,7 @@ import "./App.scss";
 import { lazy } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import SigninPage from "./pages/SigninPage/SigninPage";
+
 // import { Home } from "./pages/Home/Home";
 // import ProductCard from "./pages/ProductCard/ProductCard";
 
@@ -27,9 +26,6 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/signin" element={<SigninPage />} />
-
           <Route index element={<Home />} />
 
           <Route path="/product/:id" element={<ProductCard />}>

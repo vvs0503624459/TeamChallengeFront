@@ -3,8 +3,13 @@ import * as Yup from "yup";
 import { useState } from "react";
 import FormError from "../FormError/FormError";
 
+import PageTitle from "../PageTitle/PageTitle";
+import ModalIcons from "../ModalIcons/ModalIcons";
+
 import {
+  SignWrapper,
   AuthForm,
+  InputsWrapper,
   Input,
   InputWrap,
   TogglePasswordButton,
@@ -13,6 +18,9 @@ import {
   Button,
   ErrorIcon,
   SuccessIcon,
+  PasswordButton,
+  SignDecorText,
+  SignText,
 } from "../SignupForm/SignupForm.styled";
 
 interface MyFormValues {
@@ -20,11 +28,6 @@ interface MyFormValues {
   password: string;
 }
 
-// type Props = {
-//     name: string;
-//     email: string;
-//     password: string;
-//   };
 const initialValues: MyFormValues = { email: "", password: "" };
 
 const schema = Yup.object().shape({
@@ -42,67 +45,106 @@ const schema = Yup.object().shape({
     .matches(/[0-9]/, "Password must contain at least one number"),
 });
 
-const SignupForm = () => {
+type Props = {
+  handleIsForgotPassword: () => void;
+};
+
+const SigninForm = ({ handleIsForgotPassword }: Props) => {
   const [showPassword, setShowPassword] = useState(false);
+  // const [isUserInfoModalOpen, setIsUserInfoModalOpen] = useState(false);
+  // const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
+
+  // const handleToggleUserModal = () => {
+  //   setIsUserInfoModalOpen((state) => !state);
+
+  // };
+
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (values: MyFormValues) => {
+  const handleSubmit = (
+    values: MyFormValues,
+    { resetForm }: { resetForm: () => void }
+  ) => {
+    // const { email } = { email: values };
     console.log(values);
-    // resetForm();
+
+    // dispatch(signIn({ email, password }))
+    //   .unwrap()
+    //   .then(() => toast.success('Login  succesfully'))
+    //   .catch(() => toast.error('Something went wrong. Try again'));
+    resetForm();
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={schema}
-      onSubmit={handleSubmit}
-    >
-      {({ values, errors, touched }) => (
-        <AuthForm>
-          <InputWrap>
-            <Input
-              type="email"
-              name="email"
-              placeholder="Email"
-              error={errors.email && touched.email ? "true" : "false"}
-              success={values.email && !errors.email ? "true" : "false"}
-            />
-            <FormError name="email" />
-            {errors.email && touched.email ? (
-              <ErrorIcon />
-            ) : values.email && !errors.email ? (
-              <SuccessIcon />
-            ) : null}
-          </InputWrap>
-          <InputWrap>
-            <Input
-              type={showPassword ? "text" : "password"}
-              value={values.password}
-              name="password"
-              placeholder="Password"
-              error={errors.password && touched.password ? "true" : "false"}
-              success={values.password && !errors.password ? "true" : "false"}
-            />
-            <FormError name="password" />
-            {errors.password && touched.password ? (
-              <ErrorIcon />
-            ) : values.password && !errors.password ? (
-              <SuccessIcon />
-            ) : null}
-            <TogglePasswordButton type="button" onClick={handleTogglePassword}>
-              {showPassword ? (
-                <StyledDontShowPasswordIcon />
-              ) : (
-                <StyledShowPasswordIcon />
-              )}
-            </TogglePasswordButton>
-          </InputWrap>
-          <Button type="submit">Sign In</Button>
-        </AuthForm>
-      )}
-    </Formik>
+    <SignWrapper>
+      <PageTitle title={"Sign In"} />
+      <Formik
+        initialValues={initialValues}
+        validationSchema={schema}
+        onSubmit={handleSubmit}
+      >
+        {({ values, errors, touched }) => (
+          <AuthForm>
+            <InputsWrapper>
+              <InputWrap>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  error={errors.email && touched.email ? "true" : "false"}
+                  success={values.email && !errors.email ? "true" : "false"}
+                />
+                <FormError name="email" />
+                {errors.email && touched.email ? (
+                  <ErrorIcon />
+                ) : values.email && !errors.email ? (
+                  <SuccessIcon />
+                ) : null}
+              </InputWrap>
+              <InputWrap>
+                <Input
+                  type={showPassword ? "text" : "password"}
+                  value={values.password}
+                  name="password"
+                  placeholder="Password"
+                  error={errors.password && touched.password ? "true" : "false"}
+                  success={
+                    values.password && !errors.password ? "true" : "false"
+                  }
+                />
+                <FormError name="password" />
+                {errors.password && touched.password ? (
+                  <ErrorIcon />
+                ) : values.password && !errors.password ? (
+                  <SuccessIcon />
+                ) : null}
+                <TogglePasswordButton
+                  type="button"
+                  onClick={handleTogglePassword}
+                >
+                  {showPassword ? (
+                    <StyledDontShowPasswordIcon />
+                  ) : (
+                    <StyledShowPasswordIcon />
+                  )}
+                </TogglePasswordButton>
+              </InputWrap>
+            </InputsWrapper>
+            <PasswordButton type="submit" onClick={handleIsForgotPassword}>
+              Forgot your password?
+            </PasswordButton>
+            <Button type="submit">Sign In</Button>
+            <SignDecorText>or by</SignDecorText>
+            <ModalIcons />
+
+            <SignText>I don't have an account yet</SignText>
+          </AuthForm>
+        )}
+      </Formik>
+    </SignWrapper>
   );
 };
-export default SignupForm;
+
+export default SigninForm;

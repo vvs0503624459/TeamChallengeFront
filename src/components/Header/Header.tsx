@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { Container } from "../Container/Container.styled";
+
+import ChangeModal from "../ChangeModal/ChangeModal";
+
 import {
   Logo,
   Compare,
@@ -18,10 +21,18 @@ import {
   CatalogueBtnText,
   LogoLink,
   IconsLink,
+  OpenModalButton,
 } from "./Header.styled";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import { useState } from "react";
 
 const Header = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const handleToggleUserModal = () => {
+    setIsOpenModal((state) => !state);
+  };
+
 
   return (
     <HeaderWrapper>
@@ -42,9 +53,9 @@ const Header = () => {
           <SearchBar />
           <LanguageSwitcher />
           <HeaderIconsWrapper>
-            <IconsLink to="/signin">
+            <OpenModalButton onClick={handleToggleUserModal}>
               <User />
-            </IconsLink>
+            </OpenModalButton>
             <IconsLink to="/#">
               <Like />
             </IconsLink>
@@ -56,6 +67,7 @@ const Header = () => {
             </IconsLink>
           </HeaderIconsWrapper>
         </HeaderInnerWrapper>
+        <ChangeModal isOpen={isOpenModal} handleClose={handleToggleUserModal} />
       </Container>
     </HeaderWrapper>
   );
