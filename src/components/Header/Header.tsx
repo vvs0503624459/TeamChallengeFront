@@ -36,10 +36,10 @@ const Header = () => {
     setIsOpenModal((state) => !state);
   };
   const Likes = useAppSelector((state) => state.productsLikeState ?? false);
-console.log(
-  "(Object.keys(Likes).length =",
-  Object.values(Likes).filter(value => value === true).length
-);
+// console.log(
+//   "(Object.keys(Likes).length =",
+//   Object.values(Likes).filter(value => value === true).length
+// );
   return (
     <HeaderWrapper>
       <Container>

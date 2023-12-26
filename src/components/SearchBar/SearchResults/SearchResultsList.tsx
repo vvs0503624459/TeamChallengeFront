@@ -31,15 +31,10 @@ interface ItemSearch {
   specificationGroups: Specification[];
 }
 const SearchResultsList = ({ results, clearInput }: Props) => {
-  const hasResults = results.length > 0 ? true : false;
   return (
-    <ResultsList hasResults={hasResults}>
+    <ResultsList hasResults={results.length > 0}>
       {results.map((result, i) => (
-        <SearchLink
-          key={i}
-          to={`/product/${result.id}`}
-          onClick={clearInput}
-        >
+        <SearchLink key={i} to={`/product/${result.id}`} onClick={clearInput}>
           <SearchResultDiv>{result.maintitle}</SearchResultDiv>
         </SearchLink>
       ))}
