@@ -22,9 +22,12 @@ import {
   LogoLink,
   IconsLink,
   OpenModalButton,
+  LikesCounter,
 } from "./Header.styled";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import { useState } from "react";
+import { useAppSelector } from "../../redux/hooks";
+
 
 const Header = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -32,8 +35,11 @@ const Header = () => {
   const handleToggleUserModal = () => {
     setIsOpenModal((state) => !state);
   };
-
-
+  const Likes = useAppSelector((state) => state.productsLikeState ?? false);
+console.log(
+  "(Object.keys(Likes).length =",
+  Object.values(Likes).filter(value => value === true).length
+);
   return (
     <HeaderWrapper>
       <Container>
@@ -58,6 +64,17 @@ const Header = () => {
             </OpenModalButton>
             <IconsLink to="/#">
               <NotLike />
+              <LikesCounter
+                // likesCount={Object.keys(Likes).length ? true : false}
+                likesCount={
+                  Object.values(Likes).filter((value) => value === true).length
+                    ? true
+                    : false
+                }
+              >
+                {/* {Object.keys(Likes).length} */}
+                {Object.values(Likes).filter((value) => value === true).length}
+              </LikesCounter>
             </IconsLink>
             <IconsLink to="/#">
               <Compare />
