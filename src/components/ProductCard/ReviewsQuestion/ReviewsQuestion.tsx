@@ -87,7 +87,7 @@ const ReviewsQuestion = () => {
   // console.log(reviews);
   const [reviewOrQuestion, setReviewOrQuestion] = useState(true);
 
-  const changeReviewOrQuestion = (value: boolean) => {
+  const changeReviewOrQuestion = (value: boolean): void => {
     setReviewOrQuestion(value);
   };
   return (
