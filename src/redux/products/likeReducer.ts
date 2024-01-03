@@ -16,7 +16,20 @@ export const likeReducer = createSlice({
     toggleLike: (state, action) => ({
       ...state,
       [action.payload]: !state[action.payload],
+      // if (!state[action.payload]) {
+      //   delete state[action.payload];
+      // } else {
+      //   state[action.payload] = !state[action.payload];
+      // }
     }),
+
+    // toggleLike: (state, action) => {
+    //   const { payload: key } = action;
+    //   // Створюємо новий об'єкт, який містить тільки ті ключі, для яких значення true
+    //   return Object.fromEntries(
+    //     Object.entries(state).filter(([currentKey, value]) => currentKey !== key || value === true)
+    //   );
+    // },
   },
 });
 

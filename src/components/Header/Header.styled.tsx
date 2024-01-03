@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+interface LikesProps {
+  likesCount: boolean;
+}
 export const HeaderWrapper = styled.div`
   position: sticky;
   top: 0;
@@ -41,6 +44,25 @@ export const IconsLink = styled(Link)`
   width: 36px;
   height: 36px;
   font-size: 24px;
+  position: relative;
+`;
+export const LikesCounter = styled.span<LikesProps>`
+  background-color: #5826da;
+  font-family: Inter;
+  font-weight: 600;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+  color: white;
+  width: 16px;
+  height: 16px;
+  // padding: 0 auto;
+  text-align: center;
+  line-height: 16px;
+  display: ${(props) => (props.likesCount ? "block" : "none")};
 `;
 
 export const CatalogueBtnText = styled.div`
