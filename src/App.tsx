@@ -22,24 +22,40 @@ const Accessories = lazy(
   () => import("./components/ProductCard/Accessories/Accessories")
 );
 
+const UserProfile = lazy(() => import("./pages/UserProfile/UserProfile"));
+
+const PersonalInfo = lazy(
+  () => import("./components/PersonalInformation/PersonalInfo/PersonalInfo")
+);
+const SigninSecurity = lazy(
+  () => import("./components/PersonalInformation/SigninSecurity/SigninSecurity")
+);
+
 // import {GlobalStyles} from './components/globalStyles';
 
 function App() {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getMainProduct());
-  }, []);
+  }, [dispatch]);
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-
+        
           <Route path="/product/:id" element={<ProductCard />}>
             <Route path="general" element={<General />} />
             <Route path="specifications" element={<Specifications />} />
             <Route path="reviews" element={<ReviewsQuestion />} />
             <Route path="accessories" element={<Accessories />} />
+          </Route>
+          
+          <Route path="/user" element={<UserProfile />}>
+            <Route path="personalinfo" element={<PersonalInfo />} />
+             <Route path="signin&security" element={<SigninSecurity />} />
+            {/* <Route path="reviews" element={<ReviewsQuestion />} />
+            <Route path="accessories" element={<Accessories />} /> */}
           </Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
@@ -52,3 +68,5 @@ function App() {
 }
 
 export default App;
+
+
