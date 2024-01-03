@@ -21,6 +21,9 @@ import {
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { toggleLike } from "../../redux/products/likeReducer";
 import { addProductToCart } from "../../redux/products/cartReducer";
+const style = {
+  fill: "#5826da",
+}
 
 const PhoneCardList = () => {
   // const phone = useAppSelector((state) => state.products);
@@ -60,7 +63,7 @@ const PhoneCardList = () => {
                   <Deal>{deal}</Deal>
                 </DiscountDiv>
                 <BUTTON onClick={() => dispatch(addProductToCart({ id }))}>
-                  <Cart />
+                  <Cart style={style} />
                 </BUTTON>
               </DiscountContainer>
             </CardDiv>

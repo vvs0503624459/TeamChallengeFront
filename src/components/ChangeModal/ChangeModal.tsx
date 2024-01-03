@@ -14,6 +14,18 @@ type Props = {
   handleClose: () => void;
 };
 
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  borderRadius: '12px',
+  background: 'var(--Primary-white, #fff)',
+  boxShadow: '0px 4px 48px 0px rgba(0, 0, 0, 0.1)',
+  padding: '40px',
+  width: '415px',
+  }
+
 const ChangeModal = ({ isOpen, handleClose }: Props) => {
   const [changeModal, setChangeModal] = useState(false);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
@@ -41,7 +53,7 @@ const ChangeModal = ({ isOpen, handleClose }: Props) => {
   };
 
   return (
-    <Modal isOpen={isOpen} handleClose={handleClose}>
+    <Modal isOpen={isOpen} handleClose={handleClose} style={style}>
       <Wrapper>
         {!changeModal ? (
           !isForgotPassword ? (
