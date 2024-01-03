@@ -1,5 +1,4 @@
 import { useLocation, useParams } from "react-router-dom";
-
 import { Outlet } from "react-router-dom";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import PhoneCardList from "../../components/PhoneCardList/PhoneCardList";
@@ -16,6 +15,7 @@ import general from "../../data/general.json";
 const ProductCard = () => {
   const location = useLocation();
   const { id } = useParams();
+
   return (
     <MainSection>
       <Container>
@@ -44,7 +44,10 @@ const ProductCard = () => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="reviews" state={{ from: location }}>
+              <NavLink
+                to="reviews"
+                state={{ from: location }}
+              >
                 Reviews & Questions (324)
               </NavLink>
             </NavItem>
