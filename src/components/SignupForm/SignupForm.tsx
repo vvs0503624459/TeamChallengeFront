@@ -79,7 +79,7 @@ const SignupForm = () => {
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
-  // const dispatch = useDispatch();
+
   const dispatch = useAppDispatch();
 
   const handleSubmit = (
@@ -95,20 +95,6 @@ const SignupForm = () => {
       .catch(() => toast.error('Something went wrong. Try again'));
     resetForm();
   };
-
-  // const handleSubmit = (
-  //   values: MyFormValues,
-  //   { resetForm }: { resetForm: () => void }
-  // ) => {
-  //   // const { email } = { email: values };
-  //   console.log(values);
-
-  //   // dispatch(signIn({ email, password }))
-  //   //   .unwrap()
-  //   //   .then(() => toast.success('Login  succesfully'))
-  //   //   .catch(() => toast.error('Something went wrong. Try again'));
-  //   resetForm();
-  // };
 
   return (
     <SignWrapper>

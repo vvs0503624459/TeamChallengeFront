@@ -1,7 +1,6 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-
 // import { signIn } from '../../redux/auth/auth-operation';
 // Import SignInPayload type from your auth-operation file
 import { InPayload, signIn } from '../../redux/auth/auth-operation';
@@ -64,30 +63,6 @@ const SigninForm = ({ handleIsForgotPassword }: Props) => {
 
   const dispatch = useAppDispatch();
 
-  // const handleSubmit = (
-  //   values: MyFormValues,
-  //   { resetForm }: { resetForm: () => void }
-  // ) => {
-  //   const { email, password } = values;
-  //   dispatch(signIn({ email, password }))
-  //     .unwrap()
-  //     .then(() => toast.success('Login  succesfully'))
-  //     .catch(() => toast.error('Something went wrong. Try again'));
-  //   resetForm();
-  // };
-
-  // const handleSubmit = (
-  //   values: MyFormValues,
-  //   { resetForm }: { resetForm: () => void }
-  // ) => {
-  //   const { email, password } = values;
-  //   dispatch(signIn({ email, password } as { email: string; password: string }))
-  //     .unwrap()
-  //     .then(() => toast.success('Login  succesfully'))
-  //     .catch(() => toast.error('Something went wrong. Try again'));
-  //   resetForm();
-  // };
-
   const handleSubmit = (
     values: MyFormValues,
     { resetForm }: { resetForm: () => void }
@@ -102,7 +77,6 @@ const SigninForm = ({ handleIsForgotPassword }: Props) => {
 
     resetForm();
   };
-
 
   return (
     <SignWrapper>
