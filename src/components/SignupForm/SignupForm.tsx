@@ -2,6 +2,11 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
 
+import {InPayload, signUp } from '../../redux/auth/auth-operation';
+
+import  { useAppDispatch } from '../../redux/hooks';
+import { toast } from 'react-toastify';
+
 import FormError from "../FormError/FormError";
 import PageTitle from "../PageTitle/PageTitle";
 import ModalIcons from "../ModalIcons/ModalIcons";
@@ -23,31 +28,32 @@ import {
 } from "../SignupForm/SignupForm.styled";
 
 interface MyFormValues {
-  name: string;
-  surname: string;
-  number: string;
+  firstname: string;
+  lastname: string;
+  phoneNumber: string;
   email: string;
   password: string;
 }
 
 const initialValues: MyFormValues = {
-  name: "",
-  surname: "",
-  number: "",
-  email: "",
-  password: "",
+  firstname: '', 
+  lastname: '', 
+  phoneNumber: '',
+   email: '',
+    password: ''
+
 };
 
 const schema = Yup.object().shape({
-  name: Yup.string()
+  firstname: Yup.string()
     .min(3)
     .required("Name is required")
     .required("Name is required"),
-  surname: Yup.string()
+    lastname: Yup.string()
     .min(3)
     .required("Surname is required")
     .required("Surname is required"),
-  number: Yup.string()
+    phoneNumber: Yup.string()
     .min(6)
     .required("Number is required")
     .matches(
@@ -73,20 +79,36 @@ const SignupForm = () => {
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
+  // const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleSubmit = (
     values: MyFormValues,
     { resetForm }: { resetForm: () => void }
   ) => {
-    // const { email } = { email: values };
-    console.log(values);
-
-    // dispatch(signIn({ email, password }))
-    //   .unwrap()
-    //   .then(() => toast.success('Login  succesfully'))
-    //   .catch(() => toast.error('Something went wrong. Try again'));
+    const { firstname, lastname, phoneNumber, email, password } = values;
+    console.log(values)
+    dispatch(signUp({ firstname, lastname, phoneNumber, email, password } as InPayload))
+    // dispatch(signUp({ firstname, lastname, phoneNumber, email, password }))
+      .unwrap()
+      .then(() => toast.success('Registration succesfully'))
+      .catch(() => toast.error('Something went wrong. Try again'));
     resetForm();
   };
+
+  // const handleSubmit = (
+  //   values: MyFormValues,
+  //   { resetForm }: { resetForm: () => void }
+  // ) => {
+  //   // const { email } = { email: values };
+  //   console.log(values);
+
+  //   // dispatch(signIn({ email, password }))
+  //   //   .unwrap()
+  //   //   .then(() => toast.success('Login  succesfully'))
+  //   //   .catch(() => toast.error('Something went wrong. Try again'));
+  //   resetForm();
+  // };
 
   return (
     <SignWrapper>
@@ -102,45 +124,45 @@ const SignupForm = () => {
               <InputWrap>
                 <Input
                   type="text"
-                  name="name"
+                  name="firstname"
                   placeholder="Name"
-                  error={errors.name && touched.name ? "true" : "false"}
-                  success={values.name && !errors.name ? "true" : "false"}
+                  error={errors.firstname && touched.firstname ? "true" : "false"}
+                  success={values.firstname && !errors.firstname ? "true" : "false"}
                 />
-                <FormError name="name" />
-                {errors.name && touched.name ? (
+                <FormError name="firstname" />
+                {errors.firstname && touched.firstname ? (
                   <ErrorIcon />
-                ) : values.name && !errors.name ? (
+                ) : values.firstname && !errors.firstname ? (
                   <SuccessIcon />
                 ) : null}
               </InputWrap>
               <InputWrap>
                 <Input
                   type="text"
-                  name="surname"
+                  name="lastname"
                   placeholder="Surname"
-                  error={errors.surname && touched.surname ? "true" : "false"}
-                  success={values.surname && !errors.surname ? "true" : "false"}
+                  error={errors.lastname && touched.lastname ? "true" : "false"}
+                  success={values.lastname && !errors.lastname ? "true" : "false"}
                 />
-                <FormError name="surname" />
-                {errors.surname && touched.surname ? (
+                <FormError name="lastname" />
+                {errors.lastname && touched.lastname ? (
                   <ErrorIcon />
-                ) : values.surname && !errors.surname ? (
+                ) : values.lastname && !errors.lastname ? (
                   <SuccessIcon />
                 ) : null}
               </InputWrap>
               <InputWrap>
                 <Input
                   type="tel"
-                  name="number"
+                  name="phoneNumber"
                   placeholder="Phone number"
-                  error={errors.number && touched.number ? "true" : "false"}
-                  success={values.number && !errors.number ? "true" : "false"}
+                  error={errors.phoneNumber && touched.phoneNumber ? "true" : "false"}
+                  success={values.phoneNumber && !errors.phoneNumber ? "true" : "false"}
                 />
-                <FormError name="number" />
-                {errors.number && touched.number ? (
+                <FormError name="phoneNumber" />
+                {errors.phoneNumber && touched.phoneNumber ? (
                   <ErrorIcon />
-                ) : values.number && !errors.number ? (
+                ) : values.phoneNumber && !errors.phoneNumber ? (
                   <SuccessIcon />
                 ) : null}
               </InputWrap>

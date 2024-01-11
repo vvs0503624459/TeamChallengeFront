@@ -28,7 +28,9 @@ const schema = Yup.object().shape({
     .required("Email is required"),
 });
 const FooterSab = () => {
-  const handleSubmit = (values: MyFormValues) => {
+
+  const handleSubmit = ( values: MyFormValues) => {
+
     console.log(values);
     // resetForm();
   };

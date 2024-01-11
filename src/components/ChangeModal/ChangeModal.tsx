@@ -27,9 +27,12 @@ const style = {
   }
 
 const ChangeModal = ({ isOpen, handleClose }: Props) => {
+  
   const [changeModal, setChangeModal] = useState(false);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [thankYou, setThankYou] = useState(false);
+
+  const visibles = true; //close btn prop
 
   const handleToggleModal = () => {
     setChangeModal((state) => !state);
@@ -53,7 +56,7 @@ const ChangeModal = ({ isOpen, handleClose }: Props) => {
   };
 
   return (
-    <Modal isOpen={isOpen} handleClose={handleClose} style={style}>
+    <Modal isOpen={isOpen} handleClose={handleClose} style={style} visible={visibles}>
       <Wrapper>
         {!changeModal ? (
           !isForgotPassword ? (

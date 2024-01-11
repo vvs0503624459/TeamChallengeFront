@@ -1,168 +1,587 @@
 [
-    {
-        "id": "1",
-        "icon": "phone",
-        "title": "Smartphones and Phones",
-        "right": "iconRight",
-        "goods": [
-            {
-                "brand": "Apple"
-            },
-            {
-                "brand": "Sumsung"
-            },
-            {
-                "brand": "Xiami"
-            }
+  {
+    "id": "1",
+    "icon": "phone",
+    "title": "Smartphones and Phones",
+    "right": "iconRight",
+    "goods": [
+      {
+        "brand": "Smartphones",
+        "model": [
+          "Apple",
+          "Xiaomi",
+          "Samsung",
+          "Nothing",
+          "Realme",
+          "Google Pixel",
+          "Nokia",
+          "Motorola",
+          "OnePlus",
+          "Redmi",
+          "ZTE",
+          "OPPO"
         ]
-    },
-    {
-        "id": "2",
-        "icon": "laptop",
-        "title": "Laptops and PCs",
-        "right": "iconRight",
-        "goods": [
-            {
-                "brand": "Apple"
-
-            },
-            {
-                "brand": "Sumsung"
-
-            },
-			{
-                "brand": "Axsios"
-
-            }
+      },
+      {
+        "brand": "Apple",
+        "model": [
+          "Apple iPhone 14 Pro Max",
+          "Apple iPhone 14 Pro",
+          "Apple iPhone 14",
+          "Apple iPhone 13 Pro Max",
+          "Apple iPhone 13 Pro",
+          "Apple iPhone 13",
+          "Apple iPhone 13 mini",
+          "Apple iPhone 12 Pro Max",
+          "Apple iPhone 12 Pro",
+          "Apple iPhone 12",
+          "Apple iPhone 12 mini"
         ]
-    },
-    {
-        "id": "3",
-		"icon": "headphones",
-		"title": "Audio",
-		"right": "iconRight",
-        "goods": [
-            {
-                "brand": "Apple"
-
-            },
-            {
-                "brand": "UKr"
-            },
-            {
-                "brand": "Sumsung"
-            }
+      },
+      {
+        "brand": "Redmi",
+        "model": [
+          "Redmi Note 12 Pro",
+          "Redmi Note 12",
+          "Redmi Note 11 Pro",
+          "Redmi Note 10A"
         ]
-    },
-    {
-        "id": "4",
-		"icon": "charge",
-		"title": "Accessories",
-		"right": "iconRight",
-		"goods": [
-            {
-                "brand": "Apple"
-
-            },
-            {
-                "brand": "GBL"
-            },
-            {
-                "brand": "Sumsung"
-            }
+      },
+      {
+        "brand": "Xiaomi",
+        "model": [
+          "Xiaomi 13 Lite",
+          "Xiaomi Poco X5 Pro 5G",
+          "Xiaomi Poco M5",
+          "Xiaomi Poco M5s",
+          "Xiaomi 11 Lite 5G NE"
         ]
-    },
-    {
-        "id": "5",
-		"icon": "iconTV",
-		"title": "TVs and Multimedia",
-		"right": "iconRight",
-		"goods": [
-            {
-                "brand": "Apple"
-
-            },
-            {
-                "brand": "Sumsung"
-            }
+      },
+      {
+        "brand": "Accessories",
+        "model": [
+          "Screen Protector Glasses",
+          "Cases",
+          "Charges",
+          "Memory Cards"
         ]
-    },
-    {
-        "id": "6",
-		"icon": "iconCamera",
-		"title": "Photo and Video",
-		"right": "iconRight",
-		"goods": [
-            {
-                "brand": "Apple"
-
-            },
-            {
-                "brand": "GBL"
-            },
-            {
-                "brand": "Sumsung"
-            }
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "icon": "laptop",
+    "title": "Laptops and PCs",
+    "right": "iconRight",
+    "goods": [
+      {
+        "brand": "Laptops",
+        "model": [
+          "Apple MacBook",
+          "Asus",
+          "Lenovo",
+          "Aser",
+          "Realme",
+          "Xiaomi",
+          "HP",
+          "Dell",
+          "Gaming Laptops",
+          "Budget Laptops",
+          "Ultrabooks"
         ]
-    },
-    {
-        "id": "7",
-		"icon": "iconWatch",
-		"title": "Smart Watches",
-		"right": "iconRight",
-		"goods": [
-            {
-                "brand": "Apple"
-
-            },
-            {
-                "brand": "GBL"
-            },
-            {
-                "brand": "Sumsung"
-            }
+      },
+      {
+        "brand": "Tablets",
+        "model": [
+          "Apple iPad",
+          "Samsung",
+          "Realme",
+          "Lenovo",
+          "Xiaomi",
+          "Huawei"
         ]
-    },
-    {
-        "id": "8",
-		"icon": "iconWashing",
-		"title": "Household Appliances",
-		"right": "iconRight",
-		"goods": [
-            {
-                "brand": "Apple"
-
-            },
-            {
-                "brand": "GBL"
-            },
-            {
-                "brand": "Sumsung"
-            },
-			{
-                "brand": "Axsios"
-            }
+      },
+      {
+        "brand": "Other",
+        "model": ["Graphic Tablets", "Graphic Monitors", "E-Books"]
+      },
+      {
+        "brand": "Personal Computers",
+        "model": [
+          "iMac",
+          "Mac Studio",
+          "Intel Core processor PC",
+          "AMD Ryzen processor PC"
         ]
-    },
-    {
-        "id": "9",
-		"icon": "iconPercentage",
-		"title": "Special Offers",
-		"right": "iconRight",
-		"goods": [
-            {
-                "brand": "Apple"
-
-            },
-            {
-                "brand": "GBL"
-            },
-            {
-                "brand": "Sumsung"
-            },
-			{
-                "brand": "Axsios"
-            }
+      },
+      {
+        "brand": "Monitors",
+        "model": [
+          "Apple Monitors",
+          "Xiaomi Monitors",
+          "LG Monitors",
+          "Samsung Monitors",
+          "Asus Monitors"
         ]
-    }
+      },
+      {
+        "brand": "Accessories",
+        "model": [
+          "Screen Protector Glasses",
+          "Protection Films",
+          "Tablet Cases",
+          "Laptop Cases",
+          "Styluses",
+          "Mouses",
+          "Mouse Pads",
+          "Keyboards",
+          "Microphones",
+          "Veb-cameras",
+          "Speakers"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "icon": "headphones",
+    "title": "Audio",
+    "right": "iconRight",
+    "goods": [
+      {
+        "brand": "Headphones, Earphones",
+        "model": [
+          "Apple",
+          "Xiaomi",
+          "Samsung",
+          "JBL",
+          "Realme",
+          "Sony",
+          "Logitech",
+          "Nothing",
+          "Razer",
+          "Phillips",
+          "Panasonic",
+          "Gaming Headphones"
+        ]
+      },
+      {
+        "brand": "Wireless",
+        "model": [
+          "True Wireless Stereo (TWS)",
+          "With a Microphone",
+          "With Noise Reduction",
+          "In-ear Earphones",
+          "On-ear Headphones",
+          "Children's",
+          "For PC"
+        ]
+      },
+      {
+        "brand": "Accessories",
+        "model": [
+          "Cases",
+          "Charging Cases",
+          "With Noise Reduction",
+          "In-ear Earphones",
+          "On-ear Headphones",
+          "Children's",
+          "For PC"
+        ]
+      },
+      {
+        "brand": "Acoustics",
+        "model": ["JBL", "Divoom", "Samsung", "Marshall", "Sony", "LG"]
+      },
+      {
+        "brand": "Acoustics by Type",
+        "model": ["Portable", "Soundbars", "Desktop", "Floor"]
+      },
+      {
+        "brand": "Acoustic Systems",
+        "model": ["Marshall Acoustics", "JBL Acoustics", "Xiaomi Acoustics"]
+      },
+      {
+        "brand": "Home Theaters",
+        "model": ["Real-EL", "Macrolab"]
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "icon": "charge",
+    "title": "Accessories",
+    "right": "iconRight",
+    "goods": [
+      {
+        "brand": "Protection for Phones",
+        "model": [
+          "Apple",
+          "Xiaomi",
+          "Samsung",
+          "Nothing",
+          "Realme",
+          "Google Pixel",
+          "Nokia",
+          "Motorola",
+          "OnePlus",
+          "Redmi",
+          "ZTE",
+          "OPPO"
+        ]
+      },
+      {
+        "brand": "Protection for Tablets",
+        "model": [
+          "Apple iPad",
+          "Samsung",
+          "Nothing",
+          "Realme",
+          "Lenovo",
+          "Xiaomi",
+          "Huawei"
+        ]
+      },
+      {
+        "brand": "Portable Batteries",
+        "model": ["5000 mAh", "10000 mAh", "20000 mAh"]
+      },
+      {
+        "brand": "Cases",
+        "model": ["For phones", "For tablets", "For laptops", "For earphones"]
+      },
+      {
+        "brand": "Сhargers",
+        "model": [
+          "Network (Adapters)",
+          "Wireless",
+          "Automotive",
+          "Accumulators and Batteries"
+        ]
+      },
+      {
+        "brand": "Cabels",
+        "model": [
+          "USB-Type A",
+          "USB-Type C",
+          "HDMI",
+          "3,5 mm (Audio)",
+          "Samsung Galaxy A13"
+        ]
+      },
+      {
+        "brand": "Drives, Memory cards",
+        "model": [
+          "Memory cards",
+          "Flash drives",
+          "External hard drives",
+          "External SSD drives"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "icon": "iconTV",
+    "title": "TVs and Multimedia",
+    "right": "iconRight",
+    "goods": [
+      {
+        "brand": "TVs",
+        "model": [
+          "Sony",
+          "Philips",
+          "Xiaomi",
+          "Kivu",
+          "ERGO",
+          "Realme",
+          "Gazer",
+          "LG",
+          "TCL",
+          "Hisense"
+        ]
+      },
+      {
+        "brand": "Resolution",
+        "model": [
+          "HD (1366 x 768",
+          "Full HD (1920 x 1080)",
+          "4K UHD (3840 x 4320)",
+          "8K UHD (7680 x 4320)"
+        ]
+      },
+      {
+        "brand": "Purpose",
+        "model": [
+          "With Smart TV",
+          "For Bedroom",
+          "For Kitchen",
+          "For living room",
+          "Gaming"
+        ]
+      },
+      {
+        "brand": "Popular diagonals",
+        "model": ["32", "43", "50", "55", "65"]
+      },
+      {
+        "brand": "Soundbars",
+        "model": ["Samsung", "JBL", "Sonos"]
+      },
+      {
+        "brand": "Media Players",
+        "model": ["Apple", "Realme", "Xiaomi"]
+      },
+      {
+        "brand": "Projectors",
+        "model": ["Samsung", "Epson", "Sony", "ViewSonic", "Acer"]
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "icon": "iconCamera",
+    "title": "Photo and Video",
+    "right": "iconRight",
+    "goods": [
+      {
+        "brand": "Action Cameras",
+        "model": ["GoPro", "DJI", "Akaso", "Seabird", "ThiEYE", "Insta360"]
+      },
+      {
+        "brand": "Quadcopters, drones",
+        "model": ["DJI", "Autel", "FIMI"]
+      },
+      {
+        "brand": "Photo Cameras",
+        "model": ["Canon", "Nikon", "Sony", "Fujifilm", "Panasonic", "Pentax"]
+      },
+      {
+        "brand": "Objectives",
+        "model": ["Canon", "Nikon", "Sony"]
+      },
+      {
+        "brand": "Video Cameras",
+        "model": [
+          "Canon",
+          "Nikon",
+          "Sony",
+          "Fujifilm",
+          "Panasonic",
+          "Blackmagic"
+        ]
+      },
+      {
+        "brand": "Flashes",
+        "model": ["Canon", "Nikon", "Sony"]
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "icon": "iconWatch",
+    "title": "Smart Watches",
+    "right": "iconRight",
+    "goods": [
+      {
+        "brand": "Smart Watches",
+        "model": [
+          "Apple",
+          "Samsung",
+          "Amazfit",
+          "Huawei",
+          "Garmin",
+          "Fossil",
+          "Michael Kors",
+          "GOGPS",
+          "Polar",
+          "OPPO"
+        ]
+      },
+      {
+        "brand": "Fitness Trackers",
+        "model": ["Xiaomi", "Amazfit", "Redmi", "OPPO"]
+      },
+      {
+        "brand": "Children’s Smart Watches",
+        "model": ["Elari", "GOGPS", "AmiGo", "Gelius"]
+      },
+      {
+        "brand": "Apple",
+        "model": [
+          "Apple Watch Ultra",
+          "Apple Watch Series 8",
+          "Apple Watch SE 2",
+          "Apple Watch Series 7",
+          "Apple Watch SE"
+        ]
+      },
+      {
+        "brand": "Samsung",
+        "model": ["Samsung Galaxy Watch 5", "Samsung Galaxy Watch 4"]
+      },
+      {
+        "brand": "Xiaomi",
+        "model": [
+          "Amazfit GTR 4",
+          "Amazfit Bip 3 Pro",
+          "Watch S1 Active",
+          "Amazfit T-REX",
+          "Haylou Smart Watch"
+        ]
+      },
+      {
+        "brand": "Accessories",
+        "model": ["Screen Protection Glasses", "Watch Straps", "Chargers"]
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "icon": "iconWashing",
+    "title": "Household Appliances",
+    "right": "iconRight",
+    "goods": [
+      {
+        "brand": "Small Household Appliances",
+        "model": [
+          "Microwaves",
+          "Mixers",
+          "Blenders",
+          "Electric Kettles",
+          "Bread Ovens",
+          "Toasters",
+          "Meat Grinders",
+          "Kitchen Scales",
+          "Multicookers",
+          "Desktop Plates"
+        ]
+      },
+      {
+        "brand": "Large Household Appliances",
+        "model": ["Refrigerators", "Washing Machines", "Dishwashers", "Ovens"]
+      },
+      {
+        "brand": "Charging Stations",
+        "model": [
+          "Charging Stations",
+          "Generators",
+          "Inventers",
+          "Solar Panels"
+        ]
+      },
+      {
+        "brand": "Smart Home",
+        "model": [
+          "Video Surveillance",
+          "Smart Lightning",
+          "Smart Sockets",
+          "Smart Switches",
+          "Smart Sensors",
+          "Smart Home Controllers"
+        ]
+      },
+      {
+        "brand": "Cleaning Tech",
+        "model": [
+          "Robot Vacuum Cleaners",
+          "Manual Vacuum Cleaners",
+          "Vacuum Cleaners"
+        ]
+      },
+      {
+        "brand": "Climate Tech",
+        "model": [
+          "Air Conditioners",
+          "Air Humidifiers",
+          "Air Purifiers",
+          "Air Humidifiers",
+          "Heaters"
+        ]
+      },
+      {
+        "brand": "Coffee Tech",
+        "model": [
+          "Coffee Machines",
+          "Horn Coffee Makers",
+          "Capsule Coffee Makers",
+          "Drip Coffee Makers"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "icon": "iconPercentage",
+    "title": "Special Offers",
+    "right": "iconRight",
+    "goods": [
+      {
+        "brand": "Small Household Appliances",
+        "model": [
+          "Microwaves",
+          "Mixers",
+          "Blenders",
+          "Electric Kettles",
+          "Bread Ovens",
+          "Toasters",
+          "Meat Grinders",
+          "Kitchen Scales",
+          "Multicookers",
+          "Desktop Plates"
+        ]
+      },
+      {
+        "brand": "Large Household Appliances",
+        "model": ["Refrigerators", "Washing Machines", "Dishwashers", "Ovens"]
+      },
+      {
+        "brand": "Charging Stations",
+        "model": [
+          "Charging Stations",
+          "Generators",
+          "Inventers",
+          "Solar Panels"
+        ]
+      },
+      {
+        "brand": "Smart Home",
+        "model": [
+          "Video Surveillance",
+          "Smart Lightning",
+          "Smart Sockets",
+          "Smart Switches",
+          "Smart Sensors",
+          "Smart Home Controllers"
+        ]
+      },
+      {
+        "brand": "Cleaning Tech",
+        "model": [
+          "Robot Vacuum Cleaners",
+          "Manual Vacuum Cleaners",
+          "Vacuum Cleaners"
+        ]
+      },
+      {
+        "brand": "Climate Tech",
+        "model": [
+          "Air Conditioners",
+          "Air Humidifiers",
+          "Air Purifiers",
+          "Air Humidifiers",
+          "Heaters"
+        ]
+      },
+      {
+        "brand": "Coffee Tech",
+        "model": [
+          "Coffee Machines",
+          "Horn Coffee Makers",
+          "Capsule Coffee Makers",
+          "Drip Coffee Makers"
+        ]
+      }
+    ]
+  }
 ]

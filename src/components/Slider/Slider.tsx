@@ -11,8 +11,11 @@ import {
   SliderContainer,
   SliderItem,
   SliderImg,
+  SliderTextDiv,
   SliderTitle,
-  SliderP,
+  SliderDiscText,
+  SliderPriceText,
+  SliderPriceButton,
   ButtonLeft,
   ButtonRight,
 } from "./Slider.styled";
@@ -30,8 +33,13 @@ const Slider = () => {
     >
       <div>
         <SliderItem>
-          <SliderP>new</SliderP>
-          <SliderTitle>Samsung Galaxy Fold5</SliderTitle>
+          <SliderTextDiv>
+            <SliderTitle>Samsung Galaxy Fold5</SliderTitle>
+            <SliderDiscText>78 999 ₴</SliderDiscText>
+            <SliderPriceText>72 699 ₴</SliderPriceText>
+            <SliderPriceButton>-8%</SliderPriceButton>
+          </SliderTextDiv>
+
           <SliderImg src={SliderOne} />
           <ButtonLeft>
             <SliderLeft />
@@ -41,8 +49,13 @@ const Slider = () => {
           </ButtonRight>
         </SliderItem>
         <SliderItem>
-          <SliderP>new</SliderP>
-          <SliderTitle>Samsung Galaxy Gold6</SliderTitle>
+          <SliderTextDiv>
+            <SliderTitle>Samsung Galaxy Gold6</SliderTitle>
+            <SliderDiscText>78 999 ₴</SliderDiscText>
+            <SliderPriceText>72 699 ₴</SliderPriceText>
+            <SliderPriceButton>-8%</SliderPriceButton>
+          </SliderTextDiv>
+
           <SliderImg src={SliderTwo} />
           <ButtonLeft>
             <SliderLeft />
@@ -52,8 +65,13 @@ const Slider = () => {
           </ButtonRight>
         </SliderItem>
         <SliderItem>
-          <SliderP>new</SliderP>
-          <SliderTitle>Samsung Galaxy Black8</SliderTitle>
+          <SliderTextDiv>
+            <SliderTitle>Samsung Galaxy Black8</SliderTitle>
+            <SliderDiscText>78 999 ₴</SliderDiscText>
+            <SliderPriceText>72 699 ₴</SliderPriceText>
+            <SliderPriceButton>-8%</SliderPriceButton>
+          </SliderTextDiv>
+
           <SliderImg src={SliderTree} />
           <ButtonLeft>
             <SliderLeft />

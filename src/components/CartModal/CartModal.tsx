@@ -3,7 +3,7 @@ import PageTitle from "../PageTitle/PageTitle";
 import CartTopInfo from "./CartTopInfo";
 import CartCenterInfo from "./CartCenterInfo";
 
-import PhoneCardList from "../PhoneCardList/PhoneCardList";
+// import PhoneCardList from "../PhoneCardList/PhoneCardList";
 type Props = {
   isOpen: boolean;
   handleClose: () => void;
@@ -21,13 +21,22 @@ const style = {
 };
 
 const CartModal = ({ isOpen, handleClose }: Props) => {
+  const visibles = true; //close btn prop
+
   return (
-    <Modal isOpen={isOpen} handleClose={handleClose} style={style}>
-      <PageTitle title={"Cart"} />
-      <CartTopInfo />
-      <CartCenterInfo />
-      <PageTitle title={"People buy these together"} />
-      <PhoneCardList />
+    <Modal
+      isOpen={isOpen}
+      handleClose={handleClose}
+      visible={visibles}
+      style={style}
+    >
+      <>
+        <PageTitle title={"Cart"} />
+        <CartTopInfo />
+        <CartCenterInfo />
+        {/* <PageTitle title={"People buy these together"} />
+      <PhoneCardList /> */}
+      </>
     </Modal>
   );
 };
