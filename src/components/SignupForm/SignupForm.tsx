@@ -1,8 +1,11 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
+// import { useNavigate } from 'react-router-dom';
 
 import {InPayload, signUp } from '../../redux/auth/auth-operation';
+
+// import { configureAxios } from '../../redux/auth/auth-operation';
 
 import  { useAppDispatch } from '../../redux/hooks';
 import { toast } from 'react-toastify';
@@ -96,6 +99,29 @@ const SignupForm = () => {
     resetForm();
   };
 
+  // let navigate = useNavigate()
+
+  // const signUp = async (values: MyFormValues) => {
+  //   const params = {
+  //     user: {
+  //       ...values,
+  //     },
+  //   }
+  //   await configureAxios
+  //     .post('auth/signup', params)
+  //     .then((response) => {
+  //       if (response.data.user.token) {
+  //         localStorage.setItem(
+  //           'token',
+  //           JSON.stringify(response.data.user.token)
+  //         )
+  //         // navigate('/admin-panel')
+  //       }
+  //     })
+  //     .catch((error) => console.log('error', error))
+  // }
+
+
   return (
     <SignWrapper>
       <PageTitle title={"Sign Up"} />
@@ -103,6 +129,9 @@ const SignupForm = () => {
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={handleSubmit}
+        // onSubmit={(values) => {
+        //   signUp(values)
+        // }}
       >
         {({ values, errors, touched }) => (
           <AuthForm>

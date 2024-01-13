@@ -22,6 +22,8 @@ type Users = {
   isLoggedIn: boolean;
 };
 
+// const initialState: UserInfo[] = [];
+
 const initialState: Users = {
   user: {
     firstname: "",

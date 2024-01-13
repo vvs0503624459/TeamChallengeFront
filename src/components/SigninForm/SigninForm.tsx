@@ -1,9 +1,12 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
+// import { useNavigate } from 'react-router-dom';
 // import { signIn } from '../../redux/auth/auth-operation';
 // Import SignInPayload type from your auth-operation file
 import { InPayload, signIn } from '../../redux/auth/auth-operation';
+// import { configureAxios } from '../../redux/auth/auth-operation';
+
 import  { useAppDispatch } from '../../redux/hooks';
 import { toast } from 'react-toastify';
 
@@ -78,6 +81,28 @@ const SigninForm = ({ handleIsForgotPassword }: Props) => {
     resetForm();
   };
 
+  // let navigate = useNavigate()
+
+  // const signIn = async (values: MyFormValues) => {
+  //   const params = {
+  //     user: {
+  //       ...values,
+  //     },
+  //   }
+  //   await configureAxios
+  //     .post('/auth/login', params)
+  //     .then((response) => {
+  //       if (response.data.user.token) {
+  //         localStorage.setItem(
+  //           'token',
+  //           JSON.stringify(response.data.user.token)
+  //         )
+  //         navigate('/user')
+  //       }
+  //     })
+  //     .catch((error) => console.log('error', error))
+  // }
+
   return (
     <SignWrapper>
       <PageTitle title={"Sign In"} />
@@ -85,6 +110,9 @@ const SigninForm = ({ handleIsForgotPassword }: Props) => {
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={handleSubmit}
+        // onSubmit={(values) => {
+        //   signIn(values)
+        // }}
       >
         {({ values, errors, touched }) => (
           <AuthForm>

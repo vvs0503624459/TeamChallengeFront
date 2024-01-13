@@ -7,15 +7,15 @@ export type Product = {
   // треба буде додати Інші поля продукту
 };
 
-axios.defaults.baseURL = "http://demo-java-sp.eu-north-1.elasticbeanstalk.com";
+axios.defaults.baseURL = 'http://team-chalenge.onrender.com';
 
 export const getMainProduct = createAsyncThunk<Product[], undefined>(
   "products/getAll",
   async (_, thunkAPI) => {
     try {
       const response = await axios.get("/api/v1/devises");
-      console.log("getMainProduct", response);
-      return response.data;
+      console.log("getMainProduct", response.data);
+      // return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }

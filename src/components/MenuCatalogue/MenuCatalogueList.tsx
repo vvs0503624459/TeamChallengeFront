@@ -10,10 +10,23 @@ import {
   MenuTitle,
   MenuButton,
 } from "./MenuCatalogue.styled";
-
-import { useState } from "react";
+import {getCatalogue, CatalogueState} from '../../redux/catalogue/catalogue-operation'
+import { useEffect, useState } from 'react'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 
 const MenuCatalogueList = () => {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(getCatalogue())
+  }, [dispatch])
+
+  const catalogueList: CatalogueState[] = useAppSelector((state) => {
+    return state.catalogueMenu.catalogueList
+  })
+
+  console.log("catalogueList", catalogueList)
+
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
 
