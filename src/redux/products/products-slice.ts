@@ -70,8 +70,8 @@ export const productsSlice = createSlice({
     })
       .addCase(getMainProduct.rejected, (state, action) => {
 
-        console.error("Error loading products:", action.error.message);
-        return state;
+        // console.error("Error loading products:", action.error.message);
+        // return state;
       })
     // або можна додати й інші обробки помилок чи завантаження
     

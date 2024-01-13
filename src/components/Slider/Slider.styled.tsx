@@ -1,6 +1,7 @@
 import styled from "styled-components";
 // import { Slide } from 'react-slideshow-image';
 import { Swiper, SwiperSlide } from "swiper/react";
+import transition from "../../utils/transition";
 
 export const SliderContainer = styled(Swiper)`
   .swiper-button-prev {
@@ -38,10 +39,14 @@ export const SliderImg = styled.img`
   left: 33%;
 `;
 
-export const SliderTitle = styled.h1`
+export const SliderTextDiv = styled.div`
+  padding-top: 108px;
   padding-left: 110px;
+`;
+
+export const SliderTitle = styled.h1`
   width: 225px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.PrimaryWhite};
   font-family: Inter;
   font-size: 36px;
   font-weight: 600;
@@ -49,38 +54,63 @@ export const SliderTitle = styled.h1`
   letter-spacing: 0em;
   text-align: left;
 `;
-
-export const SliderP = styled.p`
-  padding-top: 108px;
-  padding-left: 110px;
-  color: #ffffff;
+export const SliderDiscText = styled.p`
+  color: ${({ theme }) => theme.TritiaryLightGray};
   font-family: Inter;
   font-size: 14px;
+  font-style: normal;
   font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: left;
-  text-transform: uppercase;
+  line-height: 22px; /* 157.143% */
+  text-decoration-line: strikethrough;
+`;
+
+export const SliderPriceText = styled.p`
+  color: ${({ theme }) => theme.PrimaryWhite};
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 130% */
+`;
+
+export const SliderPriceButton = styled.button`
+  display: flex;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: none;
+  background: ${({ theme }) => theme.SecondaryExoticPink};
+  color: ${({ theme }) => theme.PrimaryWhite};
+  text-align: center;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
 `;
 export const ButtonLeft = styled.button`
   position: absolute;
   top: 50%;
   left: 2%;
-  background: #f9fafe;
+  background: ${({ theme }) => theme.TritiaryLightestGray};
   width: 36px;
   height: 36px;
   padding: 6px;
   border-radius: 8px;
   border: none;
+  transition: background-color ${transition};
 `;
 export const ButtonRight = styled.button`
   position: absolute;
   top: 50%;
   right: 2%;
-  background: #f9fafe;
+  background: ${({ theme }) => theme.TritiaryLightestGray};
   width: 36px;
   height: 36px;
   padding: 6px;
   border-radius: 8px;
   border: none;
+  transition: background-color ${transition};
 `;

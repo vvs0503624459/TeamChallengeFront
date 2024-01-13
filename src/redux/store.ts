@@ -1,15 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import likeReducer from "./likeReducer";
 // import cartReducer from "./cartReducer";
+import { authReducer } from "./auth/auth-slice.js";
 import productsReducer from "./products/products-slice.js";
 import cartReducer from "./products/cartReducer.js";
 import likeReducer from "./products/likeReducer.js";
+import catalogueSlice from "./catalogue/catalogue-slice.js";
 
 export const store = configureStore({
   reducer: {
     productsLikeState: likeReducer,
     productsInCart: cartReducer,
     products: productsReducer,
+    auth:  authReducer,
+    catalogueMenu: catalogueSlice,
   },
 });
 export type RootState = ReturnType<typeof store.getState>;

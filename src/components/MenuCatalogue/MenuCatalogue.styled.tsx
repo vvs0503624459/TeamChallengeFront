@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import ReactSelect from 'react-select';
+import ReactSelect from "react-select";
+import transition from "../../utils/transition";
 
 export const StyledSelect = styled(ReactSelect)`
   & .Select__control {
@@ -150,22 +151,23 @@ export const MenuList = styled.ul`
   flex-direction: column;
   padding: 20px 0;
   width: 350px;
+  height: 360px;
   border-radius: 0px 12px;
-  border-right: 1px solid #E0E4F0;
+  border-right: 1px solid ${({ theme }) => theme.TritiaryLightGray};
 `;
 
 export const MenuItem = styled.li`
-  //   width: 177px;
-  //   height: 65px;
   display: flex;
   gap: 20px;
   align-items: center;
-  padding: 8px 20px;
+  padding: 0px 20px;
+
+  transition: background-color ${transition}, color ${transition};
 
   &:focus,
   &:hover {
-    color:  #5826DA;
-    background-color: #E0E4F0;
+    color: ${({ theme }) => theme.PrimaryBrightPurple};
+    background-color: ${({ theme }) => theme.TritiaryLightGray};
   }
 
   //   @media screen and (min-width: 768px) {
@@ -178,14 +180,15 @@ export const MenuItem = styled.li`
 `;
 
 export const TextDiv = styled.div`
-display: flex;
-gap: 20px;
-align-items: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 8px 0px;
 `;
 
 export const MenuTitle = styled.h3`
-width: 200px;
-  color: #1e1d21;
+  width: 200px;
+  color: ${({ theme }) => theme.PrimaryBlack};
   font-family: Inter;
   font-size: 16px;
   font-weight: 600;
@@ -193,11 +196,15 @@ width: 200px;
   letter-spacing: 0em;
   text-align: left;
 
-  // &:focus,
-  // &:hover {
-  //   color:  #5826DA;
-   
-  // }
+  transition: color ${transition};
+
+  &:focus,
+  &:hover {
+    color: ${({ theme }) => theme.PrimaryBrightPurple};
+  }
 `;
-
-
+export const MenuButton = styled.button`
+  background: transparent;
+  border: none;
+  transition: background-color ${transition};
+`;

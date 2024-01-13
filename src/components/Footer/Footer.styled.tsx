@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export const FooterWrapper = styled.footer`
   padding: 100px 0px 20px 0px;
-  background: var(--Primary-black, #1e1d21);
+  background: ${({ theme }) => theme.PrimaryBlack};
 `;
 
 export const FooterContainer = styled.div`
@@ -14,12 +14,10 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterText = styled.p`
-margin-top: 20px;
+  margin-top: 20px;
   margin-bottom: 40px;
   width: 176px;
-  color: var(--Tritiary-gray, #aea8b7);
-
-  /* B1 R */
+  color: ${({ theme }) => theme.TritiaryGray};
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
@@ -42,9 +40,7 @@ export const FooterListWrapper = styled.ul`
 
 export const FooterListTitles = styled.h4`
   margin-bottom: 24px;
-  color: var(--Tritiary-light-gray, #e0e4f0);
-
-  /* B2 SB */
+  color: ${({ theme }) => theme.TritiaryLightGray};
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -60,9 +56,7 @@ export const FooterList = styled.ul`
 `;
 
 export const FooterItem = styled.li`
-  color: var(--Tritiary-gray, #aea8b7);
-
-  /* P3 R */
+  color: ${({ theme }) => theme.TritiaryGray};
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -78,9 +72,7 @@ export const PolicyWrapper = styled.div`
 `;
 
 export const PolicyText = styled.p`
-  color: var(--Tritiary-gray, #aea8b7);
-
-  /* P4 R */
+  color: ${({ theme }) => theme.TritiaryGray};
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -93,14 +85,10 @@ export const PolicyList = styled.ul`
   gap: 60px;
 `;
 
-export const PolicyItem = styled.li`
-
-`;
+export const PolicyItem = styled.li``;
 
 export const PolicyLink = styled(NavLink)`
-  color: var(--Tritiary-gray, #aea8b7);
-
-  /* P4 R */
+  color: ${({ theme }) => theme.TritiaryGray};
   font-family: Inter;
   font-size: 14px;
   font-style: normal;

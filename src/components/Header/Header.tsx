@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Container } from "../Container/Container.styled";
 
 import ChangeModal from "../ChangeModal/ChangeModal";
-import CartModal from "../CartModal/CartModal";
+import HeaderCatalogueModal from "../MenuCatalogue/HeaderCatalogueModal";
 
 import {
   Logo,
@@ -33,25 +33,23 @@ import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import { useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
 
-
 const Header = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isOpenCartModal, setIsOpenCartModal] = useState(false);
+  const [isOpenModalHeader, setIsOpenModalHeader] = useState(false);
 
   const handleToggleUserModal = () => {
     setIsOpenModal((state) => !state);
   };
 
-
-  const handleToggleCartModal = () => {
-    setIsOpenCartModal((state) => !state);
+  const handleToggleHeaderModal = () => {
+    setIsOpenModalHeader((state) => !state);
   };
 
   const Likes = useAppSelector((state) => state.productsLikeState ?? false);
-// console.log(
-//   "(Object.keys(Likes).length =",
-//   Object.values(Likes).filter(value => value === true).length
-// );
+  // console.log(
+  //   "(Object.keys(Likes).length =",
+  //   Object.values(Likes).filter(value => value === true).length
+  // );
 
   return (
     <HeaderWrapper>
@@ -61,12 +59,12 @@ const Header = () => {
             <LogoLink to="/home">
               <Logo />
             </LogoLink>
-            <Link to="/home">
-              <CatalogueButton>
-                <Catalogue />
-                <CatalogueBtnText>Catalogue</CatalogueBtnText>
-              </CatalogueButton>
-            </Link>
+            {/* <Link to="/home"> */}
+            <CatalogueButton onClick={handleToggleHeaderModal}>
+              <Catalogue />
+              <CatalogueBtnText>Catalogue</CatalogueBtnText>
+            </CatalogueButton>
+            {/* </Link> */}
           </DivLogoCatalogue>
 
           <SearchBar />
@@ -92,16 +90,16 @@ const Header = () => {
             <IconsLink to="/user">
               <Compare />
             </IconsLink>
-            <OpenModalButton onClick={handleToggleCartModal}>
+            <IconsLink to="/cart">
               <Cart style={style} />
-            </OpenModalButton>
+            </IconsLink>
           </HeaderIconsWrapper>
         </HeaderInnerWrapper>
 
         <ChangeModal isOpen={isOpenModal} handleClose={handleToggleUserModal} />
-        <CartModal
-          isOpen={isOpenCartModal}
-          handleClose={handleToggleCartModal}
+        <HeaderCatalogueModal
+          isOpen={isOpenModalHeader}
+          handleClose={handleToggleHeaderModal}
         />
       </Container>
     </HeaderWrapper>

@@ -5,7 +5,7 @@ import { AiOutlineEye } from "react-icons/ai";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { AiOutlineCheckCircle } from "react-icons/ai";
-// import transition from '../../utils/transition';
+import transition from "../../utils/transition";
 
 import styled, { css } from "styled-components";
 
@@ -43,29 +43,28 @@ export const Input = styled(Field)`
   gap: 10px;
   align-self: stretch;
   border-radius: 12px;
-  border: 1px solid var(--Tritiary-purple-gray, #69657b);
+  border: 1px solid ${({ theme }) => theme.TritiaryPurpleGray};
   outline: none;
 
-  color: var(--Tritiary-purple-gray, #69657b);
-
-  /* P3 R */
+  color: ${({ theme }) => theme.TritiaryPurpleGray};
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
+
+  transition: border-color ${transition};
+
   &:focus,
   &:hover {
-    border: 1px solid #5826da;
-
-    transition: border, background-color;
+    border: 1px solid ${({ theme }) => theme.PrimaryBrightPurple};
   }
   &:focus {
     color: #a7aab5;
   }
 
   &::placeholder {
-    color: var(--Tritiary-purple-gray, #69657b);
+    color: ${({ theme }) => theme.TritiaryPurpleGray};
   }
 
   ${({ error }) =>
@@ -84,7 +83,7 @@ export const PasswordButton = styled.button`
   margin-top: 10px;
   background-color: transparent;
   border: none;
-  color: var(--Tritiary-purple-gray, #69657b);
+  color: ${({ theme }) => theme.TritiaryPurpleGray};
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -100,22 +99,20 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  background: var(--Primary-bright-purple, #5826da);
+  background: ${({ theme }) => theme.PrimaryBrightPurple};
   border: none;
-
-  color: var(--Primary-white, #fff);
+  color: ${({ theme }) => theme.PrimaryWhite};
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 24px; /* 150% */
 
+  transition: background-color ${transition};
+
   &:focus,
   &:hover {
-    background-color: #5826da;
-    color: #f3f3f3;
-    border: 1px solid rgba(243, 243, 243, 0.58);
-    transition: border, background-color;
+    background: ${({ theme }) => theme.SecondaryDarkPurple};
   }
 
   @media screen and (min-width: 768px) {
@@ -132,7 +129,7 @@ export const TogglePasswordButton = styled.button`
 `;
 
 export const StyledDontShowPasswordIcon = styled(AiOutlineEye)`
-  fill: #1e1d21;
+  fill: ${({ theme }) => theme.PrimaryBlack};
   width: 18px;
   height: 18px;
   @media screen and (min-width: 375px) {
@@ -145,7 +142,7 @@ export const StyledDontShowPasswordIcon = styled(AiOutlineEye)`
   }
 `;
 export const StyledShowPasswordIcon = styled(AiOutlineEyeInvisible)`
-  fill: #1e1d21;
+  fill: ${({ theme }) => theme.PrimaryBlack};
   width: 18px;
   height: 18px;
 
@@ -194,9 +191,7 @@ export const SuccessIcon = styled(AiOutlineCheckCircle)`
 `;
 
 export const SignDecorText = styled.p`
-  color: var(--grey, #888);
-
-  /* P2 R */
+  color: ${({ theme }) => theme.Grey};
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -204,17 +199,19 @@ export const SignDecorText = styled.p`
   line-height: 22px; /* 157.143% */
   text-align: center;
 
+  // &:after {
+  //   content: " 🦄";
+  // }
   &:before {
+    content: " ";
     width: 150px;
     height: 0.5px;
-    background: #888;
+    background: ${({ theme }) => theme.Grey};
   }
 `;
 
 export const SignText = styled.p`
-  color: var(--Tritiary-purple-gray, #69657b);
-
-  /* P2 R */
+  color: ${({ theme }) => theme.TritiaryPurpleGray};
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
