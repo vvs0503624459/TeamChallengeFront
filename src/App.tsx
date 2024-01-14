@@ -37,6 +37,8 @@ function App() {
   useEffect(() => {
     dispatch(getMainDevises());
   }, [dispatch]);
+
+  
   return (
     <ThemeProvider theme={lightTheme}>
       <>

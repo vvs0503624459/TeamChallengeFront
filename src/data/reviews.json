@@ -14,7 +14,7 @@
     "Relevance", "Newest", "Best"
   ],
   "photosUri": [
-    "/vite.svg","/vite.svg"
+    "/testImg.png","/testImg.png"
   ],
   "countOfLikes": 2,
   "countOfDislikes": 3
@@ -35,7 +35,7 @@
     "Relevance", "Newest", "Best"
   ],
   "photosUri": [
-    "/vite.svg","/vite.svg", "/vite.svg"
+    "/testImg.png","/testImg.png", "/testImg.png"
   ],
   "countOfLikes": 1,
   "countOfDislikes": 0
@@ -76,7 +76,7 @@
     "Relevance", "Newest", "Best"
   ],
   "photosUri": [
-    "/vite.svg","/vite.svg"
+    "/testImg.png","/testImg.png"
   ],
   "countOfLikes": 2,
   "countOfDislikes": 3
@@ -97,7 +97,7 @@
     "Relevance", "Newest", "Best"
   ],
   "photosUri": [
-    "/vite.svg","/vite.svg", "/vite.svg"
+    "/testImg.png","/testImg.png", "/testImg.png"
   ],
   "countOfLikes": 1,
   "countOfDislikes": 0
@@ -137,7 +137,7 @@
   "tags": [
     "Relevance", "Newest", "Best"
   ],
-  "photosUri": ["/vite.svg", "/vite.svg", "/vite.svg", "/vite.svg", "/vite.svg"],
+  "photosUri": ["/testImg.png", "/testImg.png", "/testImg.png", "/testImg.png", "/testImg.png"],
   "countOfLikes": 2,
   "countOfDislikes": 3
 },
@@ -157,7 +157,7 @@
     "Relevance", "Newest", "Best"
   ],
   "photosUri": [
-    "/vite.svg","/vite.svg", "/vite.svg"
+    "/testImg.png","/testImg.png", "/testImg.png"
   ],
   "countOfLikes": 1,
   "countOfDislikes": 0

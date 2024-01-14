@@ -8,6 +8,8 @@ import { store } from "./redux/store.ts";
 // import 'modern-normalize/modern-normalize.css';
 // import { persistor } from "./redux/store.ts";
 // import { PersistGate } from 'redux-persist/integration/react';
+import './data/i18n/i18n.tsx'
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

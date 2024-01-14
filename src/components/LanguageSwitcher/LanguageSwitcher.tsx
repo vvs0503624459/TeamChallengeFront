@@ -1,6 +1,8 @@
-import { useState } from "react";
 import styled from "styled-components";
-
+import { useTranslation } from "react-i18next";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { setLanguage } from "../../redux/languageReducer";
+import { useEffect } from "react";
 interface StyledButtonProps {
   clicked: boolean;
 }
@@ -47,14 +49,22 @@ const LanguageSwitcherWrapper = styled.div<StyledButtonProps>`
 `;
 
 const LanguageSwitcher: React.FC = () => {
-  const [currentLanguage, setLanguage] = useState("en");
+  const dispatch = useAppDispatch();
+  const { i18n}  = useTranslation();
+  const currentLanguage= useAppSelector((state) => state.languageState) ;
 
   const LanguageToggle = (language: string) => {
     // setLanguage((prevLanguage) =>
     //   prevLanguage === language ? "en" : language
     // );
-    setLanguage(() => language);
+    // const newLanguage = currentLanguage === "en" ? "ua" : "en";
+    dispatch(setLanguage(language));
+    // changeLanguage(language);
   };
+  useEffect(() => {
+    i18n.changeLanguage(currentLanguage);
+  }, [currentLanguage, i18n]);
+
 
   return (
     <LanguageSwitcherWrapper clicked={currentLanguage === "en"}>

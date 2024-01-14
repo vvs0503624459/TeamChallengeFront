@@ -21,7 +21,7 @@ export const cartReducer = createSlice({
         (state[action.payload.id] || 0) + 1,
     }),
     removeProductFromCart: (state, action) => {
-      // убрать за кошику
+      // убрать з кошику
       return omit(state, action.payload.id);
     },
     changeProductQuantity: (state, action) => ({
