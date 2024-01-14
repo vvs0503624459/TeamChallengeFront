@@ -39,7 +39,9 @@ export const SearchInput = () => {
         // const jsonPath = "./device_demo.json";
 
         const response = await fetch(jsonPath);
-
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
         const json = await response.json();
         const results = json.filter((obj: ItemSearch) =>
           value
@@ -64,11 +66,11 @@ export const SearchInput = () => {
       }
     };
     if (input !== "" && searchDebounce) {
-      fetchData(input);
+      fetchData(searchDebounce);
     } else {
       setResults([]);
     }
-  }, [input, searchDebounce]);
+  }, [searchDebounce]);
   const searchClick = () => {
         setInput("");
   };

@@ -38,6 +38,8 @@ function App() {
   useEffect(() => {
     dispatch(getMainProduct());
   }, [dispatch]);
+
+  
   return (
     <>
       <Routes>

@@ -13,20 +13,28 @@ import {
   ReviewImagesHeader,
   ReviewImagesTitleWrap,
   ReviewImagesWrap,
+  ReviewAsideContainer,
+  ReviewMainContainer,
+  Simulator,
   StarsContainer,
   StarsFormsWrap,
   StarsNumber,
   Tags,
   TagsWrap,
+  ReviewAside,
+  ReviewQuestionsWrap,
 } from "./ReviewsQuestionstyled";
 import {
   ReviewStar,
   Question,
   ShowAllImages,
 } from "../../IconComponents/IconsCatalogue";
+import ReviewFilter from "./ReviewFilter";
+import Reviews from "./Reviews";
+import Questions from "./Questions";
 // https://run.mocky.io/v3/6f3be700-72d1-46f3-9b3e-4e3a832c8a9f
 // https://designer.mocky.io/manage/delete/6f3be700-72d1-46f3-9b3e-4e3a832c8a9f/IMvtgVX3J9gcGVLF4EINejOZRE7ZCVoz0QgQ
-type Review = {
+export type Review = {
   id: string;
   rating: number;
   pluses: string;
@@ -37,7 +45,7 @@ type Review = {
     creatingDate: string;
     userInfo: string;
     answer: string;
-  }[];
+  };
   tags: string[];
   photosUri: string[];
   countOfLikes: number;
@@ -47,7 +55,8 @@ type Review = {
 //   reviewOrQuestion: boolean;
 //   changeReviewOrQuestion: (value: boolean) => void;
 // };
-
+import { useTranslation } from "react-i18next";
+// import { useAppSelector } from "../../../redux/hooks";
 const ReviewsQuestion = () => {
   const { id } = useParams();
   const [tags, setTags] = useState<string[]>([]);
@@ -90,6 +99,13 @@ const ReviewsQuestion = () => {
   const changeReviewOrQuestion = (value: boolean): void => {
     setReviewOrQuestion(value);
   };
+  const [showAllImages, setShowAllImages] = useState(true);
+
+  const changeShowAllImages = () => {
+    setShowAllImages((state) => !state);
+  };
+  const { t} = useTranslation();
+  // const language = useAppSelector((state) => state.languageState) ;
   return (
     <>
       <StarsFormsWrap>
@@ -104,11 +120,11 @@ const ReviewsQuestion = () => {
         <ButtonContainer>
           <ButtonEmpty>
             <Question />
-            Ask a Question
+            {t('Ask a Question')}
           </ButtonEmpty>
           <ButtonFilled>
             <ReviewStar />
-            Leave a Review
+            {t('Leave a Review')}
           </ButtonFilled>
         </ButtonContainer>
       </StarsFormsWrap>
@@ -116,7 +132,7 @@ const ReviewsQuestion = () => {
         {reviews && (
           <>
             {tags.map((tag: string, i) => (
-              <Tags key={i}>{tag}</Tags>
+              <Tags key={i}>{t(tag)}</Tags>
             ))}
           </>
         )}
@@ -126,24 +142,25 @@ const ReviewsQuestion = () => {
           reviewOrQuestion={reviewOrQuestion}
           onClick={() => changeReviewOrQuestion(true)}
         >
-          Reviews (300)
+          {t('Reviews')} ({reviews && (reviews.length)})
         </ButtonTitle>
         <ButtonTitle
           reviewOrQuestion={reviewOrQuestion ? false : true}
           onClick={() => changeReviewOrQuestion(false)}
         >
-          Questions (12)
+          {t('Questions')} (12)
         </ButtonTitle>
+        <Simulator></Simulator>
       </ButtonTitlesContainer>
       <ReviewImagesWrap reviewOrQuestion={reviewOrQuestion}>
         <ReviewImagesTitleWrap>
           <ReviewImagesHeader>Reviews with images</ReviewImagesHeader>
-          <ButtonEmpty>
+          <ButtonEmpty onClick={changeShowAllImages}>
             <ShowAllImages />
             Show All
           </ButtonEmpty>
         </ReviewImagesTitleWrap>
-        <ReviewImagesBox>
+        <ReviewImagesBox showAllImages={showAllImages}>
           {reviews && (
             <>
               {(
@@ -157,6 +174,18 @@ const ReviewsQuestion = () => {
           )}
         </ReviewImagesBox>
       </ReviewImagesWrap>
+      <ReviewAsideContainer>
+        <ReviewAside></ReviewAside>
+        <ReviewMainContainer>
+          <ReviewFilter />
+          <ReviewQuestionsWrap reviewOrQuestion={reviewOrQuestion}>
+            <Reviews reviews={reviews} />
+          </ReviewQuestionsWrap>
+          <ReviewQuestionsWrap reviewOrQuestion={!reviewOrQuestion}>
+            <Questions questions={reviews} />
+          </ReviewQuestionsWrap>
+        </ReviewMainContainer>
+      </ReviewAsideContainer>
     </>
   );
 };

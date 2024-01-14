@@ -1,13 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import likeReducer from "./likeReducer";
 // import cartReducer from "./cartReducer";
-import productsReducer from "./products/products-slice.js";
-import cartReducer from "./products/cartReducer.js";
-import likeReducer from "./products/likeReducer.js";
+import productsReducer from "./products/products-slice.ts";
+import cartReducer from "./products/cartReducer.ts";
+import likeReducer from "./products/likeReducer.ts";
+import languageReducer from "./languageReducer.ts";
 
 export const store = configureStore({
   reducer: {
     productsLikeState: likeReducer,
+    languageState: languageReducer,
     productsInCart: cartReducer,
     products: productsReducer,
   },
