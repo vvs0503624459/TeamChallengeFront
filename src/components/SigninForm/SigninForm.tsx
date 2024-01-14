@@ -1,8 +1,16 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-import FormError from "../FormError/FormError";
+// import { useNavigate } from 'react-router-dom';
+// import { signIn } from '../../redux/auth/auth-operation';
+// Import SignInPayload type from your auth-operation file
+import { InPayload, signIn } from '../../redux/auth/auth-operation';
+// import { configureAxios } from '../../redux/auth/auth-operation';
 
+import  { useAppDispatch } from '../../redux/hooks';
+import { toast } from 'react-toastify';
+
+import FormError from "../FormError/FormError";
 import PageTitle from "../PageTitle/PageTitle";
 import ModalIcons from "../ModalIcons/ModalIcons";
 
@@ -24,14 +32,14 @@ import {
 } from "../SignupForm/SignupForm.styled";
 
 interface MyFormValues {
-  email: string;
+  username: string;
   password: string;
 }
 
-const initialValues: MyFormValues = { email: "", password: "" };
+const initialValues: MyFormValues = { username: "", password: "" };
 
 const schema = Yup.object().shape({
-  email: Yup.string()
+  username: Yup.string()
     .matches(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
       "Email must contain only digits, letters and . - _ symbols. e.g. test@mail.com"
@@ -51,31 +59,49 @@ type Props = {
 
 const SigninForm = ({ handleIsForgotPassword }: Props) => {
   const [showPassword, setShowPassword] = useState(false);
-  // const [isUserInfoModalOpen, setIsUserInfoModalOpen] = useState(false);
-  // const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
-
-  // const handleToggleUserModal = () => {
-  //   setIsUserInfoModalOpen((state) => !state);
-
-  // };
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
 
+  const dispatch = useAppDispatch();
+
   const handleSubmit = (
     values: MyFormValues,
     { resetForm }: { resetForm: () => void }
   ) => {
-    // const { email } = { email: values };
-    console.log(values);
+    const { username, password } = values;
+    console.log(values)
+    // Dispatch the signIn action with the correct payload type
+    dispatch(signIn({ username, password } as InPayload))
+      .unwrap()
+      .then(() => toast.success('Login successfully'))
+      .catch(() => toast.error('Something went wrong. Try again'));
 
-    // dispatch(signIn({ email, password }))
-    //   .unwrap()
-    //   .then(() => toast.success('Login  succesfully'))
-    //   .catch(() => toast.error('Something went wrong. Try again'));
     resetForm();
   };
+
+  // let navigate = useNavigate()
+
+  // const signIn = async (values: MyFormValues) => {
+  //   const params = {
+  //     user: {
+  //       ...values,
+  //     },
+  //   }
+  //   await configureAxios
+  //     .post('/auth/login', params)
+  //     .then((response) => {
+  //       if (response.data.user.token) {
+  //         localStorage.setItem(
+  //           'token',
+  //           JSON.stringify(response.data.user.token)
+  //         )
+  //         navigate('/user')
+  //       }
+  //     })
+  //     .catch((error) => console.log('error', error))
+  // }
 
   return (
     <SignWrapper>
@@ -84,6 +110,9 @@ const SigninForm = ({ handleIsForgotPassword }: Props) => {
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={handleSubmit}
+        // onSubmit={(values) => {
+        //   signIn(values)
+        // }}
       >
         {({ values, errors, touched }) => (
           <AuthForm>
@@ -91,15 +120,15 @@ const SigninForm = ({ handleIsForgotPassword }: Props) => {
               <InputWrap>
                 <Input
                   type="email"
-                  name="email"
+                  name="username"
                   placeholder="Email"
-                  error={errors.email && touched.email ? "true" : "false"}
-                  success={values.email && !errors.email ? "true" : "false"}
+                  error={errors.username && touched.username ? "true" : "false"}
+                  success={values.username && !errors.username ? "true" : "false"}
                 />
-                <FormError name="email" />
-                {errors.email && touched.email ? (
+                <FormError name="username" />
+                {errors.username && touched.username ? (
                   <ErrorIcon />
-                ) : values.email && !errors.email ? (
+                ) : values.username && !errors.username ? (
                   <SuccessIcon />
                 ) : null}
               </InputWrap>

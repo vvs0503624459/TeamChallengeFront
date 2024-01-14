@@ -11,24 +11,28 @@ type Props = {
   isOpen: boolean;
   handleClose: () => void;
   style: object;
+  visible: boolean;
+  // hideBackdrop: boolean;
 };
 
-const Modal = ({ children, isOpen, style, handleClose }: Props) => {
+const Modal = ({ children, isOpen, visible, style, handleClose }: Props) => {
   return (
     <MuiModal
       open={isOpen}
       onClose={handleClose}
       closeAfterTransition
+      // hideBackdrop
       slots={{ backdrop: Backdrop }}
       slotProps={{
         backdrop: {
           timeout: 500,
+          style: { background: "transparent" },
         },
       }}
     >
-      <Fade in={isOpen}>
+      <Fade in={isOpen} style={style}>
         <Box style={style}>
-          <CloseBtn onClick={handleClose}>
+          <CloseBtn onClick={handleClose} visible={visible}>
             <IoClose size={32} />
           </CloseBtn>
           {children}

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const List = styled.ul`
+export const BrandListList = styled.ul`
   display: flex;
-  background: #f9fafe;
+  background: ${({ theme }) => theme.TritiaryLightestGray};
   justify-content: center;
   align-items: center;
 `;
 
-export const Li = styled.li`
+export const BrandListItem = styled.li`
   width: 177px;
   height: 65px;
   padding-top: 25px;

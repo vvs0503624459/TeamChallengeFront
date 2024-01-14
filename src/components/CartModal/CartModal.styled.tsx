@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const CartListTop = styled.ul`
-
-`;
+export const CartListTop = styled.ul``;
 
 export const CardItem = styled.li`
   width: 1160px;
@@ -40,7 +38,7 @@ export const CartTextDiv = styled.div`
 export const TitleLink = styled(Link)`
   width: 600px;
   text-decoration: none;
-  color: #1e1d21;
+  color: ${({ theme }) => theme.PrimaryBlack};
   font-family: Inter;
   font-size: 16px;
   font-weight: 500;
@@ -58,8 +56,8 @@ export const StockButton = styled.button`
   gap: 8px;
   border: none;
   border-radius: 8px;
-  background: var(--Secondary-toxic-green, #26dac4);
-  color: var(--Primary-white, #fff);
+  background: ${({ theme }) => theme.SecondaryToxicGreen};
+  color: ${({ theme }) => theme.PrimaryWhite};
   text-align: center;
   font-family: Inter;
   font-size: 12px;
@@ -78,7 +76,7 @@ export const BUTTON = styled.button`
   width: 36px;
   height: 36px;
   padding: 0;
-  background: #ffffff;
+  background: ${({ theme }) => theme.PrimaryWhite};
   border-radius: 8px;
   border: none;
 `;
@@ -89,7 +87,7 @@ export const StarsDiv = styled.div`
 `;
 export const Comments = styled.p`
   margin-bottom: 16px;
-  color: #69657b;
+  color: ${({ theme }) => theme.TritiaryPurpleGray};
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -99,7 +97,7 @@ export const Comments = styled.p`
 `;
 export const Price = styled.p`
   text-align: right;
-  color: var(--Tritiary-purple-gray, #69657b);
+  color: ${({ theme }) => theme.TritiaryPurpleGray};
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
@@ -127,7 +125,8 @@ export const PlusButtonList = styled.ul`
   gap: 48px;
 `;
 export const Discountprice = styled.p`
-  color: var(--Primary-black, #1e1d21);
+  color: ${({ theme }) => theme.PrimaryBlack};
+
   font-family: Inter;
   font-size: 32px;
   font-style: normal;
@@ -143,9 +142,8 @@ export const Deal = styled.p`
   align-items: center;
   gap: 10px;
   border-radius: 8px;
-  background: var(--Secondary-exotic-pink, #e8467c);
-
-  color: var(--Primary-white, #fff);
+  background: ${({ theme }) => theme.SecondaryExoticPink};
+  color: ${({ theme }) => theme.PrimaryWhite};
   text-align: center;
   font-family: Inter;
   font-size: 12px;
@@ -161,7 +159,7 @@ export const PlusButton = styled.button`
   // justify-content: center;
   // align-items: center;
   // gap: 10px;
-  border: 1px solid var(--Tritiary-light-gray, #e0e4f0);
+  border: 1px solid ${({ theme }) => theme.TritiaryLightGray};
 `;
 
 // CartCenterInfo
@@ -183,7 +181,7 @@ export const CartWrapperInfoCenter = styled.div`
   gap: 24px;
 
   border-radius: 12px;
-  border: 1px solid var(--Tritiary-light-gray, #e0e4f0);
+  border: 1px solid ${({ theme }) => theme.TritiaryLightGray};
 `;
 export const CartTextDivCenter = styled.div`
   display: flex;
@@ -191,7 +189,7 @@ export const CartTextDivCenter = styled.div`
 `;
 
 export const CartTextCenter = styled.p`
-  color: var(--Tritiary-purple-gray, #69657b);
+  color: ${({ theme }) => theme.TritiaryPurpleGray};
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -200,7 +198,7 @@ export const CartTextCenter = styled.p`
 `;
 export const CartTitleCenter = styled.h4`
   width: 149px;
-  color: var(--Primary-black, #1e1d21);
+  color: ${({ theme }) => theme.PrimaryBlack};
   font-family: Inter;
   font-size: 22px;
   font-style: normal;
@@ -221,9 +219,9 @@ export const CartButtonCenter = styled.button`
   align-items: flex-start;
   width: 48px;
   border-radius: 12px;
-  border: 1px solid var(--Tritiary-light-gray, #e0e4f0);
+  border: 1px solid ${({ theme }) => theme.TritiaryLightGray};
 
-  color: var(--Primary-black, #1e1d21);
+  color: ${({ theme }) => theme.PrimaryBlack};
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -238,10 +236,10 @@ export const CartButtonBuyCenter = styled.button`
   align-items: center;
   gap: 10px;
   border-radius: 12px;
-  border: 2px solid var(--Primary-bright-purple, #5826da);
-  background: var(--Primary-white, #fff);
+  border: 2px solid ${({ theme }) => theme.PrimaryBrightPurple};
+  background: ${({ theme }) => theme.PrimaryWhite};
 
-  color: var(--Primary-bright-purple, #5826da);
+  color: ${({ theme }) => theme.PrimaryBrightPurple};
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -257,7 +255,7 @@ export const CartWrapperChekCenter = styled.div`
 `;
 
 export const CartTitleChekCenter = styled.p`
-  color: var(--Primary-black, #1e1d21);
+  color: ${({ theme }) => theme.PrimaryBlack};
   font-family: Inter;
   font-size: 40px;
   font-style: normal;
@@ -272,9 +270,9 @@ export const CartButtonChekCenter = styled.button`
   gap: 10px;
   border-radius: 12px;
   border: none;
-  background: var(--Primary-bright-purple, #5826da);
+  background: ${({ theme }) => theme.PrimaryBrightPurple};
 
-  color: var(--Primary-white, #fff);
+  color: ${({ theme }) => theme.PrimaryWhite};
   font-family: Inter;
   font-size: 16px;
   font-style: normal;

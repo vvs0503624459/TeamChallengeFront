@@ -8,11 +8,8 @@ export const CardList = styled.ul`
 `;
 
 export const CardItem = styled.li`
-  // width: 240px;
-  // height: 420px;
-
   border-radius: 12px;
-  border: 1px solid #e0e4f0;
+  border: 1px solid ${({ theme }) => theme.TritiaryLightGray};
 `;
 
 export const CardDiv = styled.div`
@@ -42,7 +39,7 @@ export const BUTTON = styled.button`
   width: 36px;
   height: 36px;
   padding: 0;
-  background: #ffffff;
+  background: ${({ theme }) => theme.PrimaryWhite};
   border-radius: 8px;
   border: none;
 `;
@@ -50,7 +47,7 @@ export const TitleLink = styled(Link)`
   text-decoration: none;
   margin-top: 12px;
   margin-bottom: 4px;
-  color: #1e1d21;
+  color: ${({ theme }) => theme.PrimaryBlack};
   font-family: Inter;
   font-size: 16px;
   font-weight: 500;
@@ -64,7 +61,7 @@ export const StarsDiv = styled.div`
 `;
 export const Comments = styled.p`
   margin-bottom: 16px;
-  color: #69657b;
+  color: ${({ theme }) => theme.TritiaryPurpleGray};
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -73,7 +70,7 @@ export const Comments = styled.p`
   text-align: left;
 `;
 export const Price = styled.p`
-  color: #69657b;
+  color: ${({ theme }) => theme.TritiaryPurpleGray};
   font-family: Inter;
   font-size: 14px;
   font-weight: 500;
@@ -96,7 +93,7 @@ export const DiscountDiv = styled.div`
 `;
 
 export const Discountprice = styled.p`
-  color: #1e1d21;
+  color: ${({ theme }) => theme.PrimaryBlack};
   font-family: Inter;
   font-size: 20px;
   font-weight: 600;
@@ -105,14 +102,10 @@ export const Discountprice = styled.p`
   text-align: left;
 `;
 export const Deal = styled.p`
-  padding-top: 4px;
-  padding-left: 8px;
-  padding-bottom: 4px;
-  padding-right: 8px;
-  // padding: 4px, 8px, 4px, 8px;
+  padding: 4px 8px;
   border-radius: 8px;
-  background: #e8467c;
-  coolor: #ffffff;
+  background: ${({ theme }) => theme.SecondaryExoticPink};
+  color: ${({ theme }) => theme.PrimaryWhite};
   font-family: Inter;
   font-size: 12px;
   font-weight: 400;

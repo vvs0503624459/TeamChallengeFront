@@ -3,11 +3,9 @@ import PageTitle from "../PageTitle/PageTitle";
 import CartTopInfo from "./CartTopInfo";
 import CartCenterInfo from "./CartCenterInfo";
 
-import PhoneCardList from "../PhoneCardList/PhoneCardList";
-type Props = {
-  isOpen: boolean;
-  handleClose: () => void;
-};
+// import PhoneCardList from "../PhoneCardList/PhoneCardList";
+import { ModalProps } from '../../types/modalsEntity';
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -20,14 +18,23 @@ const style = {
   width: "1320px",
 };
 
-const CartModal = ({ isOpen, handleClose }: Props) => {
+const CartModal = ({ isOpen, handleClose }: ModalProps) => {
+  const visibles = true; //close btn prop
+
   return (
-    <Modal isOpen={isOpen} handleClose={handleClose} style={style}>
-      <PageTitle title={"Cart"} />
-      <CartTopInfo />
-      <CartCenterInfo />
-      <PageTitle title={"People buy these together"} />
-      <PhoneCardList />
+    <Modal
+      isOpen={isOpen}
+      handleClose={handleClose}
+      visible={visibles}
+      style={style}
+    >
+      <>
+        <PageTitle title={"Cart"} />
+        <CartTopInfo />
+        <CartCenterInfo />
+        {/* <PageTitle title={"People buy these together"} />
+      <PhoneCardList /> */}
+      </>
     </Modal>
   );
 };
