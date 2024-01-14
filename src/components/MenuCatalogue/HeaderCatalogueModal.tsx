@@ -1,9 +1,8 @@
 import Modal from "../Modal/Modal";
 import MenuCatalogueList from "./MenuCatalogueList";
-type Props = {
-  isOpen: boolean;
-  handleClose: () => void;
-};
+
+import { ModalProps } from '../../types/modalsEntity';
+
 const style = {
   position: "absolute",
   top: "41%",
@@ -17,7 +16,7 @@ const style = {
   height: "430px",
 };
 
-const HeaderCatalogueModal = ({ isOpen, handleClose }: Props) => {
+const HeaderCatalogueModal = ({ isOpen, handleClose }: ModalProps) => {
   const visibles = false;
   return (
     <Modal

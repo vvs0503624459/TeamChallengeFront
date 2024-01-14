@@ -11,14 +11,6 @@ const setAuthHeader = (token: string) => {
 //   axios.defaults.headers.common.Authorization = '';
 // };
 
-// type UserInfo = {
-//     firstname: string;
-//     lastname: string;
-//     phoneNumber: string;
-//     email: string;
-//     password: string;
-//   };
-
   // Define the SignInPayload type
 
 export type InPayload = {

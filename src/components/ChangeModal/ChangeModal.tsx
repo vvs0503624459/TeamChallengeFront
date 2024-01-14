@@ -9,10 +9,7 @@ import ThankYouModal from "../PasswordRecovery/ThankYouModal";
 
 import { Wrapper, ChangeButton, Button } from "./ChangeModal.styled";
 
-type Props = {
-  isOpen: boolean;
-  handleClose: () => void;
-};
+import { ModalProps } from '../../types/modalsEntity';
 
 const style = {
   position: 'absolute',
@@ -26,7 +23,7 @@ const style = {
   width: '415px',
   }
 
-const ChangeModal = ({ isOpen, handleClose }: Props) => {
+const ChangeModal = ({ isOpen, handleClose }: ModalProps) => {
   
   const [changeModal, setChangeModal] = useState(false);
   const [isForgotPassword, setIsForgotPassword] = useState(false);

@@ -4,10 +4,8 @@ import CartTopInfo from "./CartTopInfo";
 import CartCenterInfo from "./CartCenterInfo";
 
 // import PhoneCardList from "../PhoneCardList/PhoneCardList";
-type Props = {
-  isOpen: boolean;
-  handleClose: () => void;
-};
+import { ModalProps } from '../../types/modalsEntity';
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -20,7 +18,7 @@ const style = {
   width: "1320px",
 };
 
-const CartModal = ({ isOpen, handleClose }: Props) => {
+const CartModal = ({ isOpen, handleClose }: ModalProps) => {
   const visibles = true; //close btn prop
 
   return (

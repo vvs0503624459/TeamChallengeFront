@@ -1,53 +1,35 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
-export type Product = {
-  id: number;
-  title: string;
-  // треба буде додати Інші поля продукту
-};
+import { ProductState } from '../types/initialEntity';
 
 axios.defaults.baseURL = 'http://team-chalenge.onrender.com';
 
-export const getMainProduct = createAsyncThunk<Product[], undefined>(
-  "products/getAll",
-  async (_, thunkAPI) => {
+export const getMainDevises = createAsyncThunk<ProductState[]>(
+  "catalogue",
+  async () => {
     try {
-      const response = await axios.get("/api/v1/devises");
-      console.log("getMainProduct", response.data);
-      // return response.data;
+      const response = await axios.get("/api/v1/devices/main-page");
+      console.log("catalogue", response.data);
+      // const catalogue: CatalogueState[] = response.data
+      // return catalogue
+      return response.data
     } catch (error) {
-      return thunkAPI.rejectWithValue(error);
+      console.log('error', error)
+      throw error
     }
   }
 );
 
-// interface Product {
-//   // Описуйте тип Product на основі даних, які ви отримуєте від API
-//   id: number;
-//   name: string;
-//   // Інші поля продукту
-// }
-
-// export const getMainProduct = createAsyncThunk<Product[], void, { rejectValue: string }>(
-//   'products/getAll',
-//   async (_, thunkAPI) => {
-//     try {
-//       const response = await axios.get('/api/v1/devises');
-//       console.log("getMainProduct", response);
-//       return response.data as Product[];
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-// const fetchTodos = createAsyncThunk('todos/fetchTodos',
-// async () => {
-//   // Just make the async request here, and return the response.
-//   // This will automatically dispatch a `pending` action first,
-//   // and then `fulfilled` or `rejected` actions based on the promise.
-//   // as needed based on the
-//   const res = await axios.get('/todos')
-//   return res.data
-// })
+export const getDevises = createAsyncThunk<ProductState[]>(
+  "products/getAll",
+  async () => {
+    try {
+      const response = await axios.get("/api/v1/devises");
+      console.log("getMainProduct", response.data);
+      return response.data;
+    } catch (error) {
+      console.log('error', error)
+      throw error
+    }
+  }
+);
