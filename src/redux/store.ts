@@ -5,7 +5,7 @@ import { authReducer } from "./auth/auth-slice.js";
 import productsReducer from "./products/products-slice.js";
 import cartReducer from "./products/cartReducer.js";
 import likeReducer from "./products/likeReducer.js";
-import catalogueSlice from "./catalogue/catalogue-slice.js";
+import catalogueSlice from "./catalogue/catalogue-slice";
 
 export const store = configureStore({
   reducer: {
@@ -13,7 +13,7 @@ export const store = configureStore({
     productsInCart: cartReducer,
     products: productsReducer,
     auth:  authReducer,
-    catalogueMenu: catalogueSlice,
+    catalogue: catalogueSlice,
   },
 });
 export type RootState = ReturnType<typeof store.getState>;

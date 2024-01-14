@@ -8,30 +8,10 @@ import {
   //   subscribeEmail,
 } from "./auth-operation";
 
-type UserInfo = {
-  firstname: string;
-  lastname: string;
-  phoneNumber: string;
-  email: string;
-  password: string;
-};
+import { initialStateAuthType } from '../types/initialEntity';
 
-type Users = {
-  user: UserInfo;
-  token: string;
-  isLoggedIn: boolean;
-};
-
-// const initialState: UserInfo[] = [];
-
-const initialState: Users = {
-  user: {
-    firstname: "",
-    lastname: "",
-    phoneNumber: "",
-    email: "",
-    password: "",
-  },
+const initialState: initialStateAuthType = {
+  user: [],
   token: "",
   isLoggedIn: false,
 };

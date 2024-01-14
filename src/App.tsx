@@ -5,7 +5,7 @@ import Layout from "./components/Layout/Layout";
 import { ThemeProvider } from "styled-components";
 import { lightTheme } from "./components/Themes";
 import { useAppDispatch } from "./redux/hooks";
-import { getMainProduct } from "./redux/products/products-operation";
+import { getMainDevises } from "./redux/products/products-operation";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const ProductCard = lazy(() => import("./pages/ProductPage/ProductPage"));
@@ -35,7 +35,7 @@ const SigninSecurity = lazy(() =>
 function App() {
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(getMainProduct());
+    dispatch(getMainDevises());
   }, [dispatch]);
   return (
     <ThemeProvider theme={lightTheme}>
