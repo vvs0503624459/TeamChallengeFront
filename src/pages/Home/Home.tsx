@@ -1,3 +1,8 @@
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { MainProductState } from "../../redux/types/initialEntity";
+import { getMainDevises } from "../../redux/products/products-operation";
+
 import MenuCatalogue from "../../components/MenuCatalogue/MenuCatalogue";
 
 import CurrentOffer from "../../components/CurrentOffer/CurrentOffer";
@@ -21,6 +26,18 @@ import {
 import { GarantList, GarantItem, GarantTitle, GarantText } from "./Home.styled";
 
 const Home = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getMainDevises());
+  }, [dispatch]);
+
+  const mainProduct: MainProductState[] = useAppSelector((state) => {
+    return state.products.productsList;
+  });
+
+  // console.log("devices/main-page", mainProduct);
+
   return (
     <MainSection>
       <Container>
@@ -28,16 +45,15 @@ const Home = () => {
         <CurrentOffer />
         <BrandList />
 
-        <Section>
-          <PageTitle title={"The best price offers"} />
-          <PhoneCardList />
-        </Section>
+        <>
+          {mainProduct.map(({ title, devices }) => (
+            <Section>
+              <PageTitle title={title} />
 
-        <Section>
-          <PageTitle title={"Sales leaders"} />
-          <PhoneCardList />
-        </Section>
-
+              <PhoneCardList devices={devices} />
+            </Section>
+          ))}
+        </>
         <Section>
           <PageTitle title={"Why TechEase?"} />
           <GarantList>

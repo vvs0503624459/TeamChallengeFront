@@ -1,5 +1,34 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+
+export const SliderContainer = styled(Swiper)`
+  .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+  }
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 15px;
+    color: transparent;
+  }
+
+
+  // width: 899px;
+    width: 100vw;
+  border-radius: 12px;
+`;
+
+export const SliderItem = styled(SwiperSlide)`
+  position: relative;
+  // width: 760px;
+
+`;
 
 export const CardList = styled.ul`
   display: flex;

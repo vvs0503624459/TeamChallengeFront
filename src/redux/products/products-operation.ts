@@ -1,15 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { ProductState } from '../types/initialEntity';
+import { MainProductState } from '../types/initialEntity';
 
-axios.defaults.baseURL = 'http://team-chalenge.onrender.com';
+axios.defaults.baseURL = 'https://team-chalenge.onrender.com';
 
-export const getMainDevises = createAsyncThunk<ProductState[]>(
-  "catalogue",
+export const getMainDevises = createAsyncThunk<MainProductState[]>(
+  "devices/main-page",
   async () => {
     try {
       const response = await axios.get("/api/v1/devices/main-page");
-      console.log("catalogue", response.data);
+      console.log("devices/main-page", response.data);
       // const catalogue: CatalogueState[] = response.data
       // return catalogue
       return response.data
@@ -20,12 +20,12 @@ export const getMainDevises = createAsyncThunk<ProductState[]>(
   }
 );
 
-export const getDevises = createAsyncThunk<ProductState[]>(
-  "products/getAll",
+export const getDevises = createAsyncThunk<MainProductState[]>(
+  "devises/",
   async () => {
     try {
       const response = await axios.get("/api/v1/devises");
-      console.log("getMainProduct", response.data);
+      console.log("devises/", response.data);
       return response.data;
     } catch (error) {
       console.log('error', error)
