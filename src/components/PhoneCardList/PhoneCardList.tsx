@@ -8,10 +8,10 @@ import {
   // SliderItem,
   CardList,
   CardItem,
-  DIVIMG,
-  IMG,
-  BUTTONDIV,
-  BUTTON,
+  MainDevisImageDiv,
+  MainDevisIMG,
+  MainDevisBtnDiv,
+  MainDevisBtn,
   CardDiv,
   TitleLink,
   StarsDiv,
@@ -52,21 +52,21 @@ const PhoneCardList: React.FC<PhoneCardListProps> = ({ devices }) => {
         {devices.map(({ id, title, mainPhotoUri, price, discount }) => (
           <CardItem key={id}>
             <CardDiv>
-              <DIVIMG>
-                <IMG src={mainPhotoUri} alt={title} />
-                <BUTTONDIV>
-                  <BUTTON
+              <MainDevisImageDiv>
+                <MainDevisIMG src={mainPhotoUri} alt={title} />
+                <MainDevisBtnDiv>
+                  <MainDevisBtn
                     onClick={() => {
                       dispatch(toggleLike(id));
                     }}
                   >
                     {isLiked[id] ? <Like /> : <NotLike />}
-                  </BUTTON>
-                  <BUTTON>
+                  </MainDevisBtn>
+                  <MainDevisBtn>
                     <Compare />
-                  </BUTTON>
-                </BUTTONDIV>
-              </DIVIMG>
+                  </MainDevisBtn>
+                </MainDevisBtnDiv>
+              </MainDevisImageDiv>
               <TitleLink to={`/product/${id}`}>{title}</TitleLink>
               <StarsDiv>
                 <StarRating />
@@ -81,9 +81,9 @@ const PhoneCardList: React.FC<PhoneCardListProps> = ({ devices }) => {
                   {/* <Discountprice>{`${price} / 100% * 8%`}</Discountprice> */}
                   <Deal>-{discount}%</Deal>
                 </DiscountDiv>
-                <BUTTON onClick={() => handleToggleCartModal(id)}>
+                <MainDevisBtn onClick={() => handleToggleCartModal(id)}>
                   <Cart style={style} />
-                </BUTTON>
+                </MainDevisBtn>
               </DiscountContainer>
             </CardDiv>
           </CardItem>

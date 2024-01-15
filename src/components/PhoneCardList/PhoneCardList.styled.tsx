@@ -45,16 +45,16 @@ export const CardDiv = styled.div`
   padding: 20px;
 `;
 
-export const DIVIMG = styled.div`
+export const MainDevisImageDiv = styled.div`
   position: relative;
 `;
 
-export const IMG = styled.img`
+export const MainDevisIMG = styled.img`
   width: 160px;
   height: 199px;
   border-radius: 14px;
 `;
-export const BUTTONDIV = styled.div`
+export const MainDevisBtnDiv = styled.div`
   position: absolute;
   top: -4%;
   left: 82%;
@@ -64,7 +64,7 @@ export const BUTTONDIV = styled.div`
   gap: 8px;
 `;
 
-export const BUTTON = styled.button`
+export const MainDevisBtn = styled.button`
   width: 36px;
   height: 36px;
   padding: 0;
