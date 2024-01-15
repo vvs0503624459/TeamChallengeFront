@@ -8,13 +8,6 @@ import {
   CatalogueBrandButton,
 } from "./CatalogueModal.styled";
 
-type Props = {
-  goods: { brand: string; model: [] }[];
-  style: object;
-  isOpen: boolean;
-  handleClose: () => void;
-};
-
 const style = {
   position: "absolute",
   top: "38.5%",
@@ -26,12 +19,25 @@ const style = {
   width: "920px",
   height: "356px",
 };
+export type GoodsType = NonNullable<{ brand: string; model: [string] }[]>;
+// export type GoodsType = { brand: string; model: string[] }[];
+
+type Props = {
+  goods: GoodsType;
+  isOpen: boolean;
+  handleClose: () => void;
+};
 
 const CatalogueModal = ({ goods, isOpen, handleClose }: Props) => {
   const visibles = false; //close btn prop
-  
+
   return (
-    <Modal isOpen={isOpen} handleClose={handleClose} visible={visibles} style={style}>
+    <Modal
+      isOpen={isOpen}
+      handleClose={handleClose}
+      visible={visibles}
+      style={style}
+    >
       <CatalogueList>
         {goods.map(({ brand, model }) => (
           <li key={brand}>

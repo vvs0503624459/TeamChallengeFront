@@ -10,60 +10,64 @@ import {
   MenuTitle,
   MenuButton,
 } from "./MenuCatalogue.styled";
-import {getCatalogue} from '../../redux/catalogue/catalogue-operation'
-import {CatalogueState} from '../../redux/types/initialEntity';
-import { useEffect, useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+import { getCatalogue } from "../../redux/catalogue/catalogue-operation";
+import { CatalogueState } from "../../redux/types/initialEntity";
+import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+
+import { GoodsType } from "./CatalogueModal";
 
 const MenuCatalogueList = () => {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getCatalogue())
-  }, [dispatch])
+    dispatch(getCatalogue());
+  }, [dispatch]);
 
   const catalogue: CatalogueState[] = useAppSelector((state) => {
-    return state.catalogue.catalogueList
-  })
+    return state.catalogue.catalogueList;
+  });
 
-  console.log("catalogueList", catalogue)
+  console.log("catalogueList", catalogue);
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  const handleToggleTitle = (category:string) => {
+  const handleToggleTitle = (category: string) => {
     setSelectedCategory(category);
     setIsOpen(true); // Open the modal when a category is selected
   };
+  // Ваш тип GoodsType
 
+  // Код в компоненті MenuCatalogueList
+  const goodsData =
+    (selectedCategory &&
+      (MENU_CATEGORIES.find((category) => category.id === selectedCategory)
+        ?.goods as GoodsType)) ||
+    [];
   return (
-        <div>
-          <MenuList>
-            {MENU_CATEGORIES.map(({ id, icon, title, right }) => (
-              <MenuItem key={id}>
-                <Icons name={icon} />
-                <TextDiv>
-                  <MenuTitle>{title}</MenuTitle>
-                  <MenuButton onClick={() => handleToggleTitle(id)}>
-                    <Icons name={right} />
-                  </MenuButton>
-                </TextDiv>
-              </MenuItem>
-            ))}
-          </MenuList>
-          {isOpen ? (
-            <CatalogueModal
-              isOpen={isOpen}
-              handleClose={() => setIsOpen(false)} // Close the modal
-              goods={
-                selectedCategory &&
-                MENU_CATEGORIES.find(
-                  (category) => category.id === selectedCategory
-                )?.goods
-              }
-            />
-          ) : null}
-        </div>
+    <div>
+      <MenuList>
+        {MENU_CATEGORIES.map(({ id, icon, title, right }) => (
+          <MenuItem key={id}>
+            <Icons name={icon} />
+            <TextDiv>
+              <MenuTitle>{title}</MenuTitle>
+              <MenuButton onClick={() => handleToggleTitle(id)}>
+                <Icons name={right} />
+              </MenuButton>
+            </TextDiv>
+          </MenuItem>
+        ))}
+      </MenuList>
+      {isOpen ? (
+        <CatalogueModal
+          isOpen={isOpen}
+          handleClose={() => setIsOpen(false)} // Close the modal
+          goods={goodsData}
+        />
+      ) : null}
+    </div>
   );
 };
 

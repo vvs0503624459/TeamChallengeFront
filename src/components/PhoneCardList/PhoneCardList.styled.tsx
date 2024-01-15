@@ -1,5 +1,34 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+
+export const SliderContainer = styled(Swiper)`
+  .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+  }
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 15px;
+    color: transparent;
+  }
+
+
+  // width: 899px;
+    width: 100vw;
+  border-radius: 12px;
+`;
+
+export const SliderItem = styled(SwiperSlide)`
+  position: relative;
+  // width: 760px;
+
+`;
 
 export const CardList = styled.ul`
   display: flex;
@@ -16,16 +45,16 @@ export const CardDiv = styled.div`
   padding: 20px;
 `;
 
-export const DIVIMG = styled.div`
+export const MainDevisImageDiv = styled.div`
   position: relative;
 `;
 
-export const IMG = styled.img`
+export const MainDevisIMG = styled.img`
   width: 160px;
   height: 199px;
   border-radius: 14px;
 `;
-export const BUTTONDIV = styled.div`
+export const MainDevisBtnDiv = styled.div`
   position: absolute;
   top: -4%;
   left: 82%;
@@ -35,7 +64,7 @@ export const BUTTONDIV = styled.div`
   gap: 8px;
 `;
 
-export const BUTTON = styled.button`
+export const MainDevisBtn = styled.button`
   width: 36px;
   height: 36px;
   padding: 0;

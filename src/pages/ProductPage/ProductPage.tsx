@@ -1,3 +1,8 @@
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { MainProductState } from "../../redux/types/initialEntity";
+import { getMainDevises } from "../../redux/products/products-operation";
+
 import { useLocation, useParams } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import PageTitle from "../../components/PageTitle/PageTitle";
@@ -15,6 +20,16 @@ import general from "../../data/general.json";
 const ProductCard = () => {
   const location = useLocation();
   const { id } = useParams();
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getMainDevises());
+  }, [dispatch]);
+
+  const mainProduct: MainProductState[] = useAppSelector((state) => {
+    return state.products.productsList;
+  });
 
   return (
     <MainSection>
@@ -60,15 +75,15 @@ const ProductCard = () => {
           <Outlet />
         </div>
 
-        <Section>
-          <PageTitle title={"Recommendations"} />
-          <PhoneCardList />
-        </Section>
+        <>
+          {mainProduct.map(({ title, devices }) => (
+            <Section>
+              <PageTitle title={title} />
 
-        <section>
-          <PageTitle title={"Recently viewed"} />
-          <PhoneCardList />
-        </section>
+              <PhoneCardList devices={devices} />
+            </Section>
+          ))}
+        </>
       </Container>
     </MainSection>
   );

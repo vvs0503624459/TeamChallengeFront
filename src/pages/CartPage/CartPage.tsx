@@ -1,7 +1,7 @@
 import PageTitle from "../../components/PageTitle/PageTitle";
 import CartTopInfo from "../../components/CartModal/CartTopInfo";
 import CartCenterInfo from "../../components/CartModal/CartCenterInfo";
-import PhoneCardList from "../../components/PhoneCardList/PhoneCardList";
+// import PhoneCardList from "../../components/PhoneCardList/PhoneCardList";
 
 import {
   MainSection,
@@ -16,7 +16,7 @@ const CartPage = () => {
         <CartTopInfo />
         <CartCenterInfo />
         <PageTitle title={"People buy these together"} />
-        <PhoneCardList />
+        {/* <PhoneCardList /> */}
       </Container>
     </MainSection>
   );

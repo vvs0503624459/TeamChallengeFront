@@ -13,13 +13,15 @@ export type AuthUserState = {
 };
 
 export type initialStateProductType = {
-  productsList: ProductState[];
+  productsList: MainProductState[];
 };
 
-export type ProductState = {
+export type MainProductState = {
   title: string;
-  devices: [
-    {
+  devices: DevicesState[];
+};
+
+export type DevicesState = {
       id: string;
       title: string;
       color: string;
@@ -31,8 +33,6 @@ export type ProductState = {
       price: number;
       discount: number;
       devicesWithSameColor: [];
-    }
-  ];
 };
 
 export type initialStateCatalogueType = {
