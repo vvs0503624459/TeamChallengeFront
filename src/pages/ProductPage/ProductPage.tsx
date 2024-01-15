@@ -1,16 +1,16 @@
-// import { useEffect } from "react";
-// import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-// import { MainProductState } from "../../redux/types/initialEntity";
-// import { getMainDevises } from "../../redux/products/products-operation";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { MainProductState } from "../../redux/types/initialEntity";
+import { getMainDevises } from "../../redux/products/products-operation";
 
 import { useLocation, useParams } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-// import PageTitle from "../../components/PageTitle/PageTitle";
-// import PhoneCardList from "../../components/PhoneCardList/PhoneCardList";
+import PageTitle from "../../components/PageTitle/PageTitle";
+import PhoneCardList from "../../components/PhoneCardList/PhoneCardList";
 import StarRating from "../../components/StarRating/StarRating";
 import {
   MainSection,
-  // Section,
+  Section,
   Container,
 } from "../../components/Container/Container.styled";
 
@@ -21,16 +21,15 @@ const ProductCard = () => {
   const location = useLocation();
   const { id } = useParams();
 
-  // const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-  // useEffect(() => {
-  //   dispatch(getMainDevises());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getMainDevises());
+  }, [dispatch]);
 
-  // const mainProduct: MainProductState[] = useAppSelector((state) => {
-  //   return state.products.productsList;
-  // });
-
+  const mainProduct: MainProductState[] = useAppSelector((state) => {
+    return state.products.productsList;
+  });
 
   return (
     <MainSection>
@@ -76,7 +75,7 @@ const ProductCard = () => {
           <Outlet />
         </div>
 
-        {/* <>
+        <>
           {mainProduct.map(({ title, devices }) => (
             <Section>
               <PageTitle title={title} />
@@ -84,7 +83,7 @@ const ProductCard = () => {
               <PhoneCardList devices={devices} />
             </Section>
           ))}
-        </> */}
+        </>
       </Container>
     </MainSection>
   );
