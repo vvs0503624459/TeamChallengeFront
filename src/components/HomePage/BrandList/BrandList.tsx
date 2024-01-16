@@ -1,14 +1,14 @@
 
-import PageTitle from "../../components/PageTitle/PageTitle";
-import {Section} from "../../components/Container/Container.styled";
+import PageTitle from "../../PageTitle/PageTitle";
+import {Section} from "../../Container/Container.styled";
 
-import Samsung from "../../assets/samsung.png";
-import Apple from "../../assets/apple.png";
-import Xiaomi from "../../assets/xiaomi.png";
-import Lenovo from "../../assets/lenovo.png";
-import Jbl from "../../assets/jbl.png";
-import Dyson from "../../assets/dyson.png";
-import Asus from "../../assets/asus.png";
+import Samsung from "../../../assets/samsung.png";
+import Apple from "../../../assets/apple.png";
+import Xiaomi from "../../../assets/xiaomi.png";
+import Lenovo from "../../../assets/lenovo.png";
+import Jbl from "../../../assets/jbl.png";
+import Dyson from "../../../assets/dyson.png";
+import Asus from "../../../assets/asus.png";
 
 import { BrandListList, BrandListItem } from "./BrandList.styled";
 

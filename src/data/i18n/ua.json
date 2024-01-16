@@ -1,11 +1,48 @@
-{"translation":
-  {
-    "Reviews": "Відгуки", 
-    "Questions": "Питання", 
+{
+  "translation": {
+    "Product of the day": "Товари дня",
+    "Marshall Stockwell II Portable Speaker Black": "Портативна колонка Marshall Stockwell II чорного кольору",
+    "Sales": "Продажі",
+    "from": "від",
+    "Smart Watch GOGPS ME K11": "Розумний годинник GOGPS ME K11",
+    "Discounts": "Знижки",
+    "Laptop HP 15": "Ноутбук HP 15",
+    "Top offers": "Топ пропозиції",
+    "ZTE BLADE L9 1/32GB Dual Sim Gray": "ZTE BLADE L9 1/32GB Dual Sim сірий",
+
+    "Delivery and customer service": "Доставка та обслуговування клієнтів",
+    "Fast and reliable delivery": "Швидка та надійна доставка, а також ефективне обслуговування клієнтів для вирішення будь-яких питань.",
+    "Competitive prices": "Конкурентні ціни",
+    "Offers and discounts": "Пропозиції та знижки, які роблять товари привабливими для клієнтів.",
+    "Reliability and warranty": "Надійність і гарантія",
+    "Quality assurance": "Гарантія якості та гарантії на технічні засоби",
+    "Wide range of products": "Широкий асортимент продукції",
+    "Providing a variety": "Надання різноманітної електроніки та технічних пристроїв які клієнти можуть вибрати залежно від своїх потреб",
+
+    "Simplify Your Tech Journey": "Спростіть свою технологічну подорож",
+    "About": "Про нас",
+    "Vacancies": "Вакансії",
+    "Customer Support": "Підтримка клієнтів",
+    "Information": "Інформація",
+    "Delivery and payment": "Доставка та оплата",
+    "Warranty and service": "Гарантія та сервісне обслуговування",
+    "Return and exchange": "Повернення та обмін",
+    "Credit": "Кредит",
+    "TechEase": "TECH EASE 2023. Усі права захищено.",
+    "Cookie Policy": "Політика використання файлів cookie",
+    "Privacy Policy": "Політика конфіденційності",
+
+    "General": "Загальнi",
+    "Specifications": "Технічні характеристики",
+    "Reviews & Questions": "Відгуки та запитання",
+    "Accessories": "Аксесуари",
+
+    "Reviews": "Відгуки",
+    "Questions": "Питання",
     "search": "пошук",
-    "Relevance" : "Релевантні", 
+    "Relevance": "Релевантні",
     "Newest": "Найновіщі",
-     "Best": "Найкращі",
-     "Ask a Question": "Задати Питання"
+    "Best": "Найкращі",
+    "Ask a Question": "Задати Питання"
   }
 }

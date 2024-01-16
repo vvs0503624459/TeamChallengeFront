@@ -5,8 +5,8 @@ import { getMainDevises } from "../../redux/products/products-operation";
 
 import MenuCatalogue from "../../components/MenuCatalogue/MenuCatalogue";
 
-import CurrentOffer from "../../components/CurrentOffer/CurrentOffer";
-import BrandList from "../../components/BrandList/BrandList";
+import CurrentOffer from "../../components/HomePage/CurrentOffer/CurrentOffer";
+import BrandList from "../../components/HomePage/BrandList/BrandList";
 import PhoneCardList from "../../components/PhoneCardList/PhoneCardList";
 import PageTitle from "../../components/PageTitle/PageTitle";
 
@@ -23,9 +23,12 @@ import {
   Container,
 } from "../../components/Container/Container.styled";
 
+import { useTranslation } from "react-i18next";
+
 import { GarantList, GarantItem, GarantTitle, GarantText } from "./Home.styled";
 
 const Home = () => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -36,7 +39,7 @@ const Home = () => {
     return state.products.productsList;
   });
 
-  // console.log("devices/main-page", mainProduct);
+  console.log("devices/main-page", mainProduct);
 
   return (
     <MainSection>
@@ -60,40 +63,29 @@ const Home = () => {
             <GarantItem>
               <GarantCar />
               <div>
-                <GarantTitle>Delivery and customer service</GarantTitle>
-                <GarantText>
-                  Fast and reliable delivery, as well as efficient customer
-                  service to resolve any issues.
-                </GarantText>
+                <GarantTitle>{t("Delivery and customer service")}</GarantTitle>
+                <GarantText>{t("Fast and reliable delivery")}</GarantText>
               </div>
             </GarantItem>
             <GarantItem>
               <GarantProcent />
               <div>
-                <GarantTitle>Competitive prices</GarantTitle>
-                <GarantText>
-                  Offers and discounts that make products attractive to
-                  customers.
-                </GarantText>
+                <GarantTitle>{t("Competitive prices")}</GarantTitle>
+                <GarantText>{t("Offers and discounts")}</GarantText>
               </div>
             </GarantItem>
             <GarantItem>
               <GarantShield />
               <div>
-                <GarantTitle>Reliability and warranty</GarantTitle>
-                <GarantText>
-                  Quality assurance and warranties for technical devices
-                </GarantText>
+                <GarantTitle>{t("Reliability and warranty")}</GarantTitle>
+                <GarantText>{t("Quality assurance")}</GarantText>
               </div>
             </GarantItem>
             <GarantItem>
               <GarantLayers />
               <div>
-                <GarantTitle>Wide range of products</GarantTitle>
-                <GarantText>
-                  Providing a variety of electronics and technical devices so
-                  that customers can choose depending on their needs
-                </GarantText>
+                <GarantTitle>{t("Wide range of products")}</GarantTitle>
+                <GarantText>{t("Providing a variety")}</GarantText>
               </div>
             </GarantItem>
           </GarantList>

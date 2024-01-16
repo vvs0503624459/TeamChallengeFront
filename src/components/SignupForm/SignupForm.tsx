@@ -3,9 +3,8 @@ import * as Yup from "yup";
 import { useState } from "react";
 // import { useNavigate } from 'react-router-dom';
 
-import {InPayload, signUp } from '../../redux/auth/auth-operation';
-
-// import { configureAxios } from '../../redux/auth/auth-operation';
+import { signUp } from '../../redux/auth/auth-operation';
+import { AuthUserState } from '../../redux/types/initialEntity';
 
 import  { useAppDispatch } from '../../redux/hooks';
 import { toast } from 'react-toastify';
@@ -91,7 +90,7 @@ const SignupForm = () => {
   ) => {
     const { firstname, lastname, phoneNumber, email, password } = values;
     console.log(values)
-    dispatch(signUp({ firstname, lastname, phoneNumber, email, password } as InPayload))
+    dispatch(signUp({ firstname, lastname, phoneNumber, email, password } as AuthUserState))
     // dispatch(signUp({ firstname, lastname, phoneNumber, email, password }))
       .unwrap()
       .then(() => toast.success('Registration succesfully'))

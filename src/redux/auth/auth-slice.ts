@@ -3,7 +3,7 @@ import {
   signUp,
     signIn,
   //   signOut,
-  //   currentUser,
+    currentUser,
   //   updateUser,
   //   subscribeEmail,
 } from "./auth-operation";
@@ -14,6 +14,7 @@ const initialState: initialStateAuthType = {
   user: [],
   token: "",
   isLoggedIn: false,
+  isRefreshing: true,
 };
 
 const authSlice = createSlice({
@@ -27,15 +28,16 @@ const authSlice = createSlice({
       state.token = payload.token;
       state.isLoggedIn = true;
     })
-    // .addCase(signIn.fulfilled, (state, { payload }: { payload: { user: UserInfo; token: string } }) => {
-    //     state.user = payload.user;
-    //     state.token = payload.token;
-    //     state.isLoggedIn = true;
-    //   })
     .addCase(signIn.fulfilled, (state, { payload }) => {
         state.user = payload.user;
         state.token = payload.token;
         state.isLoggedIn = true;
+      })
+      .addCase(currentUser.fulfilled, (state, { payload }) => {
+        state.user = payload.user;
+        state.token = payload.token;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
       })
 
 });

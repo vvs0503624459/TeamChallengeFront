@@ -1,7 +1,11 @@
 // import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getMainDevises, getDevises } from "./products-operation";
+import {
+   getMainDevises,
+    getDevises,
+    getDevisesByID
+   } from "./products-operation";
 
 import { initialStateProductType } from '../types/initialEntity';
 
@@ -31,7 +35,11 @@ export const productsSlice = createSlice({
     })
     .addCase(getDevises.fulfilled, (state, action) => {
       state.productsList = action.payload;
+    })
+    .addCase(getDevisesByID.fulfilled, (state, action) => {
+      state.productsList = action.payload;
     });
+
     // або можна додати й інші обробки помилок чи завантаження
     
   },

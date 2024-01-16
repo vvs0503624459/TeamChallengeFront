@@ -4,8 +4,14 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import { ThemeProvider } from "styled-components";
 import { lightTheme } from "./components/Themes";
-import { useAppDispatch } from "./redux/hooks";
+import {
+  useAppDispatch,
+  //  useAppSelector
+} from "./redux/hooks";
 import { getDevises } from "./redux/products/products-operation";
+
+// import { initialStateAuthType } from './redux/types/initialEntity';
+import { currentUser } from "./redux/auth/auth-operation";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const ProductCard = lazy(() => import("./pages/ProductPage/ProductPage"));
@@ -30,16 +36,21 @@ const SigninSecurity = lazy(() =>
   import("./components/PersonalInformation/SigninSecurity/SigninSecurity")
 );
 
+const CookiePolicy = lazy(() => import('./pages/CookiePolicy/CookiePolicy'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy/PrivacyPolicy'));
+
 // import {GlobalStyles} from './components/globalStyles';
 
 function App() {
-
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getDevises());
+    dispatch(currentUser());
   }, [dispatch]);
 
-  
+  // const isRefreshing: initialStateAuthType[] = useAppSelector((state) => {
+  //   return state.auth.isRefreshing;
+  // });
   return (
     <ThemeProvider theme={lightTheme}>
       <>
@@ -53,13 +64,29 @@ function App() {
               <Route path="reviews" element={<ReviewsQuestion />} />
               <Route path="accessories" element={<Accessories />} />
             </Route>
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/user" element={<UserProfile />}>
-              <Route path="personalinfo" element={<PersonalInfo />} />
-              <Route path="signin&security" element={<SigninSecurity />} />
-              {/* <Route path="reviews" element={<ReviewsQuestion />} />
+            {/* {isRefreshing ? (
+        <b>Refresh user</b>
+      ) : ( */}
+            <>
+              {/* <Route
+            path="/signup"
+            element={<RestrictedRoute component={<SignupPage />} />}
+          />
+          <Route
+            path="/signin"
+            element={<RestrictedRoute component={<SigninPage />} />}
+          /> */}
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/user" element={<UserProfile />}>
+                <Route path="personalinfo" element={<PersonalInfo />} />
+                <Route path="signin&security" element={<SigninSecurity />} />
+                {/* <Route path="reviews" element={<ReviewsQuestion />} />
             <Route path="accessories" element={<Accessories />} /> */}
-            </Route>
+              </Route>
+            </>
+            {/* )} */}
+            <Route path="/cookie" element={<CookiePolicy />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>

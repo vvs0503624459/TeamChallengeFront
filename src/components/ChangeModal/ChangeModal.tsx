@@ -11,6 +11,9 @@ import { Wrapper, ChangeButton, Button } from "./ChangeModal.styled";
 
 import { ModalProps } from '../../types/modalsEntity';
 
+import { useAppSelector } from "../../redux/hooks";
+import { useNavigate } from 'react-router-dom';
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -24,15 +27,24 @@ const style = {
   }
 
 const ChangeModal = ({ isOpen, handleClose }: ModalProps) => {
-  
+  const navigate = useNavigate()
   const [changeModal, setChangeModal] = useState(false);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [thankYou, setThankYou] = useState(false);
 
   const visibles = true; //close btn prop
 
+  const isLogged = useAppSelector((state) => {
+    return state.auth.isLoggedIn;
+  });
+
   const handleToggleModal = () => {
-    setChangeModal((state) => !state);
+    if(isLogged){
+      setChangeModal(false);
+      navigate('/user')
+    }else{
+      setChangeModal((state) => !state);
+    }
   };
 
   const handleIsForgotPassword = () => {

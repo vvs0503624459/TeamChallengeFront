@@ -1,10 +1,10 @@
-import PageTitle from "../../components/PageTitle/PageTitle";
-import { Section } from "../../components/Container/Container.styled";
+import PageTitle from "../../PageTitle/PageTitle";
+import { Section } from "../../Container/Container.styled";
 
-import Offer1 from "../../assets/offer-1.png";
-import Offer2 from "../../assets/offer-2.png";
-import Offer3 from "../../assets/offer-3.png";
-import Offer4 from "../../assets/offer-4.png";
+import Offer1 from "../../../assets/offer-1.png";
+import Offer2 from "../../../assets/offer-2.png";
+import Offer3 from "../../../assets/offer-3.png";
+import Offer4 from "../../../assets/offer-4.png";
 
 import {
   CurrentOfferList,
@@ -18,7 +18,10 @@ import {
   // CurrentOfferImg
 } from "./CurrentOffer.styled";
 
+import { useTranslation } from "react-i18next";
+
 const CurrentOffer = () => {
+  const { t } = useTranslation();
   return (
     <Section>
       <PageTitle title={"Current offers"} />
@@ -26,13 +29,13 @@ const CurrentOffer = () => {
         <CurrentOfferItem color={"#92c1e9"}>
           <CurrentOfferDiv>
             <div>
-              <CurrentOfferTitle>Product of the day</CurrentOfferTitle>
+              <CurrentOfferTitle>{t("Product of the day")}</CurrentOfferTitle>
               <CurrentOfferPrice>7 599 ₴</CurrentOfferPrice>
               <CurrentOfferDisc>10 599 ₴</CurrentOfferDisc>
             </div>
 
             <CurrentOfferText>
-              Marshall Stockwell II Portable Speaker Black
+              {t("Marshall Stockwell II Portable Speaker Black")}
             </CurrentOfferText>
           </CurrentOfferDiv>
           <>
@@ -42,11 +45,11 @@ const CurrentOffer = () => {
         <CurrentOfferItem color={"#FFF66A"}>
           <CurrentOfferDiv>
             <div>
-              <CurrentOfferTitle>Sales</CurrentOfferTitle>
-              <CurrentOfferPrice>from 990 ₴</CurrentOfferPrice>
+              <CurrentOfferTitle>{t("Sales")}</CurrentOfferTitle>
+              <CurrentOfferPrice>{t("from")} 990 ₴</CurrentOfferPrice>
             </div>
 
-            <CurrentOfferText>Smart Watch GOGPS ME K11</CurrentOfferText>
+            <CurrentOfferText>{t("Smart Watch GOGPS ME K11")}</CurrentOfferText>
           </CurrentOfferDiv>
 
           <img src={Offer2} width="110" height="102" />
@@ -54,12 +57,12 @@ const CurrentOffer = () => {
         <CurrentOfferItem color={"#F2994A"}>
           <CurrentOfferDiv>
             <div>
-              <CurrentOfferTitle>Discounts</CurrentOfferTitle>
+              <CurrentOfferTitle>{t("Discounts")}</CurrentOfferTitle>
               <CurrentOfferPrice>20 990 ₴</CurrentOfferPrice>
               <CurrentOfferDisc>27 990 ₴</CurrentOfferDisc>
             </div>
 
-            <CurrentOfferText>Laptop HP 15</CurrentOfferText>
+            <CurrentOfferText>{t("Laptop HP 15")}</CurrentOfferText>
           </CurrentOfferDiv>
 
           <img src={Offer3} width="113" height="95" />
@@ -67,12 +70,12 @@ const CurrentOffer = () => {
         <CurrentOfferItem color={"#CBC2F2"}>
           <CurrentOfferDiv>
             <div>
-              <CurrentOfferTitle>Top offers</CurrentOfferTitle>
-              <CurrentOfferPrice>from 1 599 ₴</CurrentOfferPrice>
+              <CurrentOfferTitle>{t("Top offers")}</CurrentOfferTitle>
+              <CurrentOfferPrice>{t("from")} 1 599 ₴</CurrentOfferPrice>
             </div>
 
             <CurrentOfferText>
-              ZTE BLADE L9 1/32GB Dual Sim Gray
+              {t("ZTE BLADE L9 1/32GB Dual Sim Gray")}
             </CurrentOfferText>
           </CurrentOfferDiv>
 
