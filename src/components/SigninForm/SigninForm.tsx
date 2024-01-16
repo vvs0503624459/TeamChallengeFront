@@ -2,9 +2,9 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
 // import { useNavigate } from 'react-router-dom';
-// import { signIn } from '../../redux/auth/auth-operation';
+import { AuthUserState } from '../../redux/types/initialEntity';
 // Import SignInPayload type from your auth-operation file
-import { InPayload, signIn } from '../../redux/auth/auth-operation';
+import { signIn } from '../../redux/auth/auth-operation';
 // import { configureAxios } from '../../redux/auth/auth-operation';
 
 import  { useAppDispatch } from '../../redux/hooks';
@@ -73,7 +73,7 @@ const SigninForm = ({ handleIsForgotPassword }: Props) => {
     const { username, password } = values;
     console.log(values)
     // Dispatch the signIn action with the correct payload type
-    dispatch(signIn({ username, password } as InPayload))
+    dispatch(signIn({ username, password } as AuthUserState))
       .unwrap()
       .then(() => toast.success('Login successfully'))
       .catch(() => toast.error('Something went wrong. Try again'));

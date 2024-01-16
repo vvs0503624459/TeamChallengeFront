@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { MainProductState } from "../../redux/types/initialEntity";
-import { getMainDevises } from "../../redux/products/products-operation";
+import {
+  getMainDevises,
+  //  getDevisesByID
+} from "../../redux/products/products-operation";
 
 import { useLocation, useParams } from "react-router-dom";
 import { Outlet } from "react-router-dom";
@@ -14,31 +17,39 @@ import {
   Container,
 } from "../../components/Container/Container.styled";
 
+import { useTranslation } from "react-i18next";
+
 import { NavList, NavItem, NavLink } from "./ProductPage.styled";
 import general from "../../data/general.json";
 
 const ProductCard = () => {
+  const { t } = useTranslation();
+
   const location = useLocation();
-  const { id } = useParams();
+  const { devisesId } = useParams();
 
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    dispatch(getMainDevises());
-  }, [dispatch]);
+  // const selectDrinkById: MainProductState[] = useAppSelector((state) => {
+  //   return state.products.productsList.find((devices) => devices.id === devisesId))
+  // });
 
   const mainProduct: MainProductState[] = useAppSelector((state) => {
     return state.products.productsList;
   });
+  useEffect(() => {
+    dispatch(getMainDevises());
+    // dispatch(getDevisesByID(devisesId));
+  }, [dispatch, devisesId]);
 
   return (
     <MainSection>
       <Container>
         <div>
           {general
-            .filter((obj) => obj.id === id)
+            .filter((obj) => obj.id === devisesId)
             .map(({ maintitle, comments }) => (
-              <div key={id}>
+              <div key={devisesId}>
                 <h1>{maintitle}</h1>
                 <StarRating />
                 <p>{comments}</p>
@@ -50,25 +61,22 @@ const ProductCard = () => {
           <NavList>
             <NavItem>
               <NavLink to="general" state={{ from: location }}>
-                General
+                {t("General")}
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="specifications" state={{ from: location }}>
-                Specifications
+                {t("Specifications")}
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                to="reviews"
-                state={{ from: location }}
-              >
-                Reviews & Questions (324)
+              <NavLink to="reviews" state={{ from: location }}>
+                {t("Reviews & Questions")}(324)
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="accessories" state={{ from: location }}>
-                Accessories
+                {t("Accessories")}
               </NavLink>
             </NavItem>
           </NavList>

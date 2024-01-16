@@ -22,14 +22,18 @@ import {
   PolicyLink,
 } from "./Footer.styled";
 
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <FooterWrapper>
       <Container>
         <FooterContainer>
           <div>
             <Logo />
-            <FooterText>Simplify Your Tech Journey</FooterText>
+            <FooterText>{t("Simplify Your Tech Journey")}</FooterText>
             <FooterIconList>
               <li>
                 <FooterInstagram />
@@ -47,26 +51,18 @@ const Footer = () => {
             <div>
               <FooterListTitles>TechEase</FooterListTitles>
               <FooterList>
-                <FooterItem>About</FooterItem>
-                <FooterItem>Vacancies</FooterItem>
-                <FooterItem>Customer Support</FooterItem>
+                <FooterItem>{t("About")}</FooterItem>
+                <FooterItem>{t("Vacancies")}</FooterItem>
+                <FooterItem>{t("Customer Support")}</FooterItem>
               </FooterList>
             </div>
             <div>
-              <FooterListTitles>Information</FooterListTitles>
+              <FooterListTitles>{t("Information")}</FooterListTitles>
               <FooterList>
-                <FooterItem>Delivery and payment</FooterItem>
-                <FooterItem>Warranty and service</FooterItem>
-                <FooterItem>Return and exchange</FooterItem>
-                <FooterItem>Credit</FooterItem>
-              </FooterList>
-            </div>
-            <div>
-              <FooterListTitles>TechEase</FooterListTitles>
-              <FooterList>
-                <FooterItem>About</FooterItem>
-                <FooterItem>Vacancies</FooterItem>
-                <FooterItem>Customer Support</FooterItem>
+                <FooterItem>{t("Delivery and payment")}</FooterItem>
+                <FooterItem>{t("Warranty and service")}</FooterItem>
+                <FooterItem>{t("Return and exchange")}</FooterItem>
+                <FooterItem>{t("Credit")}</FooterItem>
               </FooterList>
             </div>
           </FooterListWrapper>
@@ -74,13 +70,13 @@ const Footer = () => {
         </FooterContainer>
 
         <PolicyWrapper>
-          <PolicyText>TECH EASE 2023. All Rights Reserved.</PolicyText>
+          <PolicyText>{t("TechEase")}</PolicyText>
           <PolicyList>
             <PolicyItem>
-              <PolicyLink to={`/product`}>Cookie Policy</PolicyLink>
+              <PolicyLink to={`/cookie`}>{t("Cookie Policy")}</PolicyLink>
             </PolicyItem>
             <PolicyItem>
-              <PolicyLink to={`/product`}>Privacy Policy</PolicyLink>
+              <PolicyLink to={`/privacy`}>{t("Privacy Policy")}</PolicyLink>
             </PolicyItem>
           </PolicyList>
         </PolicyWrapper>

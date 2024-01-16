@@ -2,6 +2,7 @@ export type initialStateAuthType = {
   user: AuthUserState[];
   token: string;
   isLoggedIn: boolean;
+  isRefreshing: boolean;
 };
 
 export type AuthUserState = {
@@ -10,6 +11,7 @@ export type AuthUserState = {
   phoneNumber: string;
   email: string;
   password: string;
+  username: string;
 };
 
 export type initialStateProductType = {

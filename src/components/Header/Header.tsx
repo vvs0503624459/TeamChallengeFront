@@ -32,13 +32,24 @@ const style = {
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import { useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
-
+import { useNavigate } from 'react-router-dom';
+// import { initialStateAuthType } from '../../redux/types/initialEntity';
 const Header = () => {
+  const navigate = useNavigate()
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenModalHeader, setIsOpenModalHeader] = useState(false);
 
+    const isLogged = useAppSelector((state) => {
+    return state.auth.isLoggedIn;
+  });
+
   const handleToggleUserModal = () => {
-    setIsOpenModal((state) => !state);
+    if(isLogged){
+      setIsOpenModal(false);
+      navigate('/user')
+    }else{
+      setIsOpenModal(true);
+    }
   };
 
   const handleToggleHeaderModal = () => {
@@ -87,7 +98,7 @@ const Header = () => {
                 {Object.values(Likes).filter((value) => value === true).length}
               </LikesCounter>
             </IconsLink>
-            <IconsLink to="/user">
+            <IconsLink to="/">
               <Compare />
             </IconsLink>
             <IconsLink to="/cart">
