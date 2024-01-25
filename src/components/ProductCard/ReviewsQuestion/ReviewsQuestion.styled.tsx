@@ -142,7 +142,6 @@ export const ReviewImagesBox = styled.div<ShowAllImagesProps>`
   gap: 40px;
   flex-wrap: ${(props) => (props.showAllImages ? "nowrap" : "wrap")};
   overflow: hidden;
-
 `;
 export const ReviewImagesContainer = styled.img`
   min-width: calc(25% - 30px);
@@ -159,7 +158,7 @@ export const ReviewAsideContainer = styled.div`
 `;
 export const ReviewAside = styled.div`
   width: 37%;
-  background-color: royalblue;
+  // background-color: royalblue;
   justify-content: space-between;
 `;
 export const ReviewMainContainer = styled.div`
@@ -173,7 +172,7 @@ export const SearchReviewFiltersRow = styled.div`
   display: flex;
   gap: 12px;
   &:first-child {
-    // need to test 
+    // need to test
     width: 600px;
   }
 `;
@@ -182,7 +181,6 @@ export const ReviewFilters = styled.button`
   border-radius: 12px;
   border: 1px solid var(--Tritiary-light-gray, #e0e4f0);
   opacity: 0.8;
-
 `;
 export const ReviewQuestionsWrap = styled.div<ReviewsQuestionProps>`
   display: ${(props) => (props.reviewOrQuestion ? "flex" : "none")};
@@ -225,4 +223,26 @@ export const ReplyUserButton = styled.button`
 export const ReviewItemToRateWrap = styled.div`
   display: flex;
   gap: 12px;
+`;
+export const AnswerItemWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0px;
+`;
+export const AnswerWrap = styled.div`
+  display: flex;
+  padding: 4px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--Primary-bright-purple, #5826da);
+  color: var(--Primary-bright-purple, #5826da);
+`;
+export const AnswerHr = styled.hr`
+  border: none;
+  width: 100%;
+  margin: 0;
+  border-top: 1px double #e0e4f0;
 `;

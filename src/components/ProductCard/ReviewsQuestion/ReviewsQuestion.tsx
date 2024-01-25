@@ -23,15 +23,15 @@ import {
   TagsWrap,
   ReviewAside,
   ReviewQuestionsWrap,
-} from "./ReviewsQuestionstyled";
+} from "./ReviewsQuestion.styled";
 import {
   ReviewStar,
-  Question,
+  QuestionTag,
   ShowAllImages,
 } from "../../IconComponents/IconsCatalogue";
 import ReviewFilter from "./ReviewFilter";
 import Reviews from "./Reviews";
-import Questions from "./Questions";
+import Questions, { Question } from "./Questions";
 // https://run.mocky.io/v3/6f3be700-72d1-46f3-9b3e-4e3a832c8a9f
 // https://designer.mocky.io/manage/delete/6f3be700-72d1-46f3-9b3e-4e3a832c8a9f/IMvtgVX3J9gcGVLF4EINejOZRE7ZCVoz0QgQ
 export type Review = {
@@ -51,18 +51,18 @@ export type Review = {
   countOfLikes: number;
   countOfDislikes: number;
 };
-// type Props = {
-//   reviewOrQuestion: boolean;
-//   changeReviewOrQuestion: (value: boolean) => void;
-// };
 import { useTranslation } from "react-i18next";
-// import { useAppSelector } from "../../../redux/hooks";
+import ReviewAsideDevice from "./ReviewAsideDevice";
 const ReviewsQuestion = () => {
   const { id } = useParams();
   const [tags, setTags] = useState<string[]>([]);
   const [reviews, setReviews] = useState<Review[] | null>(null);
-  // const [reviewOrQuestion, setReviewOrQuestion] =
-  // const [newReview, setNewReview] = useState<Review>([]);
+  const [questions, setQuestions] = useState<Question[] | null>(null);
+  const [reviewOrQuestion, setReviewOrQuestion] = useState(true);
+  const changeReviewOrQuestion = (value: boolean): void => {
+    setReviewOrQuestion(value);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -87,25 +87,41 @@ const ReviewsQuestion = () => {
         } else {
           console.warn(`Review with id ${id} not found.`);
         }
+        const jsonPathQuestions = "../../src/data/questions.json";
+        const responseQuestions = await fetch(jsonPathQuestions);
+
+        const jsonQuestions = await responseQuestions.json();
+        const foundQuestion = jsonQuestions.filter(
+          (obj: Question) => obj.id === id
+        );
+        if (foundQuestion) {
+          setQuestions(foundQuestion);
+        } else {
+          console.warn(`Question with id ${id} not found.`);
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
+
+//       if (reviews || questions) {
+//   comments = (reviews.length || 0 ) + (questions.length || 0 );
+// };
     };
     fetchData();
   }, [id]);
-  // console.log(reviews);
-  const [reviewOrQuestion, setReviewOrQuestion] = useState(true);
 
-  const changeReviewOrQuestion = (value: boolean): void => {
-    setReviewOrQuestion(value);
-  };
   const [showAllImages, setShowAllImages] = useState(true);
-
   const changeShowAllImages = () => {
     setShowAllImages((state) => !state);
   };
-  const { t} = useTranslation();
-  // const language = useAppSelector((state) => state.languageState) ;
+  const { t } = useTranslation();
+            let comments: number = 0;
+
+
+// const comments: number = (reviews.length || questions.length) ? (reviews.length || 0 ) + (questions.length || 0 ) : undefined ;
+// console.log("Total_comments:", comments);
+//   console.log("Total_reviews:", reviews);
+//     console.log("Total_questions:", questions);
   return (
     <>
       <StarsFormsWrap>
@@ -115,16 +131,17 @@ const ReviewsQuestion = () => {
           </StarsNumber>
           <StarRatingFixed
             rating={Number(phone.find((item) => item.id === id)!.stars)}
+            readonly={true}
           />
         </StarsContainer>
         <ButtonContainer>
           <ButtonEmpty>
-            <Question />
-            {t('Ask a Question')}
+            <QuestionTag />
+            {t("Ask a Question")}
           </ButtonEmpty>
           <ButtonFilled>
             <ReviewStar />
-            {t('Leave a Review')}
+            {t("Leave a Review")}
           </ButtonFilled>
         </ButtonContainer>
       </StarsFormsWrap>
@@ -142,22 +159,22 @@ const ReviewsQuestion = () => {
           reviewOrQuestion={reviewOrQuestion}
           onClick={() => changeReviewOrQuestion(true)}
         >
-          {t('Reviews')} ({reviews && (reviews.length)})
+          {t("Reviews")} ({reviews && reviews.length})
         </ButtonTitle>
         <ButtonTitle
           reviewOrQuestion={reviewOrQuestion ? false : true}
           onClick={() => changeReviewOrQuestion(false)}
         >
-          {t('Questions')} (12)
+          {t("Questions")} ({questions && questions.length})
         </ButtonTitle>
         <Simulator></Simulator>
       </ButtonTitlesContainer>
       <ReviewImagesWrap reviewOrQuestion={reviewOrQuestion}>
         <ReviewImagesTitleWrap>
-          <ReviewImagesHeader>Reviews with images</ReviewImagesHeader>
+          <ReviewImagesHeader>{t("Reviews with images")}</ReviewImagesHeader>
           <ButtonEmpty onClick={changeShowAllImages}>
             <ShowAllImages />
-            Show All
+            {t("Show All")}
           </ButtonEmpty>
         </ReviewImagesTitleWrap>
         <ReviewImagesBox showAllImages={showAllImages}>
@@ -175,14 +192,19 @@ const ReviewsQuestion = () => {
         </ReviewImagesBox>
       </ReviewImagesWrap>
       <ReviewAsideContainer>
-        <ReviewAside></ReviewAside>
+        <ReviewAside>
+          <ReviewAsideDevice id={id} comments={ (reviews && reviews.length ) + (questions && questions.length )}/>
+        </ReviewAside>
         <ReviewMainContainer>
           <ReviewFilter />
           <ReviewQuestionsWrap reviewOrQuestion={reviewOrQuestion}>
             <Reviews reviews={reviews} />
           </ReviewQuestionsWrap>
           <ReviewQuestionsWrap reviewOrQuestion={!reviewOrQuestion}>
-            <Questions questions={reviews} />
+            <Questions
+              // id={id}
+              questions={questions}
+            />
           </ReviewQuestionsWrap>
         </ReviewMainContainer>
       </ReviewAsideContainer>
