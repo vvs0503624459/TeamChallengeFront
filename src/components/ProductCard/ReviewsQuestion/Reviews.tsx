@@ -31,7 +31,7 @@ const Reviews = ({ reviews }: Props) => {
             <ReviewItemWrap key={obj.comment.id}>
               <ReviewHeaderFooterWrap>
                 <ReviewRateWrap>
-                  <StarRatingFixed rating={Number(obj.rating)} />
+                  <StarRatingFixed readonly={true} rating={Number(obj.rating)} />
                   {obj.comment.userInfo}
                 </ReviewRateWrap>
                 {obj.comment.creatingDate}

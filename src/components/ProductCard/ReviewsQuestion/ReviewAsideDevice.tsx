@@ -1,3 +1,4 @@
+// import { useEffect, useState } from "react";
 import { useState } from "react";
 import { addProductToCart } from "../../../redux/products/cartReducer";
 import CartModal from "../../CartModal/CartModal";
@@ -21,20 +22,21 @@ import {
   CardDivHeader,
   CardDivFooter,
 } from "./ReviewProductCard.styled.tsx";
-// import { useEffect } from "react";
 import {
-  DevicesState,
-  MainProductState,
+  DeviceIdState,
 } from "../../../redux/types/initialEntity";
-import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { useAppDispatch } from "../../../redux/hooks";
+import ReviewCardSpecifications from "./ReviewCardSpecifications.tsx";
+
 type Props = {
   id: string | undefined;
   comments: number | null;
+  device: DeviceIdState | undefined;
 };
 const style = {
   fill: "#5826da",
 };
-const ReviewAsideDevice = ({ id, comments }: Props) => {
+const ReviewAsideDevice = ({ comments, device }: Props) => {
   const [isOpenCartModal, setIsOpenCartModal] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -43,27 +45,17 @@ const ReviewAsideDevice = ({ id, comments }: Props) => {
     dispatch(addProductToCart({ id }));
     setIsOpenCartModal(true);
   };
-  const products = useAppSelector((state) => {
-    return state.products.productsList;
-  });
 
-  const mainProduct = products
-    .find((item: MainProductState) => item.title === "New products");
 
-  let device: DevicesState | undefined;
-  if (mainProduct) {
-    device = mainProduct.devices.find((obj: DevicesState) => obj.id === id);
-  }
+  // console.log("device/ReviewAsideDevice", device);
 
-  // console.log("devices/ReviewAsideDevice", products);
-  console.log("device/ReviewAsideDevice", device);
   return (
     <>
       {device && (
         <>
           <CardItem key={device.id}>
             <MainProdImageDiv>
-              <MainProdIMG src={device.mainPhotoUri} alt={device.title} />
+              <MainProdIMG src={device.photoUris[0]} alt={device.title} />
               {/* <MainProdBtnDiv></MainProdBtnDiv> */}
             </MainProdImageDiv>
             <CardDiv>
@@ -85,7 +77,7 @@ const ReviewAsideDevice = ({ id, comments }: Props) => {
                     {/* <Discountprice>{`${price} / 100% * 8%`}</Discountprice> */}
                     <Deal>-{device.discount}%</Deal>
                   </DiscountDiv>
-                  <MainProdBtn onClick={() => handleToggleCartModal(device!.id)}>
+                  <MainProdBtn onClick={() => handleToggleCartModal(device.id)}>
                     <Cart style={style} />
                   </MainProdBtn>
                 </DiscountContainer>
@@ -96,7 +88,7 @@ const ReviewAsideDevice = ({ id, comments }: Props) => {
             isOpen={isOpenCartModal}
             handleClose={() => setIsOpenCartModal(false)}
           />
-
+          <ReviewCardSpecifications device={device} />
         </>
       )}
     </>

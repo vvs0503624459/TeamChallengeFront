@@ -32,8 +32,6 @@ import {
 import ReviewFilter from "./ReviewFilter";
 import Reviews from "./Reviews";
 import Questions, { Question } from "./Questions";
-// https://run.mocky.io/v3/6f3be700-72d1-46f3-9b3e-4e3a832c8a9f
-// https://designer.mocky.io/manage/delete/6f3be700-72d1-46f3-9b3e-4e3a832c8a9f/IMvtgVX3J9gcGVLF4EINejOZRE7ZCVoz0QgQ
 export type Review = {
   id: string;
   rating: number;
@@ -53,8 +51,10 @@ export type Review = {
 };
 import { useTranslation } from "react-i18next";
 import ReviewAsideDevice from "./ReviewAsideDevice";
+import { useAppSelector } from "../../../redux/hooks";
+import { DeviceIdState } from "../../../redux/types/initialEntity";
 const ReviewsQuestion = () => {
-  const { id } = useParams();
+  const { id } = useParams<string>();
   const [tags, setTags] = useState<string[]>([]);
   const [reviews, setReviews] = useState<Review[] | null>(null);
   const [questions, setQuestions] = useState<Question[] | null>(null);
@@ -62,12 +62,16 @@ const ReviewsQuestion = () => {
   const changeReviewOrQuestion = (value: boolean): void => {
     setReviewOrQuestion(value);
   };
-
+ 
+  const product = useAppSelector((state) => {
+    return state.products.product;
+  });
+  // console.log("products/ReviewAsideDevice", product);
   useEffect(() => {
     const fetchData = async () => {
       try {
         // const jsonPath =
-        //   "https://run.mocky.io/v3/6f3be700-72d1-46f3-9b3e-4e3a832c8a9f";
+        //   `https://team-chalenge.onrender.com/api/v1/reviews/${id}`;
         const jsonPath = "../../src/data/reviews.json";
         const response = await fetch(jsonPath);
 
@@ -99,29 +103,40 @@ const ReviewsQuestion = () => {
         } else {
           console.warn(`Question with id ${id} not found.`);
         }
+        if (foundReview || foundQuestion) {
+          setComments((foundReview.length || 0) + (foundQuestion.length || 0));
+        };
       } catch (error) {
         console.error("Error fetching data:", error);
       }
 
-//       if (reviews || questions) {
-//   comments = (reviews.length || 0 ) + (questions.length || 0 );
-// };
+
     };
     fetchData();
   }, [id]);
 
+  // console.log("products/ReviewAsideDevice", device);
+
+  let device: DeviceIdState | undefined;
+  if (product) {
+    device = product;
+  }
+
+  const [comments, setComments] = useState(null);
   const [showAllImages, setShowAllImages] = useState(true);
   const changeShowAllImages = () => {
     setShowAllImages((state) => !state);
   };
   const { t } = useTranslation();
-            let comments: number = 0;
+  // let comments: number | null;
+  //       if (reviews || questions) {
+  //   comments = (reviews.length || 0 ) + (questions.length || 0 );
+  // };
 
-
-// const comments: number = (reviews.length || questions.length) ? (reviews.length || 0 ) + (questions.length || 0 ) : undefined ;
-// console.log("Total_comments:", comments);
-//   console.log("Total_reviews:", reviews);
-//     console.log("Total_questions:", questions);
+  // const comments: number = (reviews.length || questions.length) ? (reviews.length || 0 ) + (questions.length || 0 ) : undefined ;
+  // console.log("Total_comments:", comments);
+  //   console.log("Total_reviews:", reviews);
+  //     console.log("Total_questions:", questions);
   return (
     <>
       <StarsFormsWrap>
@@ -193,7 +208,8 @@ const ReviewsQuestion = () => {
       </ReviewImagesWrap>
       <ReviewAsideContainer>
         <ReviewAside>
-          <ReviewAsideDevice id={id} comments={ (reviews && reviews.length ) + (questions && questions.length )}/>
+          {/* <ReviewAsideDevice id={id} comments={(reviews && reviews.length) + (questions && questions.length)} /> */}
+          <ReviewAsideDevice id={id} comments={comments} device={device} />
         </ReviewAside>
         <ReviewMainContainer>
           <ReviewFilter />
