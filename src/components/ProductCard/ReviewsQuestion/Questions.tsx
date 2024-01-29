@@ -1,20 +1,100 @@
-import { Review } from "./ReviewsQuestion";
-
+import { useTranslation } from "react-i18next";
+import {
+  AnswerHr,
+  AnswerItemWrap,
+  AnswerWrap,
+  ReplyUserButton,
+  ReviewHeaderFooterWrap,
+  ReviewItemToRateWrap,
+  ReviewItemWrap,
+  ReviewRateWrap,
+} from "./ReviewsQuestion.styled";
+import {
+  IconThumbsDown,
+  IconThumbsUp,
+  IconThumbsVector,
+  TagReply,
+} from "../../IconComponents/IconsCatalogue";
 type Props = {
-  questions: Review[] | null;
+  // id: string | undefined;
+  questions: Question[] | null;
+  // setQuestions: React.Dispatch<React.SetStateAction<Question[] | null>>;
+};
+export type Question = {
+  id: string;
+  comment: {
+    id: string;
+    message: string;
+    creatingDate: string;
+    userInfo: string;
+    answer: {
+      comment: {
+        id: string;
+        message: string;
+        creatingDate: string;
+        userInfo: string;
+        answer: {};
+      };
+    };
+  };
+  photosUri: string[];
 };
 
 const Questions = ({ questions }: Props) => {
+  // const [questions, setQuestions] = useState<Question[] | null>(null);
+  const { t } = useTranslation();
   return (
-    <div>
+    <>
       {questions && (
         <>
-          {questions.map((obj: Review) => (
-            <div key={obj.comment.id}>{obj.comment.userInfo}</div>
+          {questions.map((obj: Question) => (
+            <ReviewItemWrap key={obj.comment.id}>
+              <ReviewHeaderFooterWrap>
+                <ReviewRateWrap>{obj.comment.userInfo}</ReviewRateWrap>
+                {obj.comment.creatingDate}
+              </ReviewHeaderFooterWrap>
+              <p>{obj.comment.message}</p>
+              <ReviewHeaderFooterWrap>
+                <ReplyUserButton>
+                  {t("Reply")} {obj.comment.userInfo}
+                </ReplyUserButton>
+                <ReviewItemToRateWrap>
+                  <IconThumbsUp />
+                  <IconThumbsVector />
+                  <IconThumbsDown />
+                </ReviewItemToRateWrap>
+              </ReviewHeaderFooterWrap>
+              {obj.comment.answer && (
+                <AnswerItemWrap key={obj.comment.answer.comment.id}>
+                  <AnswerHr />
+                  <ReviewHeaderFooterWrap>
+                    <ReviewRateWrap>
+                      <AnswerWrap>
+                        <TagReply />
+                        {t("Reply to")} {obj.comment.userInfo}
+                      </AnswerWrap>
+                      {obj.comment.answer.comment.userInfo}
+                    </ReviewRateWrap>
+                    {obj.comment.answer.comment.creatingDate}
+                  </ReviewHeaderFooterWrap>
+                  <p>{obj.comment.answer.comment.message}</p>
+                  <ReviewHeaderFooterWrap>
+                    <ReplyUserButton>
+                      {t("Reply")} {obj.comment.answer.comment.userInfo}
+                    </ReplyUserButton>
+                    <ReviewItemToRateWrap>
+                      <IconThumbsUp />
+                      <IconThumbsVector />
+                      <IconThumbsDown />
+                    </ReviewItemToRateWrap>
+                  </ReviewHeaderFooterWrap>
+                </AnswerItemWrap>
+              )}
+            </ReviewItemWrap>
           ))}
         </>
       )}
-    </div>
+    </>
   );
 };
 

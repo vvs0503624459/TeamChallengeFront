@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
    getMainDevises,
     getDevises,
-    getDevisesByID
+    getDeviсesByID
    } from "./products-operation";
 
 import { initialStateProductType } from '../types/initialEntity';
@@ -16,6 +16,7 @@ import { initialStateProductType } from '../types/initialEntity';
 
 const initialState: initialStateProductType = {
   productsList: [],
+  product: null,
 };
 
 export const productsSlice = createSlice({
@@ -36,8 +37,8 @@ export const productsSlice = createSlice({
     .addCase(getDevises.fulfilled, (state, action) => {
       state.productsList = action.payload;
     })
-    .addCase(getDevisesByID.fulfilled, (state, action) => {
-      state.productsList = action.payload;
+    .addCase(getDeviсesByID.fulfilled, (state, action) => {
+      state.product = action.payload;
     });
 
     // або можна додати й інші обробки помилок чи завантаження

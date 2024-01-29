@@ -1,4 +1,10 @@
-import { IconMinus, IconPlus, IconThumbsDown, IconThumbsUp, IconThumbsVector } from "../../IconComponents/IconsCatalogue";
+import {
+  IconMinus,
+  IconPlus,
+  IconThumbsDown,
+  IconThumbsUp,
+  IconThumbsVector,
+} from "../../IconComponents/IconsCatalogue";
 import StarRatingFixed from "../../StarRating/StarRatingFixed";
 import { Review } from "./ReviewsQuestion";
 import {
@@ -9,13 +15,14 @@ import {
   ReviewItemToRateWrap,
   ReviewItemWrap,
   ReviewRateWrap,
-} from "./ReviewsQuestionstyled";
-
+} from "./ReviewsQuestion.styled";
+import { useTranslation } from "react-i18next";
 type Props = {
   reviews: Review[] | null;
 };
 
 const Reviews = ({ reviews }: Props) => {
+  const { t } = useTranslation();
   return (
     <>
       {reviews && (
@@ -24,7 +31,7 @@ const Reviews = ({ reviews }: Props) => {
             <ReviewItemWrap key={obj.comment.id}>
               <ReviewHeaderFooterWrap>
                 <ReviewRateWrap>
-                  <StarRatingFixed rating={Number(obj.rating)} />
+                  <StarRatingFixed readonly={true} rating={Number(obj.rating)} />
                   {obj.comment.userInfo}
                 </ReviewRateWrap>
                 {obj.comment.creatingDate}
@@ -52,7 +59,9 @@ const Reviews = ({ reviews }: Props) => {
               )}
 
               <ReviewHeaderFooterWrap>
-                <ReplyUserButton>Reply {obj.comment.userInfo}</ReplyUserButton>
+                <ReplyUserButton>
+                  {t("Reply")} {obj.comment.userInfo}
+                </ReplyUserButton>
                 <ReviewItemToRateWrap>
                   <IconThumbsUp />
                   <IconThumbsVector />

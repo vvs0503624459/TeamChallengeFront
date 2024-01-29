@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { MainProductState } from "../../redux/types/initialEntity";
 import {
-  getMainDevises,
-  //  getDevisesByID
+  // getMainDevises,
+   getDeviсesByID
 } from "../../redux/products/products-operation";
 
 import { useLocation, useParams } from "react-router-dom";
@@ -26,30 +26,37 @@ const ProductCard = () => {
   const { t } = useTranslation();
 
   const location = useLocation();
-  const { devisesId } = useParams();
-
+  const { id } = useParams();
+  const deviceId: string = id!;
+  // console.log("products/deviceId", deviceId);
   const dispatch = useAppDispatch();
 
   // const selectDrinkById: MainProductState[] = useAppSelector((state) => {
-  //   return state.products.productsList.find((devices) => devices.id === devisesId))
+  //   return state.products.productsList.find((devices) => devices.id === deviceId))
   // });
 
   const mainProduct: MainProductState[] = useAppSelector((state) => {
     return state.products.productsList;
   });
-  useEffect(() => {
-    dispatch(getMainDevises());
-    // dispatch(getDevisesByID(devisesId));
-  }, [dispatch, devisesId]);
 
+ 
+  useEffect(() => {
+    dispatch(getDeviсesByID({ id: deviceId! }));
+    // dispatch(getMainDevises());
+  }, [dispatch, deviceId]);
+  // }, [dispatch]);
+  const product = useAppSelector((state) => {
+    return state.products.product;
+  });
+  console.log("products/ProductCard", product);
   return (
     <MainSection>
       <Container>
         <div>
           {general
-            .filter((obj) => obj.id === devisesId)
+            .filter((obj) => obj.id === deviceId)
             .map(({ maintitle, comments }) => (
-              <div key={devisesId}>
+              <div key={deviceId}>
                 <h1>{maintitle}</h1>
                 <StarRating />
                 <p>{comments}</p>
