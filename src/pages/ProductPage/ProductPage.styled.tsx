@@ -1,33 +1,38 @@
 import styled from "styled-components";
-import { Link, LinkProps } from "react-router-dom";
+import { NavLink, LinkProps } from "react-router-dom";
+
+export const ProductTitle = styled.h1`
+  color: ${(props) => props.theme.PrimaryBlack};
+  font-size: 32px;
+  font-weight: 500;
+  line-height: calc(40 / 32);
+`;
 
 export const NavList = styled.ul`
-display: flex;
-gap: 60px;
-align-items: center;
-padding-top: 32px;
-padding-bottom: 36px;
-
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 36px;
 `;
 
-export const NavItem = styled.li`
-`;
+export const NavItem = styled.li``;
 
-export const NavLink = styled(Link)<LinkProps>`
+export const NavLinkStyled = styled(NavLink)<LinkProps>`
   color: #69657b;
   font-family: Inter;
   font-size: 20px;
   font-weight: 600;
-  line-height: 26px;
+  line-height: calc(26 / 20);
   letter-spacing: 0em;
   text-align: left;
 
   &:hover {
-    color: #5826da;
+    color: ${(props) => props.theme.PrimaryBrightPurple};
   }
 
-  &::active {
-    color: #5826da;
+  &.active {
+    color: ${(props) => props.theme.PrimaryBrightPurple};
+    text-decoration: underline;
   }
 `;
-

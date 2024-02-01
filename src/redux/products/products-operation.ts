@@ -1,12 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { MainProductState } from '../types/initialEntity';
+import { DevicesState, MainProductState } from "../types/initialEntity";
 
-axios.defaults.baseURL = 'https://team-chalenge.onrender.com';
+axios.defaults.baseURL = "https://team-chalenge.onrender.com";
 
 export type InPayload = {
   id: string;
-
 };
 
 export const getMainDevises = createAsyncThunk<MainProductState[]>(
@@ -14,38 +13,32 @@ export const getMainDevises = createAsyncThunk<MainProductState[]>(
   async () => {
     try {
       const response = await axios.get("/api/v1/devices/main-page");
-      console.log("devices/main-page", response.data);
       // const catalogue: CatalogueState[] = response.data
       // return catalogue
-      return response.data
-    } catch (error) {
-      console.log('error', error)
-      throw error
-    }
-  }
-);
-
-export const getDevises = createAsyncThunk<MainProductState[]>(
-  "devises/",
-  async () => {
-    try {
-      const response = await axios.get("/api/v1/devises");
-      console.log("devises/", response.data);
       return response.data;
     } catch (error) {
-      console.log('error', error)
-      throw error
+      console.log("error", error);
+      throw error;
     }
   }
 );
 
-export const getDevisesByID = createAsyncThunk<MainProductState[]>(
+export const getDevises = createAsyncThunk<MainProductState[]>("devises/", async () => {
+  try {
+    const response = await axios.get("/api/v1/devises");
+    return response.data;
+  } catch (error) {
+    console.log("error", error);
+    throw error;
+  }
+});
+
+export const getDevisesByID = createAsyncThunk<DevicesState, string | undefined>(
   "devises/byid",
-  async (devisesId, thunkAPI) => {
+  async (Id, thunkAPI) => {
     try {
-      const response = await axios.get(`/api/v1/devises/${devisesId}`);
-      console.log("devises/byid", response.data);
-      return response.data;
+      const { data } = await axios.get(`/api/v1/devices/${Id}`);
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }

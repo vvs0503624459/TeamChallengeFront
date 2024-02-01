@@ -16,6 +16,7 @@ export type AuthUserState = {
 
 export type initialStateProductType = {
   productsList: MainProductState[];
+  currentProduct: DevicesState | null;
 };
 
 export type MainProductState = {
@@ -23,18 +24,31 @@ export type MainProductState = {
   devices: DevicesState[];
 };
 
+type Specifications = {
+  descriptionExtra: null;
+  main: boolean;
+  title: string;
+  value: string;
+};
+
+type SpecGtoups = {
+  title: string;
+  specifications: Specifications[];
+};
+
 export type DevicesState = {
-      id: string;
-      title: string;
-      color: string;
-      mainPhotoUri: string;
-      review: {
-        rating: number;
-        countOfVotes: number;
-      };
-      price: number;
-      discount: number;
-      devicesWithSameColor: [];
+  id: string;
+  title: string;
+  color: string;
+  mainPhotoUri: string;
+  review: {
+    rating: number;
+    countOfVotes: number;
+  };
+  price: number;
+  discount: number;
+  devicesWithSameColor: [];
+  specificationGroups: SpecGtoups[];
 };
 
 export type initialStateCatalogueType = {
