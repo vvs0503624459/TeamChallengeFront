@@ -27,7 +27,7 @@ export const getDevises = createAsyncThunk<MainProductState[]>("devises/", async
   }
 });
 
-export const getDevisesByID = createAsyncThunk<DevicesState>(
+export const getDeviсesByID = createAsyncThunk<DevicesState>(
   "devises/byid",
   async (Id, thunkAPI) => {
     try {
