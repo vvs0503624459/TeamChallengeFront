@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { MainProductState } from "../../redux/types/initialEntity";
-import { getDevisesByID, getMainDevises } from "../../redux/products/products-operation";
+import {
+  getMainDevises,
+  //  getDevisesByID
+} from "../../redux/products/products-operation";
 
 import { useLocation, useParams } from "react-router-dom";
 import { Outlet } from "react-router-dom";
@@ -22,24 +25,22 @@ const ProductCard = () => {
   const { currentProduct } = useProduct();
 
   const location = useLocation();
-  const { id } = useParams();
+  const { devisesId } = useParams();
 
   const dispatch = useAppDispatch();
 
   // const selectDrinkById: MainProductState[] = useAppSelector((state) => {
-  //   return state.products.productsList.find((devices) => devices.id === devisesId))
+  //   return state.products.productsList.find((devices) => devices.id === deviceId))
   // });
 
   const mainProduct: MainProductState[] = useAppSelector((state) => {
     return state.products.productsList;
   });
-  useEffect(() => {
-    dispatch(getMainDevises());
-  }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getDevisesByID(id));
-  }, [dispatch, id]);
+    dispatch(getMainDevises());
+    // dispatch(getDevisesByID(devisesId));
+  }, [dispatch, devisesId]);
 
   return (
     <MainSection>
@@ -47,9 +48,9 @@ const ProductCard = () => {
         {currentProduct && <ProductTitle>{currentProduct.title}</ProductTitle>}
         {/* <div>
           {general
-            .filter((obj) => obj.id === id)
+            .filter((obj) => obj.id === devisesId)
             .map(({ maintitle, comments }) => (
-              <div key={id}>
+              <div key={devisesId}>
                 <h1>{maintitle}</h1>
                 <StarRating />
                 <p>{comments}</p>

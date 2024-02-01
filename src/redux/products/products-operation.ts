@@ -4,36 +4,30 @@ import { DevicesState, MainProductState } from "../types/initialEntity";
 
 axios.defaults.baseURL = "https://team-chalenge.onrender.com";
 
-export type InPayload = {
-  id: string;
-};
-
 export const getMainDevises = createAsyncThunk<MainProductState[]>(
   "devices/main-page",
-  async () => {
+  async (_, thunkAPI) => {
     try {
       const response = await axios.get("/api/v1/devices/main-page");
-      // const catalogue: CatalogueState[] = response.data
-      // return catalogue
-      return response.data;
+      return response.data as MainProductState[];
     } catch (error) {
-      console.log("error", error);
-      throw error;
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
 
-export const getDevises = createAsyncThunk<MainProductState[]>("devises/", async () => {
+export const getDevises = createAsyncThunk<MainProductState[]>("devises/", async (_, thunkAPI) => {
   try {
+    // помилка у шляху "/api/v1/deviCes"
     const response = await axios.get("/api/v1/devises");
-    return response.data;
+    console.log("devises/", response.data);
+    return response.data as MainProductState[];
   } catch (error) {
-    console.log("error", error);
-    throw error;
+    return thunkAPI.rejectWithValue(error);
   }
 });
 
-export const getDevisesByID = createAsyncThunk<DevicesState, string | undefined>(
+export const getDevisesByID = createAsyncThunk<DevicesState>(
   "devises/byid",
   async (Id, thunkAPI) => {
     try {

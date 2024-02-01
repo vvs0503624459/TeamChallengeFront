@@ -804,7 +804,7 @@ export const ReviewStar = () => {
     </svg>
   );
 };
-export const Question = () => {
+export const QuestionTag = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -945,6 +945,30 @@ export const IconThumbsVector = () => {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+export const TagReply = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M6.35355 2.64645C6.54882 2.84171 6.54882 3.15829 6.35355 3.35355L3.70711 6L6.35355 8.64645C6.54882 8.84171 6.54882 9.15829 6.35355 9.35355C6.15829 9.54882 5.84171 9.54882 5.64645 9.35355L2.64645 6.35355C2.45118 6.15829 2.45118 5.84171 2.64645 5.64645L5.64645 2.64645C5.84171 2.45118 6.15829 2.45118 6.35355 2.64645Z"
+        fill="#5826DA"
+      />
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M2.5 6C2.5 5.72386 2.72386 5.5 3 5.5H10.5C11.2986 5.5 12.0626 5.82309 12.6245 6.39519C13.1861 6.96699 13.5 7.74063 13.5 8.54545V13C13.5 13.2761 13.2761 13.5 13 13.5C12.7239 13.5 12.5 13.2761 12.5 13V8.54545C12.5 8.00009 12.2871 7.47883 11.911 7.0959C11.5352 6.71327 11.0275 6.5 10.5 6.5H3C2.72386 6.5 2.5 6.27614 2.5 6Z"
+        fill="#5826DA"
       />
     </svg>
   );

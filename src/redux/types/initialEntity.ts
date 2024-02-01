@@ -76,3 +76,124 @@ export type CatalogueState = {
     }
   ];
 };
+
+export type DeviceIdState = {
+  id: string;
+  title: string;
+  price: number;
+  discount: number;
+  sameDevices: [
+    {
+      id: string;
+      value: string;
+    }
+  ];
+  sameMemories: [
+    {
+      id: string;
+      value: string;
+    }
+  ];
+  photoUris: [string];
+  presentation: [
+    {
+      text: string;
+      photoUri: string;
+    }
+  ];
+  specificationGroups: [
+    {
+      title: string;
+      specifications: [
+        {
+          title: string;
+          value: string;
+          descriptionExtra: string;
+          main: true;
+        }
+      ];
+    }
+  ];
+  recommendations: [
+    {
+      id: string;
+      title: string;
+      color: string;
+      mainPhotoUri: string;
+      review: {
+        rating: number;
+        countOfVotes: number;
+      };
+      price: number;
+      discount: number;
+      devicesWithSameColor: [
+        {
+          id: string;
+          value: string;
+        }
+      ];
+    }
+  ];
+  accessories: {
+    additionalProp1: [
+      {
+        id: string;
+        title: string;
+        color: string;
+        mainPhotoUri: string;
+        review: {
+          rating: number;
+          countOfVotes: number;
+        };
+        price: number;
+        discount: number;
+        devicesWithSameColor: [
+          {
+            id: string;
+            value: string;
+          }
+        ];
+      }
+    ];
+    additionalProp2: [
+      {
+        id: string;
+        title: string;
+        color: string;
+        mainPhotoUri: string;
+        review: {
+          rating: number;
+          countOfVotes: number;
+        };
+        price: number;
+        discount: number;
+        devicesWithSameColor: [
+          {
+            id: string;
+            value: string;
+          }
+        ];
+      }
+    ];
+    additionalProp3: [
+      {
+        id: string;
+        title: string;
+        color: string;
+        mainPhotoUri: string;
+        review: {
+          rating: number;
+          countOfVotes: number;
+        };
+        price: number;
+        discount: number;
+        devicesWithSameColor: [
+          {
+            id: string;
+            value: string;
+          }
+        ];
+      }
+    ];
+  };
+};
