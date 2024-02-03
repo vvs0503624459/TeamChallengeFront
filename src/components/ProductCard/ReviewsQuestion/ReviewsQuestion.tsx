@@ -23,11 +23,7 @@ import {
   ReviewAside,
   ReviewQuestionsWrap,
 } from "./ReviewsQuestion.styled";
-import {
-  ReviewStar,
-  QuestionTag,
-  ShowAllImages,
-} from "../../IconComponents/IconsCatalogue";
+import { ReviewStar, QuestionTag, ShowAllImages } from "../../IconComponents/IconsCatalogue";
 import ReviewFilter from "./ReviewFilter";
 import Reviews from "./Reviews";
 import Questions, { Question } from "./Questions";
@@ -69,7 +65,7 @@ const ReviewsQuestion = () => {
   const changeReviewOrQuestion = (value: boolean): void => {
     setReviewOrQuestion(value);
   };
- 
+
   const product = useAppSelector((state) => {
     return state.products.product;
   });
@@ -87,11 +83,7 @@ const ReviewsQuestion = () => {
         if (foundReview) {
           setReviews(foundReview);
           const allTags = Array.from(
-            new Set(
-              foundReview.flatMap(
-                (review: Review) => review.tags
-              ) as unknown as string[]
-            )
+            new Set(foundReview.flatMap((review: Review) => review.tags) as unknown as string[])
           );
           // console.log("All Tags:", allTags);
           setTags(allTags);
@@ -102,9 +94,7 @@ const ReviewsQuestion = () => {
         const responseQuestions = await fetch(jsonPathQuestions);
 
         const jsonQuestions = await responseQuestions.json();
-        const foundQuestion = jsonQuestions.filter(
-          (obj: Question) => obj.id === id
-        );
+        const foundQuestion = jsonQuestions.filter((obj: Question) => obj.id === id);
         if (foundQuestion) {
           setQuestions(foundQuestion);
         } else {
@@ -112,12 +102,10 @@ const ReviewsQuestion = () => {
         }
         if (foundReview || foundQuestion) {
           setComments((foundReview.length || 0) + (foundQuestion.length || 0));
-        };
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
-
-
     };
     fetchData();
   }, [id]);
@@ -209,13 +197,11 @@ const ReviewsQuestion = () => {
         <ReviewImagesBox showAllImages={showAllImages}>
           {reviews && (
             <>
-              {(
-                reviews.flatMap(
-                  (review: Review) => review.photosUri
-                ) as unknown as string[]
-              ).map((image: string, i: number) => (
-                <ReviewImagesContainer src={image} key={i} alt="item-photo" />
-              ))}
+              {(reviews.flatMap((review: Review) => review.photosUri) as unknown as string[]).map(
+                (image: string, i: number) => (
+                  <ReviewImagesContainer src={image} key={i} alt="item-photo" />
+                )
+              )}
             </>
           )}
         </ReviewImagesBox>
