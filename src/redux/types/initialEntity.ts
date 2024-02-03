@@ -24,18 +24,30 @@ export type MainProductState = {
   devices: DevicesState[];
 };
 
+// type Specifications = {
+//   descriptionExtra: null;
+//   main: boolean;
+//   title: string;
+//   value: string;
+// };
+
+// type SpecGtoups = {
+//   title: string;
+//   specifications: Specifications[];
+// };
+
 export type DevicesState = {
-      id: string;
-      title: string;
-      color: string;
-      mainPhotoUri: string;
-      review: {
-        rating: number;
-        countOfVotes: number;
-      };
-      price: number;
-      discount: number;
-      devicesWithSameColor: [];
+  id: string;
+  title: string;
+  color: string;
+  mainPhotoUri: string;
+  review: {
+    rating: number;
+    countOfVotes: number;
+  };
+  price: number;
+  discount: number;
+  devicesWithSameColor: [];
 };
 
 export type initialStateCatalogueType = {
@@ -64,126 +76,123 @@ export type CatalogueState = {
   ];
 };
 
-
 export type DeviceIdState = {
- id: string,
-  title: string,
-  price: number,
-  discount: number,
+  id: string;
+  title: string;
+  price: number;
+  discount: number;
   sameDevices: [
     {
-      id: string,
-      value: string
+      id: string;
+      value: string;
     }
-  ],
+  ];
   sameMemories: [
     {
-      id: string,
-      value: string
+      id: string;
+      value: string;
     }
-  ],
-  photoUris: [
-    string
-  ],
+  ];
+  photoUris: [string];
   presentation: [
     {
-      text: string,
-      photoUri: string
+      text: string;
+      photoUri: string;
     }
-  ],
+  ];
   specificationGroups: [
     {
-      title: string,
+      title: string;
       specifications: [
         {
-          title: string,
-          value: string,
-          descriptionExtra: string,
-          main: true
+          title: string;
+          value: string;
+          descriptionExtra: string;
+          main: true;
         }
-      ]
+      ];
     }
-  ],
+  ];
   recommendations: [
     {
-      id: string,
-      title: string,
-      color: string,
-      mainPhotoUri: string,
+      id: string;
+      title: string;
+      color: string;
+      mainPhotoUri: string;
       review: {
-        rating: number,
-        countOfVotes: number
-      },
-      price: number,
-      discount: number,
+        rating: number;
+        countOfVotes: number;
+      };
+      price: number;
+      discount: number;
       devicesWithSameColor: [
         {
-          id: string,
-          value: string
+          id: string;
+          value: string;
         }
-      ]
+      ];
     }
-  ],
+  ];
   accessories: {
     additionalProp1: [
       {
-        id: string,
-        title: string,
-        color: string,
-        mainPhotoUri: string,
+        id: string;
+        title: string;
+        color: string;
+        mainPhotoUri: string;
         review: {
-          rating: number,
-          countOfVotes: number
-        },
-        price: number,
-        discount: number,
+          rating: number;
+          countOfVotes: number;
+        };
+        price: number;
+        discount: number;
         devicesWithSameColor: [
           {
-            id: string,
-            value: string
+            id: string;
+            value: string;
           }
-        ]
+        ];
       }
-    ],
+    ];
     additionalProp2: [
       {
-        id: string,
-        title: string,
-        color: string,
-        mainPhotoUri: string,
+        id: string;
+        title: string;
+        color: string;
+        mainPhotoUri: string;
         review: {
-          rating: number,
-          countOfVotes: number
-        },
-        price: number,
-        discount: number,
+          rating: number;
+          countOfVotes: number;
+        };
+        price: number;
+        discount: number;
         devicesWithSameColor: [
           {
-            id: string,
-            value: string
+            id: string;
+            value: string;
           }
-        ]
+        ];
       }
-    ],
+    ];
     additionalProp3: [
       {
-        id: string,
-        title: string,
-        color: string,
-        mainPhotoUri: string,
+        id: string;
+        title: string;
+        color: string;
+        mainPhotoUri: string;
         review: {
-          rating: number,
-          countOfVotes: number
-        },
-        price: number,
-        discount: number,
+          rating: number;
+          countOfVotes: number;
+        };
+        price: number;
+        discount: number;
         devicesWithSameColor: [
           {
-            id: string,
-            value: string
+            id: string;
+            value: string;
           }
-        ]
+        ];
       }
-    ]
-  }
+    ];
+  };
 };
