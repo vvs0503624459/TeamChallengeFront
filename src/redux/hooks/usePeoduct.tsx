@@ -1,8 +1,8 @@
-import { useSelector } from "react-redux";
 import { selectCurrentProduct } from "../products/products.selectors";
+import { useAppSelector } from "../hooks";
 
 export const useProduct = () => {
   return {
-    currentProduct: useSelector(selectCurrentProduct),
+    currentProduct: useAppSelector(selectCurrentProduct),
   };
 };

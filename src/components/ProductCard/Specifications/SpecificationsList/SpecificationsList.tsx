@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { PropertyWrap, ListStyled, ItemStyled } from "./SpecificationsList.styled";
-import { DevicesState } from "../../../../redux/types/initialEntity";
+import { DeviceIdState } from "../../../../redux/types/initialEntity";
 import { nanoid } from "nanoid";
 import { DescriptionBtn } from "../DescriptionBtn/DescriptionBtn";
 
 interface SpecificationsListProps {
-  product: DevicesState;
+  product: DeviceIdState;
 }
 
 export const SpecificationsList: FC<SpecificationsListProps> = ({ product }) => {

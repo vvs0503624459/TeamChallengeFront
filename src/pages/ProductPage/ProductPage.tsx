@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { MainProductState } from "../../redux/types/initialEntity";
-import {
-  getMainDevises,
-  //  getDevisesByID
-} from "../../redux/products/products-operation";
+import { getDeviсesByID } from "../../redux/products/products-operation";
 
 import { useLocation, useParams } from "react-router-dom";
 import { Outlet } from "react-router-dom";
@@ -25,7 +22,8 @@ const ProductCard = () => {
   const { currentProduct } = useProduct();
 
   const location = useLocation();
-  const { devisesId } = useParams();
+  const { id: deviceId } = useParams();
+  // const deviceId: string = id!;
 
   const dispatch = useAppDispatch();
 
@@ -38,9 +36,9 @@ const ProductCard = () => {
   });
 
   useEffect(() => {
-    dispatch(getMainDevises());
-    // dispatch(getDevisesByID(devisesId));
-  }, [dispatch, devisesId]);
+    dispatch(getDeviсesByID({ id: deviceId! }));
+    // dispatch(getMainDevises());
+  }, [dispatch, deviceId]);
 
   return (
     <MainSection>
