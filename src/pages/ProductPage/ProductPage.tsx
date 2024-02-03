@@ -26,8 +26,8 @@ const ProductCard = () => {
   const { t } = useTranslation();
 
   const location = useLocation();
-  const { id } = useParams();
-  const deviceId: string = id!;
+  const { id: deviceId } = useParams();
+  // const deviceId: string = id!;
   // console.log("products/deviceId", deviceId);
   const dispatch = useAppDispatch();
 
