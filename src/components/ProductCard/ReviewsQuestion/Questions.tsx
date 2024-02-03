@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { SortType, useSorter } from "../../../redux/hooks/sorters";
 import {
   AnswerHr,
   AnswerItemWrap,
@@ -18,6 +19,7 @@ import {
 type Props = {
   // id: string | undefined;
   questions: Question[] | null;
+  currentSorter: SortType;
   // setQuestions: React.Dispatch<React.SetStateAction<Question[] | null>>;
 };
 export type Question = {
@@ -40,14 +42,15 @@ export type Question = {
   photosUri: string[];
 };
 
-const Questions = ({ questions }: Props) => {
+const Questions = ({ questions, currentSorter }: Props) => {
   // const [questions, setQuestions] = useState<Question[] | null>(null);
   const { t } = useTranslation();
+  const sorter = useSorter(currentSorter)
   return (
     <>
       {questions && (
         <>
-          {questions.map((obj: Question) => (
+          {questions.sort(sorter).map((obj: Question) => (
             <ReviewItemWrap key={obj.comment.id}>
               <ReviewHeaderFooterWrap>
                 <ReviewRateWrap>{obj.comment.userInfo}</ReviewRateWrap>

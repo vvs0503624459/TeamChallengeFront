@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
+export const CardWrap = styled.div`
+  display: flex;
+  flex-direction:column;
+  gap: 40px;
+`;
 export const CardItem = styled.div`
   display: flex;
   padding: 20px;

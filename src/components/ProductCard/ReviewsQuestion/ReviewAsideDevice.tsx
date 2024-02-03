@@ -3,7 +3,6 @@ import { useState } from "react";
 import { addProductToCart } from "../../../redux/products/cartReducer";
 import CartModal from "../../CartModal/CartModal";
 import { Cart } from "../../IconComponents/IconsCatalogue";
-import StarRating from "../../StarRating/StarRating";
 import {
   CardItem,
   MainProdImageDiv,
@@ -21,12 +20,14 @@ import {
   Comments,
   CardDivHeader,
   CardDivFooter,
+  CardWrap,
 } from "./ReviewProductCard.styled.tsx";
 import {
   DeviceIdState,
 } from "../../../redux/types/initialEntity";
 import { useAppDispatch } from "../../../redux/hooks";
 import ReviewCardSpecifications from "./ReviewCardSpecifications.tsx";
+import StarRating from "../../StarRating/StarRating.tsx";
 
 type Props = {
   id: string | undefined;
@@ -52,7 +53,7 @@ const ReviewAsideDevice = ({ comments, device }: Props) => {
   return (
     <>
       {device && (
-        <>
+        <CardWrap>
           <CardItem key={device.id}>
             <MainProdImageDiv>
               <MainProdIMG src={device.photoUris[0]} alt={device.title} />
@@ -62,7 +63,10 @@ const ReviewAsideDevice = ({ comments, device }: Props) => {
               <CardDivHeader>
                 <TitleLink to={`/product/${device.id}`}>{device.title}</TitleLink>
                 <StarsDiv>
-                  <StarRating />
+                  <StarRating
+                    size={20}
+                    rate={3}
+                    readonly={true} />
                   <Comments>
                     {comments && `(${comments})`}
                   </Comments>
@@ -89,7 +93,7 @@ const ReviewAsideDevice = ({ comments, device }: Props) => {
             handleClose={() => setIsOpenCartModal(false)}
           />
           <ReviewCardSpecifications device={device} />
-        </>
+        </CardWrap>
       )}
     </>
   );
