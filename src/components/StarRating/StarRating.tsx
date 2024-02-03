@@ -3,7 +3,14 @@ import { useState } from "react";
 
 import { Stars } from "./StarRating.styled";
 // import Rating from '@mui/material/Rating';
-const StarRating = () => {
+
+type Props = {
+  rate: number,
+  readonly: boolean,
+  size: number
+}
+
+const StarRating = ({rate, readonly, size }: Props) => {
   // let result = phone.map(({stars}) => {
 
   // });
@@ -12,7 +19,7 @@ const StarRating = () => {
 
   // Catch Rating value
 
-  const [rating, setRating] = useState(1);
+  const [rating, setRating] = useState(rate);
 
   // Catch Rating value
   const handleRating = (rate: number) => {
@@ -27,12 +34,13 @@ const StarRating = () => {
     console.log(value, index);
   return (
     <Stars
-      size={20}
+      size={size}
       initialValue={rating}
       onClick={handleRating}
       onPointerEnter={onPointerEnter}
       onPointerLeave={onPointerLeave}
       onPointerMove={onPointerMove}
+      readonly={readonly}
     />
   );
 };

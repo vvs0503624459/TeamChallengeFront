@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import StarRatingFixed from "../../StarRating/StarRatingFixed";
-import phone from "../../../data/phone.json";
+// import phone from "../../../data/phone.json";
 import {
   ButtonContainer,
   ButtonEmpty,
@@ -16,9 +15,9 @@ import {
   ReviewAsideContainer,
   ReviewMainContainer,
   Simulator,
-  StarsContainer,
+  // StarsContainer,
   StarsFormsWrap,
-  StarsNumber,
+  // StarsNumber,
   Tags,
   TagsWrap,
   ReviewAside,
@@ -53,6 +52,14 @@ import { useTranslation } from "react-i18next";
 import ReviewAsideDevice from "./ReviewAsideDevice";
 import { useAppSelector } from "../../../redux/hooks";
 import { DeviceIdState } from "../../../redux/types/initialEntity";
+import { SortType } from "../../../redux/hooks/sorters";
+// import StarRating from "../../StarRating/StarRating";
+
+// const style = {
+//   size: 20,
+// };
+
+
 const ReviewsQuestion = () => {
   const { id } = useParams<string>();
   const [tags, setTags] = useState<string[]>([]);
@@ -117,11 +124,17 @@ const ReviewsQuestion = () => {
 
   // console.log("products/ReviewAsideDevice", device);
 
+
   let device: DeviceIdState | undefined;
   if (product) {
     device = product;
   }
 
+  const [currentSorter, setCurrentSorter] = useState(SortType.DESCENDING_DATE);
+  // console.log("currentSorter/Review", currentSorter);
+  useEffect(() => {
+    setCurrentSorter(SortType.DESCENDING_DATE);
+  }, [reviewOrQuestion]);
   const [comments, setComments] = useState(null);
   const [showAllImages, setShowAllImages] = useState(true);
   const changeShowAllImages = () => {
@@ -140,15 +153,16 @@ const ReviewsQuestion = () => {
   return (
     <>
       <StarsFormsWrap>
-        <StarsContainer>
+        {/* <StarsContainer>
           <StarsNumber>
             {phone.find((item) => item.id === id)!.stars}
           </StarsNumber>
-          <StarRatingFixed
-            rating={Number(phone.find((item) => item.id === id)!.stars)}
+          <StarRating
+            rate={+phone.find((item) => item.id === id)!.stars}
+            size={20}
             readonly={true}
           />
-        </StarsContainer>
+        </StarsContainer> */}
         <ButtonContainer>
           <ButtonEmpty>
             <QuestionTag />
@@ -212,14 +226,15 @@ const ReviewsQuestion = () => {
           <ReviewAsideDevice id={id} comments={comments} device={device} />
         </ReviewAside>
         <ReviewMainContainer>
-          <ReviewFilter />
+          <ReviewFilter setCurrentSorter={setCurrentSorter} reviewOrQuestion={reviewOrQuestion} />
           <ReviewQuestionsWrap reviewOrQuestion={reviewOrQuestion}>
-            <Reviews reviews={reviews} />
+            <Reviews reviews={reviews} currentSorter={currentSorter} />
           </ReviewQuestionsWrap>
           <ReviewQuestionsWrap reviewOrQuestion={!reviewOrQuestion}>
             <Questions
               // id={id}
               questions={questions}
+              currentSorter={currentSorter}
             />
           </ReviewQuestionsWrap>
         </ReviewMainContainer>

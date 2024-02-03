@@ -13,11 +13,11 @@ export const getMainDevises = createAsyncThunk<MainProductState[]>(
   "devices/main-page",
   async () => {
     try {
-      const response = await axios.get("/api/v1/devices/main-page");
-      console.log("devices/main-page", response.data);
+      const {data} = await axios.get("/api/v1/devices/main-page");
+      // console.log("devices/main-page", response.data);
       // const catalogue: CatalogueState[] = response.data
       // return catalogue
-      return response.data as MainProductState[];
+      return data;
     } catch (error) {
       console.log('error', error)
       throw error
@@ -30,9 +30,9 @@ export const getDevises = createAsyncThunk<MainProductState[]>(
   async () => {
     try {
       // помилка у шляху "/api/v1/deviCes"
-      const response = await axios.get("/api/v1/devises");
-      console.log("devises/", response.data);
-      return response.data as MainProductState[];
+      const {data} = await axios.get("/api/v1/devises");
+      // console.log("devises/", response.data);
+      return data;
     } catch (error) {
       console.log('error', error)
       throw error
@@ -44,9 +44,9 @@ export const getDeviсesByID = createAsyncThunk<DeviceIdState, InPayload>(
   "devices/byid",
   async (payload, thunkAPI) => {
     try {
-      const response = await axios.get(`/api/v1/devices/${payload.id}`);
-      console.log("devices/byid", response.data);
-      return response.data as DeviceIdState;
+      const {data} = await axios.get(`/api/v1/devices/${payload.id}`);
+
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }

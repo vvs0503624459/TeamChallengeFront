@@ -55,10 +55,12 @@ const ProductCard = () => {
         <div>
           {general
             .filter((obj) => obj.id === deviceId)
-            .map(({ maintitle, comments }) => (
+            .map(({ maintitle, comments, stars }) => (
               <div key={deviceId}>
                 <h1>{maintitle}</h1>
-                <StarRating />
+                <StarRating size={32}
+                  rate={+stars}
+                  readonly={false} />
                 <p>{comments}</p>
               </div>
             ))}

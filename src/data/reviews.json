@@ -1,17 +1,17 @@
 [{
   "id": "6595a351cb91ce11f98cbe17",
-  "rating": 5,
+  "rating": 3,
   "pluses": "The best phone to take pictures on the market. Battery, service, works all day. Stunning performance!",
   "minuses": "Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot outside.",
   "comment": {
     "id": "6595a351cb91ce11f9cbe17Daria",
     "message": "Just received a phone. The A15 chip makes it super fast, and the camera is unreal! Love how it performs in low light. The sleek design is a head-turner. Battery life seems solid too. So far, it's exceeding my expectations. Impressed! 👍",
-    "creatingDate": "2 days ago",
+    "creatingDate": "18.01.2023",
     "userInfo": "Daria",
     "answer": ""
   },
   "tags": [
-    "Relevance", "Newest", "Best"
+    "Impressed", "Long battery life", "Expensive"
   ],
   "photosUri": [
     "/testImg.png","/testImg.png"
@@ -21,18 +21,18 @@
 },
 {
   "id": "6595a351cb91ce11f98cbe17",
-  "rating": 5,
+  "rating": 4,
   "pluses": "The best phone to take pictures on the market. Battery, service, works all day. Stunning performance!",
   "minuses": "Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot outside.",
   "comment": {
     "id": "6595a351cb91e11f98cbe17Sashko M.",
     "message": "Gaming on this phone is unmatched! A15 chip rocks for seamless play, stunning visuals. Camera excels in any light. Sleek design, long battery. Best gaming performance, but the phone itself could cost less.",
-    "creatingDate": "2 days ago",
+    "creatingDate": "10.01.2024",
     "userInfo": "Sashko M.",
     "answer": ""
   },
   "tags": [
-    "Relevance", "Newest", "Best"
+    "Powerful processor", "Long battery life"
   ],
   "photosUri": [
     "/testImg.png","/testImg.png", "/testImg.png"
@@ -42,14 +42,14 @@
 },
 {
   "id": "6595a351cb91ce11f98cbe17",
-  "rating": 5,
+  "rating": 2,
   "pluses": "The best phone to take pictures on the market. Battery, service, works all day. Stunning performance!",
   "minuses": "Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot outside.",
   "comment": {
-    "id": "6595a351cb9ce11f98cbe17Misha",
+    "id": "6595a351cb9ce11f98cbe17Grisha",
     "message": "Gaming on this phone is unmatched! A15 chip rocks for seamless play, stunning visuals. Camera excels in any light. Sleek design, long battery. Best gaming performance, but the phone itself could cost less.",
-    "creatingDate": "2 days ago",
-    "userInfo": "Misha",
+    "creatingDate": "09.01.2024",
+    "userInfo": "Grisha",
     "answer": "Hi Misha. Programs running in the background can consume processing power and cause the device to heat up. Close any unnecessary programs or processes."
   },
   "tags": [
@@ -62,18 +62,18 @@
 },
 {
   "id": "6595a351cb91ce11f98cbe17",
-  "rating": 5,
+  "rating": 1,
   "pluses": "The best phone to take pictures on the market. Battery, service, works all day. Stunning performance!",
   "minuses": "Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot outside.",
   "comment": {
-    "id": "6595a351cb91ce11f98cbe17Daria",
+    "id": "6595a351cb91ce11f98cbe17Tanya",
     "message": "Just received a phone. The A15 chip makes it super fast, and the camera is unreal! Love how it performs in low light. The sleek design is a head-turner. Battery life seems solid too. So far, it's exceeding my expectations. Impressed! 👍",
-    "creatingDate": "2 days ago",
-    "userInfo": "Daria",
+    "creatingDate": "06.01.2024",
+    "userInfo": "Tanya",
     "answer": ""
   },
   "tags": [
-    "Relevance", "Newest", "Best"
+    "Powerful processor", "Expensive"
   ],
   "photosUri": [
     "/testImg.png","/testImg.png"
@@ -87,14 +87,14 @@
   "pluses": "The best phone to take pictures on the market. Battery, service, works all day. Stunning performance!",
   "minuses": "Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot outside.",
   "comment": {
-    "id": "6595a351cb91ce11f98cbe17Sashko M.",
+    "id": "6595a351cb91ce11f98cbe17Gric",
     "message": "Gaming on this phone is unmatched! A15 chip rocks for seamless play, stunning visuals. Camera excels in any light. Sleek design, long battery. Best gaming performance, but the phone itself could cost less.",
-    "creatingDate": "2 days ago",
-    "userInfo": "Sashko M.",
+    "creatingDate": "09.01.2024",
+    "userInfo": "Gric",
     "answer": ""
   },
   "tags": [
-    "Relevance", "Newest", "Best"
+    "Hot easily", "Fast response"
   ],
   "photosUri": [
     "/testImg.png","/testImg.png", "/testImg.png"
@@ -104,18 +104,18 @@
 },
 {
   "id": "6595a351cb91ce11f98cbe17",
-  "rating": 5,
+  "rating": 4,
   "pluses": "The best phone to take pictures on the market. Battery, service, works all day. Stunning performance!",
   "minuses": "Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot outside.",
   "comment": {
-    "id": "6595a351cb91ce11f98cbe17Misha",
+    "id": "6595a351cb91ce11f98cbe17Tisha",
     "message": "Gaming on this phone is unmatched! A15 chip rocks for seamless play, stunning visuals. Camera excels in any light. Sleek design, long battery. Best gaming performance, but the phone itself could cost less.",
-    "creatingDate": "2 days ago",
-    "userInfo": "Misha",
+    "creatingDate": "09.01.2024",
+    "userInfo": "Tisha",
     "answer": "Hi Misha. Programs running in the background can consume processing power and cause the device to heat up. Close any unnecessary programs or processes."
   },
   "tags": [
-    "Relevance", "Newest", "Best"
+    "Quality camera", "Not convenient "
   ],
   "photosUri": [
   ],
@@ -128,14 +128,14 @@
   "pluses": "The best phone to take pictures on the market. Battery, service, works all day. Stunning performance!",
   "minuses": "Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot outside.",
   "comment": {
-    "id": "6595a351cb91ce1f98cbe17Daria",
+    "id": "6595a351cb91ce1f98cbe17Pasha",
     "message": "Just received a phone. The A15 chip makes it super fast, and the camera is unreal! Love how it performs in low light. The sleek design is a head-turner. Battery life seems solid too. So far, it's exceeding my expectations. Impressed! 👍",
-    "creatingDate": "2 days ago",
-    "userInfo": "Daria",
+    "creatingDate": "20.12.2023",
+    "userInfo": "Pasha",
     "answer": ""
   },
   "tags": [
-    "Relevance", "Newest", "Best"
+    "Recommendation", "Powerful processor", "Modern look", "Fast response"
   ],
   "photosUri": ["/testImg.png", "/testImg.png", "/testImg.png", "/testImg.png", "/testImg.png"],
   "countOfLikes": 2,
@@ -143,14 +143,14 @@
 },
 {
   "id": "6595a351cb91ce11f98cbe17",
-  "rating": 5,
+  "rating": 2,
   "pluses": "The best phone to take pictures on the market. Battery, service, works all day. Stunning performance!",
   "minuses": "Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot outside.",
   "comment": {
-    "id": "6595a351cb91c11f98cbe17Sashko M.",
+    "id": "6595a351cb91c11f98cbe17Tolik",
     "message": "Gaming on this phone is unmatched! A15 chip rocks for seamless play, stunning visuals. Camera excels in any light. Sleek design, long battery. Best gaming performance, but the phone itself could cost less.",
-    "creatingDate": "2 days ago",
-    "userInfo": "Sashko M.",
+    "creatingDate": "20.12.2023",
+    "userInfo": "Tolik",
     "answer": ""
   },
   "tags": [
@@ -164,21 +164,22 @@
 },
 {
   "id": "6595a351cb91ce11f98cbe17",
-  "rating": 5,
+  "rating": 1,
   "pluses": "The best phone to take pictures on the market. Battery, service, works all day. Stunning performance!",
   "minuses": "Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot outside.",
   "comment": {
     "id": "6595a351cb9ce11f98cbe17Misha",
     "message": "Gaming on this phone is unmatched! A15 chip rocks for seamless play, stunning visuals. Camera excels in any light. Sleek design, long battery. Best gaming performance, but the phone itself could cost less.",
-    "creatingDate": "2 days ago",
+    "creatingDate": "01.02.2024",
     "userInfo": "Misha",
     "answer": "Hi Misha. Programs running in the background can consume processing power and cause the device to heat up. Close any unnecessary programs or processes."
   },
   "tags": [
-    "Relevance", "Newest", "Best"
+    
   ],
   "photosUri": [
   ],
   "countOfLikes": 1,
   "countOfDislikes": 0
 }]
+
