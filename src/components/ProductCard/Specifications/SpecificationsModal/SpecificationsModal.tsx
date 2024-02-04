@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
 import { Modal, Overlay } from "./SpecificationsModal.styled";
-import iconsSprite from "../../../../assets/iconsSprite.svg";
+import iconsSprite from "@/assets/iconsSprite.svg";
 
 interface SpecificationsModalProps {
   isModalOpen: boolean;
