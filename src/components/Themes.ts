@@ -17,9 +17,15 @@ export const lightTheme = {
   SecondaryExoticPink: "#E8467C",
   TritiaryLightestGray: "#F2F4FA",
   SecondaryToxicGreen: "#26DAC4",
+  SecondaryCalmOrange: "#FA7E47",
+
   //hover-focus
 
   SecondaryDarkPurple: "#4117AD",
+
+  animation: {
+    cubicBezier: "cubic-bezier(0.4, 0, 0.2, 1)",
+  },
 };
 
 // background: ${({ theme }) => theme.TritiaryLightestGray};

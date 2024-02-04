@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 import { getMainDevises, getDevises, getDeviсesByID } from "./products-operation";
 
-import { initialStateProductType } from "../types/initialEntity";
+import { DeviceIdState, initialStateProductType } from "../types/initialEntity";
 
 const initialState: initialStateProductType = {
   productsList: [],
@@ -22,7 +22,7 @@ export const productsSlice = createSlice({
       .addCase(getDevises.fulfilled, (state, action) => {
         state.productsList = action.payload;
       })
-      .addCase(getDeviсesByID.fulfilled, (state, action) => {
+      .addCase(getDeviсesByID.fulfilled, (state, action: PayloadAction<DeviceIdState>) => {
         state.product = action.payload;
       });
   },
