@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const ButtonsBuyWrap = styled.div`
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  gap: 20px;
 `;
 
 export const BtnWrap = styled.div`
   width: 540px;
+  height: 96px;
+  align-content: space-between;
   display: flex;
   padding: 20px;
   justify-content: space-between;
@@ -159,6 +161,11 @@ export const IconsWrap = styled.div`
   align-items: center;
   justify-content: center;
   gap: 24px;
+`;
+
+export const HartButton = styled.button`
+  border: none;
+  background-color: transparent;
 `;
 
 export const HartIcon = styled.svg`

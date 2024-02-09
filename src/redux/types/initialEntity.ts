@@ -76,6 +76,18 @@ export type CatalogueState = {
   ];
 };
 
+type SpecificationsItem = {
+  title: string;
+  value: string;
+  descriptionExtra: string;
+  main: true;
+};
+
+type SpecificationsGroupItem = {
+  title: string;
+  specifications: SpecificationsItem[];
+};
+
 export type DeviceIdState = {
   id: string;
   title: string;
@@ -100,19 +112,7 @@ export type DeviceIdState = {
       photoUri: string;
     }
   ];
-  specificationGroups: [
-    {
-      title: string;
-      specifications: [
-        {
-          title: string;
-          value: string;
-          descriptionExtra: string;
-          main: true;
-        }
-      ];
-    }
-  ];
+  specificationGroups: SpecificationsGroupItem[];
   recommendations: [
     {
       id: string;
