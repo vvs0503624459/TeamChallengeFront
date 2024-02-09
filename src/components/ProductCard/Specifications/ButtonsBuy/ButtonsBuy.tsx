@@ -7,6 +7,7 @@ import {
   ChevronRightIcon,
   CompareIcon,
   Discount,
+  HartButton,
   HartIcon,
   IconsContainer,
   IconsWrap,
@@ -20,9 +21,33 @@ import iconsSprite from "@/assets/iconsSprite.svg";
 import pumb from "@/assets/bank_pumb.png";
 import abank from "@/assets/bank_abank.png";
 import { useProduct } from "@/redux/hooks/usePeoduct";
+import { useState } from "react";
+import { DeviceIdState } from "@/redux/types/initialEntity";
+// import { DeviceIdState } from "@/redux/types/initialEntity";
 
 export const ButtonsBuy = () => {
   const { currentProduct } = useProduct();
+  const [isFavoriteProduct, setIsFavoriteProduct] = useState<boolean>(false);
+
+  const handleHartBtn = (): void => {
+    const favoriteProduct = JSON.parse(localStorage.getItem("favoriteProducts") || "''");
+    if (!isFavoriteProduct) {
+      localStorage.setItem(
+        "favoriteProducts",
+        JSON.stringify([...favoriteProduct, currentProduct])
+      );
+      setIsFavoriteProduct(true);
+      return;
+    }
+    if (currentProduct) {
+      const index = favoriteProduct.findIndex(
+        (product: DeviceIdState) => product.id === currentProduct.id
+      );
+      favoriteProduct.splice(index, 1);
+      localStorage.setItem("favoriteProducts", JSON.stringify(favoriteProduct));
+    }
+    return;
+  };
 
   return (
     <ButtonsBuyWrap>
@@ -44,9 +69,11 @@ export const ButtonsBuy = () => {
         )}
         <IconsContainer>
           <IconsWrap>
-            <HartIcon>
-              <use href={iconsSprite + "#icon-heart"}></use>
-            </HartIcon>
+            <HartButton type="button" onClick={handleHartBtn}>
+              <HartIcon>
+                <use href={iconsSprite + "#icon-heart"}></use>
+              </HartIcon>
+            </HartButton>
             <CompareIcon>
               <use href={iconsSprite + "#icon-compare"}></use>
             </CompareIcon>

@@ -1,7 +1,27 @@
 import { createGlobalStyle } from "styled-components";
 import "modern-normalize";
+import InterRegular from "./fonts/Inter-Regular.ttf";
+import InterMedium from "./fonts/Inter-Medium.ttf";
+import InterSemiBold from "./fonts/Inter-SemiBold.ttf";
+import InterBold from "./fonts/Inter-Bold.ttf";
+
+export function fontFace(name: string, src: string, fontWeight = 400, fontStyle = "normal") {
+  return `
+      @font-face{
+          font-family: ${name};
+          src: url(${src}) format("truetype");
+          font-style: ${fontStyle};
+          font-weight: ${fontWeight};
+      }
+  `;
+}
 
 export const GlobalStyle = createGlobalStyle`
+	${fontFace("InterRegular", InterRegular)}
+	${fontFace("InterMedium", InterMedium, 500)}
+	${fontFace("InterSemiBold", InterSemiBold, 600)}
+	${fontFace("InterBold", InterBold, 700)}
+
 	*,
 	*::before,
 	*::after {
@@ -9,10 +29,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	font-family: 'Roboto', sans-serif;
-	font-style: normal;
-	font-weight: 400;
+  font-family: 'InterRegular';
   margin: 0;
   background-color: ${(props) => props.theme.PrimaryWhite};
   color: ${(props) => props.theme.PrimaryBlack};
