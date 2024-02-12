@@ -4,39 +4,40 @@ import Fade from "@mui/material/Fade";
 import { IoClose } from "react-icons/io5";
 import { Box } from "@mui/material";
 
-import { CloseBtn } from "./Modal.styled";
+import { CloseButton } from "./Modal.styled";
 
 type Props = {
   children: React.ReactNode;
   isOpen: boolean;
   handleClose: () => void;
   style: object;
-  // visible: boolean;
   // hideBackdrop: boolean;
 };
 
-const Modal = ({ children, isOpen, style, handleClose }: Props) => {
+const OtherModal = ({ children, isOpen,  style, handleClose }: Props) => {
   return (
     <MuiModal
-    open={isOpen}
-    onClose={handleClose}
-    closeAfterTransition
-    slots={{ backdrop: Backdrop }}
-    slotProps={{
-      backdrop: {
-        timeout: 500,
-      },
-    }}
+      open={isOpen}
+      onClose={handleClose}
+      closeAfterTransition
+      // hideBackdrop
+      slots={{ backdrop: Backdrop }}
+      slotProps={{
+        backdrop: {
+          timeout: 500,
+          style: { background: "transparent" },
+        },
+      }}
     >
       <Fade in={isOpen} style={style}>
         <Box style={style}>
-          <CloseBtn onClick={handleClose}>
+          <CloseButton onClick={handleClose}>
             <IoClose size={32} />
-          </CloseBtn>
+          </CloseButton>
           {children}
         </Box>
       </Fade>
     </MuiModal>
   );
 };
-export default Modal;
+export default OtherModal;

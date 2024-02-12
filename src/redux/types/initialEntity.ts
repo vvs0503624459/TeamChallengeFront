@@ -3,6 +3,7 @@ export type initialStateAuthType = {
   token: string;
   isLoggedIn: boolean;
   isRefreshing: boolean;
+  isSubscribed: boolean;
 };
 
 export type AuthUserState = {

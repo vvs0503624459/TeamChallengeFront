@@ -17,13 +17,13 @@ const style = {
 };
 
 const HeaderCatalogueModal = ({ isOpen, handleClose }: ModalProps) => {
-  const visibles = false;
+  // const visibles = false;
   return (
     <Modal
       isOpen={isOpen}
       handleClose={handleClose}
       style={style}
-      visible={visibles}
+      // visible={visibles}
     >
       <MenuCatalogueList />
     </Modal>

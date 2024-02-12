@@ -39,7 +39,7 @@ const Home = () => {
     return state.products.productsList;
   });
 
-  console.log("devices/main-page", mainProduct);
+  // console.log("devices/main-page", mainProduct);
 
   return (
     <MainSection>

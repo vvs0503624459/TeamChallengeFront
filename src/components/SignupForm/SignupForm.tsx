@@ -49,10 +49,14 @@ const initialValues: MyFormValues = {
 const schema = Yup.object().shape({
   firstname: Yup.string()
     .min(3)
+    .trim()
+    .strict(true)
     .required("Name is required")
     .required("Name is required"),
     lastname: Yup.string()
     .min(3)
+    .trim()
+    .strict(true)
     .required("Surname is required")
     .required("Surname is required"),
     phoneNumber: Yup.string()
@@ -71,6 +75,8 @@ const schema = Yup.object().shape({
     .required("Email is required"),
   password: Yup.string()
     .min(6, "Password must be at least 6 characters long")
+    .trim()
+    .strict(true)
     .required("Password is required")
     .matches(/[a-zA-Z]/, "Password must contain at least one letter")
     .matches(/[0-9]/, "Password must contain at least one number"),
