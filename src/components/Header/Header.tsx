@@ -87,6 +87,9 @@ const Header = () => {
             <OpenModalButton onClick={handleToggleUserModal}>
               <User />
             </OpenModalButton>
+            <IconsLink to="/">
+              <Compare />
+            </IconsLink>
             <IconsLink to="/#">
               <NotLike />
               <LikesCounter
@@ -100,9 +103,6 @@ const Header = () => {
                 {/* {Object.keys(Likes).length} */}
                 {Object.values(Likes).filter((value) => value === true).length}
               </LikesCounter>
-            </IconsLink>
-            <IconsLink to="/">
-              <Compare />
             </IconsLink>
             <IconsLink to="/cart">
               <Cart style={style} />

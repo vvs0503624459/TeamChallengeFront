@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import StarRatingFixed from "../../StarRating/StarRatingFixed";
-import phone from "../../../data/phone.json";
+// import phone from "../../../data/phone.json";
 import {
   ButtonContainer,
   ButtonEmpty,
@@ -16,24 +15,18 @@ import {
   ReviewAsideContainer,
   ReviewMainContainer,
   Simulator,
-  StarsContainer,
+  // StarsContainer,
   StarsFormsWrap,
-  StarsNumber,
+  // StarsNumber,
   Tags,
   TagsWrap,
   ReviewAside,
   ReviewQuestionsWrap,
-} from "./ReviewsQuestionstyled";
-import {
-  ReviewStar,
-  Question,
-  ShowAllImages,
-} from "../../IconComponents/IconsCatalogue";
+} from "./ReviewsQuestion.styled";
+import { ReviewStar, QuestionTag, ShowAllImages } from "../../IconComponents/IconsCatalogue";
 import ReviewFilter from "./ReviewFilter";
 import Reviews from "./Reviews";
-import Questions from "./Questions";
-// https://run.mocky.io/v3/6f3be700-72d1-46f3-9b3e-4e3a832c8a9f
-// https://designer.mocky.io/manage/delete/6f3be700-72d1-46f3-9b3e-4e3a832c8a9f/IMvtgVX3J9gcGVLF4EINejOZRE7ZCVoz0QgQ
+import Questions, { Question } from "./Questions";
 export type Review = {
   id: string;
   rating: number;
@@ -51,23 +44,37 @@ export type Review = {
   countOfLikes: number;
   countOfDislikes: number;
 };
-// type Props = {
-//   reviewOrQuestion: boolean;
-//   changeReviewOrQuestion: (value: boolean) => void;
-// };
 import { useTranslation } from "react-i18next";
-// import { useAppSelector } from "../../../redux/hooks";
+import ReviewAsideDevice from "./ReviewAsideDevice";
+import { useAppSelector } from "../../../redux/hooks";
+import { DeviceIdState } from "../../../redux/types/initialEntity";
+import { SortType } from "../../../redux/hooks/sorters";
+// import StarRating from "../../StarRating/StarRating";
+
+// const style = {
+//   size: 20,
+// };
+
+
 const ReviewsQuestion = () => {
-  const { id } = useParams();
+  const { id } = useParams<string>();
   const [tags, setTags] = useState<string[]>([]);
   const [reviews, setReviews] = useState<Review[] | null>(null);
-  // const [reviewOrQuestion, setReviewOrQuestion] =
-  // const [newReview, setNewReview] = useState<Review>([]);
+  const [questions, setQuestions] = useState<Question[] | null>(null);
+  const [reviewOrQuestion, setReviewOrQuestion] = useState(true);
+  const changeReviewOrQuestion = (value: boolean): void => {
+    setReviewOrQuestion(value);
+  };
+
+  const product = useAppSelector((state) => {
+    return state.products.product;
+  });
+  // console.log("products/ReviewAsideDevice", product);
   useEffect(() => {
     const fetchData = async () => {
       try {
         // const jsonPath =
-        //   "https://run.mocky.io/v3/6f3be700-72d1-46f3-9b3e-4e3a832c8a9f";
+        //   `https://team-chalenge.onrender.com/api/v1/reviews/${id}`;
         const jsonPath = "../../src/data/reviews.json";
         const response = await fetch(jsonPath);
 
@@ -76,16 +83,25 @@ const ReviewsQuestion = () => {
         if (foundReview) {
           setReviews(foundReview);
           const allTags = Array.from(
-            new Set(
-              foundReview.flatMap(
-                (review: Review) => review.tags
-              ) as unknown as string[]
-            )
+            new Set(foundReview.flatMap((review: Review) => review.tags) as unknown as string[])
           );
           // console.log("All Tags:", allTags);
           setTags(allTags);
         } else {
           console.warn(`Review with id ${id} not found.`);
+        }
+        const jsonPathQuestions = "../../src/data/questions.json";
+        const responseQuestions = await fetch(jsonPathQuestions);
+
+        const jsonQuestions = await responseQuestions.json();
+        const foundQuestion = jsonQuestions.filter((obj: Question) => obj.id === id);
+        if (foundQuestion) {
+          setQuestions(foundQuestion);
+        } else {
+          console.warn(`Question with id ${id} not found.`);
+        }
+        if (foundReview || foundQuestion) {
+          setComments((foundReview.length || 0) + (foundQuestion.length || 0));
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -93,38 +109,56 @@ const ReviewsQuestion = () => {
     };
     fetchData();
   }, [id]);
-  // console.log(reviews);
-  const [reviewOrQuestion, setReviewOrQuestion] = useState(true);
 
-  const changeReviewOrQuestion = (value: boolean): void => {
-    setReviewOrQuestion(value);
-  };
+  // console.log("products/ReviewAsideDevice", device);
+
+
+  let device: DeviceIdState | undefined;
+  if (product) {
+    device = product;
+  }
+
+  const [currentSorter, setCurrentSorter] = useState(SortType.DESCENDING_DATE);
+  // console.log("currentSorter/Review", currentSorter);
+  useEffect(() => {
+    setCurrentSorter(SortType.DESCENDING_DATE);
+  }, [reviewOrQuestion]);
+  const [comments, setComments] = useState(null);
   const [showAllImages, setShowAllImages] = useState(true);
-
   const changeShowAllImages = () => {
     setShowAllImages((state) => !state);
   };
-  const { t} = useTranslation();
-  // const language = useAppSelector((state) => state.languageState) ;
+  const { t } = useTranslation();
+  // let comments: number | null;
+  //       if (reviews || questions) {
+  //   comments = (reviews.length || 0 ) + (questions.length || 0 );
+  // };
+
+  // const comments: number = (reviews.length || questions.length) ? (reviews.length || 0 ) + (questions.length || 0 ) : undefined ;
+  // console.log("Total_comments:", comments);
+  //   console.log("Total_reviews:", reviews);
+  //     console.log("Total_questions:", questions);
   return (
     <>
       <StarsFormsWrap>
-        <StarsContainer>
+        {/* <StarsContainer>
           <StarsNumber>
             {phone.find((item) => item.id === id)!.stars}
           </StarsNumber>
-          <StarRatingFixed
-            rating={Number(phone.find((item) => item.id === id)!.stars)}
+          <StarRating
+            rate={+phone.find((item) => item.id === id)!.stars}
+            size={20}
+            readonly={true}
           />
-        </StarsContainer>
+        </StarsContainer> */}
         <ButtonContainer>
           <ButtonEmpty>
-            <Question />
-            {t('Ask a Question')}
+            <QuestionTag />
+            {t("Ask a Question")}
           </ButtonEmpty>
           <ButtonFilled>
             <ReviewStar />
-            {t('Leave a Review')}
+            {t("Leave a Review")}
           </ButtonFilled>
         </ButtonContainer>
       </StarsFormsWrap>
@@ -142,47 +176,52 @@ const ReviewsQuestion = () => {
           reviewOrQuestion={reviewOrQuestion}
           onClick={() => changeReviewOrQuestion(true)}
         >
-          {t('Reviews')} ({reviews && (reviews.length)})
+          {t("Reviews")} ({reviews && reviews.length})
         </ButtonTitle>
         <ButtonTitle
           reviewOrQuestion={reviewOrQuestion ? false : true}
           onClick={() => changeReviewOrQuestion(false)}
         >
-          {t('Questions')} (12)
+          {t("Questions")} ({questions && questions.length})
         </ButtonTitle>
         <Simulator></Simulator>
       </ButtonTitlesContainer>
       <ReviewImagesWrap reviewOrQuestion={reviewOrQuestion}>
         <ReviewImagesTitleWrap>
-          <ReviewImagesHeader>Reviews with images</ReviewImagesHeader>
+          <ReviewImagesHeader>{t("Reviews with images")}</ReviewImagesHeader>
           <ButtonEmpty onClick={changeShowAllImages}>
             <ShowAllImages />
-            Show All
+            {t("Show All")}
           </ButtonEmpty>
         </ReviewImagesTitleWrap>
         <ReviewImagesBox showAllImages={showAllImages}>
           {reviews && (
             <>
-              {(
-                reviews.flatMap(
-                  (review: Review) => review.photosUri
-                ) as unknown as string[]
-              ).map((image: string, i: number) => (
-                <ReviewImagesContainer src={image} key={i} alt="item-photo" />
-              ))}
+              {(reviews.flatMap((review: Review) => review.photosUri) as unknown as string[]).map(
+                (image: string, i: number) => (
+                  <ReviewImagesContainer src={image} key={i} alt="item-photo" />
+                )
+              )}
             </>
           )}
         </ReviewImagesBox>
       </ReviewImagesWrap>
       <ReviewAsideContainer>
-        <ReviewAside></ReviewAside>
+        <ReviewAside>
+          {/* <ReviewAsideDevice id={id} comments={(reviews && reviews.length) + (questions && questions.length)} /> */}
+          <ReviewAsideDevice id={id} comments={comments} device={device} />
+        </ReviewAside>
         <ReviewMainContainer>
-          <ReviewFilter />
+          <ReviewFilter setCurrentSorter={setCurrentSorter} reviewOrQuestion={reviewOrQuestion} />
           <ReviewQuestionsWrap reviewOrQuestion={reviewOrQuestion}>
-            <Reviews reviews={reviews} />
+            <Reviews reviews={reviews} currentSorter={currentSorter} />
           </ReviewQuestionsWrap>
           <ReviewQuestionsWrap reviewOrQuestion={!reviewOrQuestion}>
-            <Questions questions={reviews} />
+            <Questions
+              // id={id}
+              questions={questions}
+              currentSorter={currentSorter}
+            />
           </ReviewQuestionsWrap>
         </ReviewMainContainer>
       </ReviewAsideContainer>

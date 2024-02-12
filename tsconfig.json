@@ -1,9 +1,15 @@
 {
   "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./public",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "target": "ES2020",
-     "types": ["history"],
+    "types": ["history"],
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2020", "DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -21,6 +27,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+  "typeRoots": ["types", "node_modules/@types"],
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "6595a351cb91ce11f98cbe17",
+
+    "comment": {
+      "id": "6595a351cb91ce11f98cbe17_questions_Oleksii",
+      "message": "What are the key improvements and new features in the iPhone 14 Pro Max compared to the previous models?",
+      "creatingDate": "10.01.2024",
+      "userInfo": "Oleksii",
+      "answer": {
+        "id": "6595a351cb91ce11f98cbe17",
+
+        "comment": {
+          "id": "6595a351cb91ce11f98cbe17_questions_Oleksii_reply_TechEase Representative",
+          "message": "Hi Oleksii, the iPhone 14 Pro Max brings several exciting upgrades over its predecessors.One notable improvement is the enhanced camera system, featuring advanced computational photography and better low-light performance, allowing you to capture stunning photos and videos even in challenging conditions. The display quality has also been enhanced with improved brightness and color accuracy, providing a more immersive viewing experience. Additionally, the iPhone 14 Pro Max boasts a more powerful processor, resulting in faster performance for multitasking, gaming, and app usage.The device also supports the latest connectivity standards, ensuring you're ready for future network advancements.Overall, the iPhone 14 Pro Max offers a compelling blend of cutting-edge technology and user-friendly features for a top-tier smartphone experience.",
+          "creatingDate": "10.01.2024",
+          "userInfo": "TechEase Representative",
+          "answer": {}
+        },
+
+        "photosUri": ["/testImg.png", "/testImg.png", "/testImg.png"]
+      }
+    },
+
+    "photosUri": ["/testImg.png", "/testImg.png"]
+  },
+
+  {
+    "id": "6595a351cb91ce11f98cbe17",
+
+    "comment": {
+      "id": "6595a351cb91ce11f98cbe17_questions_Olena",
+      "message": "What are my options for receiving the product? Can you provide details about the delivery methods available for this phone?",
+      "creatingDate": "18.12.2023",
+      "userInfo": "Olena",
+      "answer": {
+        "id": "6595a351cb91ce11f98cbe17",
+
+        "comment": {
+          "id": "6595a351cb91ce11f98cbe17_questions_Olena_reply_TechEase Representative",
+          "message": "Hi Olena, certainly! We offer two convenient delivery methods. The first option is \"Pickup from postal office,\" where you can choose to collect your order from your local postal office at your convenience. This option is ideal for those who prefer a hands-on approach and want to personally retrieve their package. The second option is \"Delivery by TechEase courier,\" where our trusted courier service will deliver the iPhone 14 Pro Max directly to your specified address. This method is perfect for customers who prefer the convenience of doorstep delivery and want to have the product brought right to their location. Feel free to select the option that best suits your preferences and needs during the checkout process. Both options are designed to provide you with a seamless and reliable delivery experience for your new device.",
+          "creatingDate": "18.12.2023",
+          "userInfo": "TechEase Representative",
+          "answer": {}
+        },
+
+        "photosUri": ["/testImg.png", "/testImg.png", "/testImg.png"]
+      }
+    },
+    "photosUri": []
+  },
+  {
+    "id": "6595a351cb91ce11f98cbe17",
+
+    "comment": {
+      "id": "6595a351cb91ce11f98cbe17_questions_Natalka",
+      "message": "Is it possible to arrange for a self-pickup of this phone?",
+      "creatingDate": "05.12.2023",
+      "userInfo": "Natalka",
+      "answer": {
+        "id": "6595a351cb91ce11f98cbe17",
+
+        "comment": {
+          "id": "6595a351cb91ce11f98cbe17_questions_Natalka_reply_TechEase Representative",
+          "message": "Hi Natalka, currently, we do not offer a self-pickup option. However, we have two convenient delivery methods available. The first is \"Pickup from postal office,\" where you can collect your order from your local postal office. The second option is \"Delivery by TechEase courier\", where our reliable courier service will deliver the iPhone 14 Pro Max directly to your provided address. Both options ensure a hassle-free and secure delivery process for your convenience.",
+          "creatingDate": "05.12.2023",
+          "userInfo": "TechEase Representative",
+          "answer": {
+            "id": "6595a351cb91ce11f98cbe17",
+            "comment": {
+              "id": "6595a351cb91ce11f98cbe17_questions_Natalka_Natalka_reply_TechEase Representative_Natalka_reply_Natalka",
+              "message": "Okay, I got it. Thanks for helping me figure this out.",
+              "creatingDate": "05.12.2023",
+              "userInfo": "Natalka",
+              "answer": {}
+            },
+            "photosUri": []
+          }
+        },
+
+        "photosUri": ["/testImg.png", "/testImg.png", "/testImg.png"]
+      }
+    },
+
+    "photosUri": ["/testImg.png", "/testImg.png"]
+  },
+  
+  {
+    "id": "6595a351cb91ce11f98cbe17",
+
+    "comment": {
+      "id": "6595a351cb91ce11f98cbe17_questions_Solomiia",
+      "message": "Are there any discounts currently available for the iPhone 14 Pro Max?",
+      "creatingDate": "06.10.2023",
+      "userInfo": "Solomiia",
+      "answer": {
+        "id": "6595a351cb91ce11f98cbe17",
+
+        "comment": {
+          "id": "6595a351cb91ce11f98cbe17_questions_Solomiia_reply_TechEase Representative",
+          "message": "Hi Olena, at the moment, there are no ongoing discounts specifically for the iPhone 14 Pro Max. However, I recommend keeping an eye on our website for any upcoming promotions or special offers. We regularly update our deals, and you never know when a great offer might come up. I would like to mention a unique feature that we have. If you decide to add the iPhone 14 Pro Max to your cart and leave it there, the price at which you added the product to the cart will be available to you for the next 24 hours. This is a great way to ensure price stability for our customers.",
+          "creatingDate": "07.10.2023",
+          "userInfo": "TechEase Representative",
+          "answer": {}
+        },
+
+        "photosUri": ["/testImg.png", "/testImg.png", "/testImg.png"]
+      }
+    },
+
+    "photosUri": ["/testImg.png", "/testImg.png"]
+  }
+]

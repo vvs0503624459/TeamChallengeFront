@@ -72,15 +72,14 @@ const PhoneCardList: React.FC<PhoneCardListProps> = ({ devices }) => {
               </MainDevisImageDiv>
               <TitleLink to={`/product/${id}`}>{title}</TitleLink>
               <StarsDiv>
-                <StarRating />
+                <StarRating readonly={true} rate={review.rating | 0} size={20} />
                 {/* <Comments>({comments})</Comments> */}
               </StarsDiv>
               <Price>{price}</Price>
               <DiscountContainer>
                 <DiscountDiv>
-                  <Discountprice>{`${
-                    price - (price * 8) / 100
-                  }`}</Discountprice>
+                  <Discountprice>{`${price - (price * 8) / 100
+                    }`}</Discountprice>
                   {/* <Discountprice>{`${price} / 100% * 8%`}</Discountprice> */}
                   <Deal>-{discount}%</Deal>
                 </DiscountDiv>

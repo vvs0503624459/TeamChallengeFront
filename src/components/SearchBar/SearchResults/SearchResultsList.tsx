@@ -32,14 +32,14 @@ interface ItemSearch {
 }
 const SearchResultsList = ({ results, clearInput }: Props) => {
   return (
-    <ResultsList hasResults={results.length > 0 ? true : false}>
+      results.length <1 ? "" : (<ResultsList>
       {results.map((result, i) => (
         <SearchLink key={i} to={`/product/${result.id}`} onClick={clearInput}>
           <SearchResultDiv>{result.maintitle}</SearchResultDiv>
         </SearchLink>
       ))}
-    </ResultsList>
-  );
+    </ResultsList>)
+    );
 };
 
 export default SearchResultsList;

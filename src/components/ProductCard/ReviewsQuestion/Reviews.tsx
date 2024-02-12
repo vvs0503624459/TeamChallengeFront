@@ -1,5 +1,12 @@
-import { IconMinus, IconPlus, IconThumbsDown, IconThumbsUp, IconThumbsVector } from "../../IconComponents/IconsCatalogue";
-import StarRatingFixed from "../../StarRating/StarRatingFixed";
+import { SortType, useSorter} from "../../../redux/hooks/sorters";
+import {
+  IconMinus,
+  IconPlus,
+  IconThumbsDown,
+  IconThumbsUp,
+  IconThumbsVector,
+} from "../../IconComponents/IconsCatalogue";
+import StarRating from "../../StarRating/StarRating";
 import { Review } from "./ReviewsQuestion";
 import {
   ReplyUserButton,
@@ -9,26 +16,31 @@ import {
   ReviewItemToRateWrap,
   ReviewItemWrap,
   ReviewRateWrap,
-} from "./ReviewsQuestionstyled";
-
+} from "./ReviewsQuestion.styled";
+import { useTranslation } from "react-i18next";
 type Props = {
   reviews: Review[] | null;
+  currentSorter: SortType;
 };
 
-const Reviews = ({ reviews }: Props) => {
+const Reviews = ({ reviews, currentSorter }: Props) => {
+  // const value = SortType.DESCENDING_DATE;
+  const sorter = useSorter(currentSorter)
+  const { t } = useTranslation();
   return (
     <>
       {reviews && (
         <>
-          {reviews.map((obj: Review) => (
+          {reviews.sort(sorter).map((obj: Review) => (
             <ReviewItemWrap key={obj.comment.id}>
               <ReviewHeaderFooterWrap>
                 <ReviewRateWrap>
-                  <StarRatingFixed rating={Number(obj.rating)} />
+                  <StarRating readonly={true} rate={Number(obj.rating)} size={32} />
                   {obj.comment.userInfo}
                 </ReviewRateWrap>
                 {obj.comment.creatingDate}
               </ReviewHeaderFooterWrap>
+              {obj.tags.length>0 && <p>{obj.tags.map(tag => <span key={tag}>{tag}</span> )}</p>}
               <p>{obj.comment.message}</p>
               <div>
                 <IconPlus />
@@ -52,7 +64,9 @@ const Reviews = ({ reviews }: Props) => {
               )}
 
               <ReviewHeaderFooterWrap>
-                <ReplyUserButton>Reply {obj.comment.userInfo}</ReplyUserButton>
+                <ReplyUserButton>
+                  {t("Reply")} {obj.comment.userInfo}
+                </ReplyUserButton>
                 <ReviewItemToRateWrap>
                   <IconThumbsUp />
                   <IconThumbsVector />
