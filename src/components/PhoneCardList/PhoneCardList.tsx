@@ -52,7 +52,7 @@ const PhoneCardList: React.FC<PhoneCardListProps> = ({ devices }) => {
   return (
     <>
       <CardList>
-        {newArray.map(({ id, title, mainPhotoUri, price, discount }) => (
+        {newArray.map(({ id, title, mainPhotoUri, price, discount, review }) => (
           <CardItem key={id}>
             <CardDiv>
               <MainDevisImageDiv>
