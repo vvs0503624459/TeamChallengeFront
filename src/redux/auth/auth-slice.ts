@@ -5,7 +5,7 @@ import {
   //   signOut,
     currentUser,
   //   updateUser,
-  //   subscribeEmail,
+    // subscribeEmail,
 } from "./auth-operation";
 
 import { initialStateAuthType } from '../types/initialEntity';
@@ -15,6 +15,7 @@ const initialState: initialStateAuthType = {
   token: "",
   isLoggedIn: false,
   isRefreshing: true,
+  isSubscribed: false,
 };
 
 const authSlice = createSlice({
@@ -39,6 +40,11 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
+      // .addCase(subscribeEmail.fulfilled, (state, ) => {
+      //   // state.user = payload.user;
+      //   state.isLoggedIn = true;
+      //   state.isSubscribed = true;
+      // }),
 
 });
 export const authReducer = authSlice.reducer;

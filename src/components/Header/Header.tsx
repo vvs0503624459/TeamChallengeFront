@@ -51,6 +51,9 @@ const Header = () => {
       setIsOpenModal(true);
     }
   };
+  const handleCloseUserModal = () => {
+    setIsOpenModal((state) => !state);
+  };
 
   const handleToggleHeaderModal = () => {
     setIsOpenModalHeader((state) => !state);
@@ -107,7 +110,7 @@ const Header = () => {
           </HeaderIconsWrapper>
         </HeaderInnerWrapper>
 
-        <ChangeModal isOpen={isOpenModal} handleClose={handleToggleUserModal} />
+        <ChangeModal isOpen={isOpenModal} handleClose={handleCloseUserModal} />
         <HeaderCatalogueModal
           isOpen={isOpenModalHeader}
           handleClose={handleToggleHeaderModal}

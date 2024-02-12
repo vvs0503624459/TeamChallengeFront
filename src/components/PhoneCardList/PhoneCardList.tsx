@@ -46,10 +46,13 @@ const PhoneCardList: React.FC<PhoneCardListProps> = ({ devices }) => {
     setIsOpenCartModal(true);
   };
 
+
+  const newArray = devices.slice(0,5);
+
   return (
     <>
       <CardList>
-        {devices.map(({ id, title, mainPhotoUri, price, discount }) => (
+        {newArray.map(({ id, title, mainPhotoUri, price, discount }) => (
           <CardItem key={id}>
             <CardDiv>
               <MainDevisImageDiv>

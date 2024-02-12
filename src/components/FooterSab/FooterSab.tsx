@@ -1,5 +1,8 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
+// import  { useAppDispatch } from '../../redux/hooks';
+// import { subscribeEmail } from '../../redux/auth/auth-operation';
+// import { AuthUserState } from '../../redux/types/initialEntity';
 // import FormError from "../FormError/FormError";
 import {
     FooterMail
@@ -28,12 +31,18 @@ const schema = Yup.object().shape({
     .required("Email is required"),
 });
 const FooterSab = () => {
-
-  const handleSubmit = ( values: MyFormValues) => {
-
-    console.log(values);
-    // resetForm();
+  // const dispatch = useAppDispatch();
+  const handleSubmit = () => {
   };
+  // const handleSubmit = (
+  //   values: MyFormValues,
+  //   { resetForm }: { resetForm: () => void }
+  // ) => {
+  //   const { email } = values;
+  //   dispatch(subscribeEmail({ email } as AuthUserState))
+
+  //   resetForm();
+  // };
   return (
     <SubDiv>
       <SubTextDiv>

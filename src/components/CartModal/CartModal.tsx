@@ -19,13 +19,13 @@ const style = {
 };
 
 const CartModal = ({ isOpen, handleClose }: ModalProps) => {
-  const visibles = true; //close btn prop
+  // const visibles = true; //close btn prop
 
   return (
     <Modal
       isOpen={isOpen}
       handleClose={handleClose}
-      visible={visibles}
+      // visible={visibles}
       style={style}
     >
       <>

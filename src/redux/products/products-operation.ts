@@ -11,30 +11,28 @@ export type InPayload = {
 
 export const getMainDevises = createAsyncThunk<MainProductState[]>(
   "devices/main-page",
-  async () => {
+  async (_, thunkAPI) => {
     try {
       const response = await axios.get("/api/v1/devices/main-page");
-      console.log("devices/main-page", response.data);
+      // console.log("devices/main-page", response.data);
       // const catalogue: CatalogueState[] = response.data
       // return catalogue
       return response.data
     } catch (error) {
-      console.log('error', error)
-      throw error
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
 
 export const getDevises = createAsyncThunk<MainProductState[]>(
   "devises/",
-  async () => {
+  async (_, thunkAPI) => {
     try {
       const response = await axios.get("/api/v1/devises");
-      console.log("devises/", response.data);
+      // console.log("devises/", response.data);
       return response.data;
     } catch (error) {
-      console.log('error', error)
-      throw error
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );

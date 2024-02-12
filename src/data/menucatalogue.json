@@ -4,10 +4,10 @@
     "icon": "phone",
     "title": "Smartphones and Phones",
     "right": "iconRight",
-    "goods": [
+    "groupSpecifications": [
       {
-        "brand": "Smartphones",
-        "model": [
+        "nameOfGroup": "Smartphones",
+        "catalogueGroupSpecifications": [
           "Apple",
           "Xiaomi",
           "Samsung",
@@ -23,8 +23,8 @@
         ]
       },
       {
-        "brand": "Apple",
-        "model": [
+        "nameOfGroup": "Apple",
+        "catalogueGroupSpecifications": [
           "Apple iPhone 14 Pro Max",
           "Apple iPhone 14 Pro",
           "Apple iPhone 14",
@@ -39,8 +39,8 @@
         ]
       },
       {
-        "brand": "Redmi",
-        "model": [
+        "nameOfGroup": "Redmi",
+        "catalogueGroupSpecifications": [
           "Redmi Note 12 Pro",
           "Redmi Note 12",
           "Redmi Note 11 Pro",
@@ -48,8 +48,8 @@
         ]
       },
       {
-        "brand": "Xiaomi",
-        "model": [
+        "nameOfGroup": "Xiaomi",
+        "catalogueGroupSpecifications": [
           "Xiaomi 13 Lite",
           "Xiaomi Poco X5 Pro 5G",
           "Xiaomi Poco M5",
@@ -58,8 +58,8 @@
         ]
       },
       {
-        "brand": "Accessories",
-        "model": [
+        "nameOfGroup": "Accessories",
+        "catalogueGroupSpecifications": [
           "Screen Protector Glasses",
           "Cases",
           "Charges",
@@ -73,10 +73,10 @@
     "icon": "laptop",
     "title": "Laptops and PCs",
     "right": "iconRight",
-    "goods": [
+    "groupSpecifications": [
       {
-        "brand": "Laptops",
-        "model": [
+        "nameOfGroup": "Laptops",
+        "catalogueGroupSpecifications": [
           "Apple MacBook",
           "Asus",
           "Lenovo",
@@ -91,8 +91,8 @@
         ]
       },
       {
-        "brand": "Tablets",
-        "model": [
+        "nameOfGroup": "Tablets",
+        "catalogueGroupSpecifications": [
           "Apple iPad",
           "Samsung",
           "Realme",
@@ -102,12 +102,12 @@
         ]
       },
       {
-        "brand": "Other",
-        "model": ["Graphic Tablets", "Graphic Monitors", "E-Books"]
+        "nameOfGroup": "Other",
+        "catalogueGroupSpecifications": ["Graphic Tablets", "Graphic Monitors", "E-Books"]
       },
       {
-        "brand": "Personal Computers",
-        "model": [
+        "nameOfGroup": "Personal Computers",
+        "catalogueGroupSpecifications": [
           "iMac",
           "Mac Studio",
           "Intel Core processor PC",
@@ -115,8 +115,8 @@
         ]
       },
       {
-        "brand": "Monitors",
-        "model": [
+        "nameOfGroup": "Monitors",
+        "catalogueGroupSpecifications": [
           "Apple Monitors",
           "Xiaomi Monitors",
           "LG Monitors",
@@ -125,8 +125,8 @@
         ]
       },
       {
-        "brand": "Accessories",
-        "model": [
+        "nameOfGroup": "Accessories",
+        "catalogueGroupSpecifications": [
           "Screen Protector Glasses",
           "Protection Films",
           "Tablet Cases",
@@ -147,10 +147,10 @@
     "icon": "headphones",
     "title": "Audio",
     "right": "iconRight",
-    "goods": [
+    "groupSpecifications": [
       {
-        "brand": "Headphones, Earphones",
-        "model": [
+        "nameOfGroup": "Headphones, Earphones",
+        "catalogueGroupSpecifications": [
           "Apple",
           "Xiaomi",
           "Samsung",
@@ -166,8 +166,8 @@
         ]
       },
       {
-        "brand": "Wireless",
-        "model": [
+        "nameOfGroup": "Wireless",
+        "catalogueGroupSpecifications": [
           "True Wireless Stereo (TWS)",
           "With a Microphone",
           "With Noise Reduction",
@@ -178,8 +178,8 @@
         ]
       },
       {
-        "brand": "Accessories",
-        "model": [
+        "nameOfGroup": "Accessories",
+        "catalogueGroupSpecifications": [
           "Cases",
           "Charging Cases",
           "With Noise Reduction",
@@ -190,20 +190,20 @@
         ]
       },
       {
-        "brand": "Acoustics",
-        "model": ["JBL", "Divoom", "Samsung", "Marshall", "Sony", "LG"]
+        "nameOfGroup": "Acoustics",
+        "catalogueGroupSpecifications": ["JBL", "Divoom", "Samsung", "Marshall", "Sony", "LG"]
       },
       {
-        "brand": "Acoustics by Type",
-        "model": ["Portable", "Soundbars", "Desktop", "Floor"]
+        "nameOfGroup": "Acoustics by Type",
+        "catalogueGroupSpecifications": ["Portable", "Soundbars", "Desktop", "Floor"]
       },
       {
-        "brand": "Acoustic Systems",
-        "model": ["Marshall Acoustics", "JBL Acoustics", "Xiaomi Acoustics"]
+        "nameOfGroup": "Acoustic Systems",
+        "catalogueGroupSpecifications": ["Marshall Acoustics", "JBL Acoustics", "Xiaomi Acoustics"]
       },
       {
-        "brand": "Home Theaters",
-        "model": ["Real-EL", "Macrolab"]
+        "nameOfGroup": "Home Theaters",
+        "catalogueGroupSpecifications": ["Real-EL", "Macrolab"]
       }
     ]
   },
@@ -212,10 +212,10 @@
     "icon": "charge",
     "title": "Accessories",
     "right": "iconRight",
-    "goods": [
+    "groupSpecifications": [
       {
-        "brand": "Protection for Phones",
-        "model": [
+        "nameOfGroup": "Protection for Phones",
+        "catalogueGroupSpecifications": [
           "Apple",
           "Xiaomi",
           "Samsung",
@@ -231,8 +231,8 @@
         ]
       },
       {
-        "brand": "Protection for Tablets",
-        "model": [
+        "nameOfGroup": "Protection for Tablets",
+        "catalogueGroupSpecifications": [
           "Apple iPad",
           "Samsung",
           "Nothing",
@@ -243,16 +243,16 @@
         ]
       },
       {
-        "brand": "Portable Batteries",
-        "model": ["5000 mAh", "10000 mAh", "20000 mAh"]
+        "nameOfGroup": "Portable Batteries",
+        "catalogueGroupSpecifications": ["5000 mAh", "10000 mAh", "20000 mAh"]
       },
       {
-        "brand": "Cases",
-        "model": ["For phones", "For tablets", "For laptops", "For earphones"]
+        "nameOfGroup": "Cases",
+        "catalogueGroupSpecifications": ["For phones", "For tablets", "For laptops", "For earphones"]
       },
       {
-        "brand": "Сhargers",
-        "model": [
+        "nameOfGroup": "Сhargers",
+        "catalogueGroupSpecifications": [
           "Network (Adapters)",
           "Wireless",
           "Automotive",
@@ -260,8 +260,8 @@
         ]
       },
       {
-        "brand": "Cabels",
-        "model": [
+        "nameOfGroup": "Cabels",
+        "catalogueGroupSpecifications": [
           "USB-Type A",
           "USB-Type C",
           "HDMI",
@@ -270,8 +270,8 @@
         ]
       },
       {
-        "brand": "Drives, Memory cards",
-        "model": [
+        "nameOfGroup": "Drives, Memory cards",
+        "catalogueGroupSpecifications": [
           "Memory cards",
           "Flash drives",
           "External hard drives",
@@ -285,10 +285,10 @@
     "icon": "iconTV",
     "title": "TVs and Multimedia",
     "right": "iconRight",
-    "goods": [
+    "groupSpecifications": [
       {
-        "brand": "TVs",
-        "model": [
+        "nameOfGroup": "TVs",
+        "catalogueGroupSpecifications": [
           "Sony",
           "Philips",
           "Xiaomi",
@@ -302,8 +302,8 @@
         ]
       },
       {
-        "brand": "Resolution",
-        "model": [
+        "nameOfGroup": "Resolution",
+        "catalogueGroupSpecifications": [
           "HD (1366 x 768",
           "Full HD (1920 x 1080)",
           "4K UHD (3840 x 4320)",
@@ -311,8 +311,8 @@
         ]
       },
       {
-        "brand": "Purpose",
-        "model": [
+        "nameOfGroup": "Purpose",
+        "catalogueGroupSpecifications": [
           "With Smart TV",
           "For Bedroom",
           "For Kitchen",
@@ -321,20 +321,20 @@
         ]
       },
       {
-        "brand": "Popular diagonals",
-        "model": ["32", "43", "50", "55", "65"]
+        "nameOfGroup": "Popular diagonals",
+        "catalogueGroupSpecifications": ["32", "43", "50", "55", "65"]
       },
       {
-        "brand": "Soundbars",
-        "model": ["Samsung", "JBL", "Sonos"]
+        "nameOfGroup": "Soundbars",
+        "catalogueGroupSpecifications": ["Samsung", "JBL", "Sonos"]
       },
       {
-        "brand": "Media Players",
-        "model": ["Apple", "Realme", "Xiaomi"]
+        "nameOfGroup": "Media Players",
+        "catalogueGroupSpecifications": ["Apple", "Realme", "Xiaomi"]
       },
       {
-        "brand": "Projectors",
-        "model": ["Samsung", "Epson", "Sony", "ViewSonic", "Acer"]
+        "nameOfGroup": "Projectors",
+        "catalogueGroupSpecifications": ["Samsung", "Epson", "Sony", "ViewSonic", "Acer"]
       }
     ]
   },
@@ -343,26 +343,26 @@
     "icon": "iconCamera",
     "title": "Photo and Video",
     "right": "iconRight",
-    "goods": [
+    "groupSpecifications": [
       {
-        "brand": "Action Cameras",
-        "model": ["GoPro", "DJI", "Akaso", "Seabird", "ThiEYE", "Insta360"]
+        "nameOfGroup": "Action Cameras",
+        "catalogueGroupSpecifications": ["GoPro", "DJI", "Akaso", "Seabird", "ThiEYE", "Insta360"]
       },
       {
-        "brand": "Quadcopters, drones",
-        "model": ["DJI", "Autel", "FIMI"]
+        "nameOfGroup": "Quadcopters, drones",
+        "catalogueGroupSpecifications": ["DJI", "Autel", "FIMI"]
       },
       {
-        "brand": "Photo Cameras",
-        "model": ["Canon", "Nikon", "Sony", "Fujifilm", "Panasonic", "Pentax"]
+        "nameOfGroup": "Photo Cameras",
+        "catalogueGroupSpecifications": ["Canon", "Nikon", "Sony", "Fujifilm", "Panasonic", "Pentax"]
       },
       {
-        "brand": "Objectives",
-        "model": ["Canon", "Nikon", "Sony"]
+        "nameOfGroup": "Objectives",
+        "catalogueGroupSpecifications": ["Canon", "Nikon", "Sony"]
       },
       {
-        "brand": "Video Cameras",
-        "model": [
+        "nameOfGroup": "Video Cameras",
+        "catalogueGroupSpecifications": [
           "Canon",
           "Nikon",
           "Sony",
@@ -372,8 +372,8 @@
         ]
       },
       {
-        "brand": "Flashes",
-        "model": ["Canon", "Nikon", "Sony"]
+        "nameOfGroup": "Flashes",
+        "catalogueGroupSpecifications": ["Canon", "Nikon", "Sony"]
       }
     ]
   },
@@ -382,10 +382,10 @@
     "icon": "iconWatch",
     "title": "Smart Watches",
     "right": "iconRight",
-    "goods": [
+    "groupSpecifications": [
       {
-        "brand": "Smart Watches",
-        "model": [
+        "nameOfGroup": "Smart Watches",
+        "catalogueGroupSpecifications": [
           "Apple",
           "Samsung",
           "Amazfit",
@@ -399,16 +399,16 @@
         ]
       },
       {
-        "brand": "Fitness Trackers",
-        "model": ["Xiaomi", "Amazfit", "Redmi", "OPPO"]
+        "nameOfGroup": "Fitness Trackers",
+        "catalogueGroupSpecifications": ["Xiaomi", "Amazfit", "Redmi", "OPPO"]
       },
       {
-        "brand": "Children’s Smart Watches",
-        "model": ["Elari", "GOGPS", "AmiGo", "Gelius"]
+        "nameOfGroup": "Children’s Smart Watches",
+        "catalogueGroupSpecifications": ["Elari", "GOGPS", "AmiGo", "Gelius"]
       },
       {
-        "brand": "Apple",
-        "model": [
+        "nameOfGroup": "Apple",
+        "catalogueGroupSpecifications": [
           "Apple Watch Ultra",
           "Apple Watch Series 8",
           "Apple Watch SE 2",
@@ -417,12 +417,12 @@
         ]
       },
       {
-        "brand": "Samsung",
-        "model": ["Samsung Galaxy Watch 5", "Samsung Galaxy Watch 4"]
+        "nameOfGroup": "Samsung",
+        "catalogueGroupSpecifications": ["Samsung Galaxy Watch 5", "Samsung Galaxy Watch 4"]
       },
       {
-        "brand": "Xiaomi",
-        "model": [
+        "nameOfGroup": "Xiaomi",
+        "catalogueGroupSpecifications": [
           "Amazfit GTR 4",
           "Amazfit Bip 3 Pro",
           "Watch S1 Active",
@@ -431,8 +431,8 @@
         ]
       },
       {
-        "brand": "Accessories",
-        "model": ["Screen Protection Glasses", "Watch Straps", "Chargers"]
+        "nameOfGroup": "Accessories",
+        "catalogueGroupSpecifications": ["Screen Protection Glasses", "Watch Straps", "Chargers"]
       }
     ]
   },
@@ -441,10 +441,10 @@
     "icon": "iconWashing",
     "title": "Household Appliances",
     "right": "iconRight",
-    "goods": [
+    "groupSpecifications": [
       {
-        "brand": "Small Household Appliances",
-        "model": [
+        "nameOfGroup": "Small Household Appliances",
+        "catalogueGroupSpecifications": [
           "Microwaves",
           "Mixers",
           "Blenders",
@@ -458,12 +458,12 @@
         ]
       },
       {
-        "brand": "Large Household Appliances",
-        "model": ["Refrigerators", "Washing Machines", "Dishwashers", "Ovens"]
+        "nameOfGroup": "Large Household Appliances",
+        "catalogueGroupSpecifications": ["Refrigerators", "Washing Machines", "Dishwashers", "Ovens"]
       },
       {
-        "brand": "Charging Stations",
-        "model": [
+        "nameOfGroup": "Charging Stations",
+        "catalogueGroupSpecifications": [
           "Charging Stations",
           "Generators",
           "Inventers",
@@ -471,8 +471,8 @@
         ]
       },
       {
-        "brand": "Smart Home",
-        "model": [
+        "nameOfGroup": "Smart Home",
+        "catalogueGroupSpecifications": [
           "Video Surveillance",
           "Smart Lightning",
           "Smart Sockets",
@@ -482,16 +482,16 @@
         ]
       },
       {
-        "brand": "Cleaning Tech",
-        "model": [
+        "nameOfGroup": "Cleaning Tech",
+        "catalogueGroupSpecifications": [
           "Robot Vacuum Cleaners",
           "Manual Vacuum Cleaners",
           "Vacuum Cleaners"
         ]
       },
       {
-        "brand": "Climate Tech",
-        "model": [
+        "nameOfGroup": "Climate Tech",
+        "catalogueGroupSpecifications": [
           "Air Conditioners",
           "Air Humidifiers",
           "Air Purifiers",
@@ -500,8 +500,8 @@
         ]
       },
       {
-        "brand": "Coffee Tech",
-        "model": [
+        "nameOfGroup": "Coffee Tech",
+        "catalogueGroupSpecifications": [
           "Coffee Machines",
           "Horn Coffee Makers",
           "Capsule Coffee Makers",
@@ -515,10 +515,10 @@
     "icon": "iconPercentage",
     "title": "Special Offers",
     "right": "iconRight",
-    "goods": [
+    "groupSpecifications": [
       {
-        "brand": "Small Household Appliances",
-        "model": [
+        "nameOfGroup": "Small Household Appliances",
+        "catalogueGroupSpecifications": [
           "Microwaves",
           "Mixers",
           "Blenders",
@@ -532,12 +532,12 @@
         ]
       },
       {
-        "brand": "Large Household Appliances",
-        "model": ["Refrigerators", "Washing Machines", "Dishwashers", "Ovens"]
+        "nameOfGroup": "Large Household Appliances",
+        "catalogueGroupSpecifications": ["Refrigerators", "Washing Machines", "Dishwashers", "Ovens"]
       },
       {
-        "brand": "Charging Stations",
-        "model": [
+        "nameOfGroup": "Charging Stations",
+        "catalogueGroupSpecifications": [
           "Charging Stations",
           "Generators",
           "Inventers",
@@ -545,8 +545,8 @@
         ]
       },
       {
-        "brand": "Smart Home",
-        "model": [
+        "nameOfGroup": "Smart Home",
+        "catalogueGroupSpecifications": [
           "Video Surveillance",
           "Smart Lightning",
           "Smart Sockets",
@@ -556,16 +556,16 @@
         ]
       },
       {
-        "brand": "Cleaning Tech",
-        "model": [
+        "nameOfGroup": "Cleaning Tech",
+        "catalogueGroupSpecifications": [
           "Robot Vacuum Cleaners",
           "Manual Vacuum Cleaners",
           "Vacuum Cleaners"
         ]
       },
       {
-        "brand": "Climate Tech",
-        "model": [
+        "nameOfGroup": "Climate Tech",
+        "catalogueGroupSpecifications": [
           "Air Conditioners",
           "Air Humidifiers",
           "Air Purifiers",
@@ -574,8 +574,8 @@
         ]
       },
       {
-        "brand": "Coffee Tech",
-        "model": [
+        "nameOfGroup": "Coffee Tech",
+        "catalogueGroupSpecifications": [
           "Coffee Machines",
           "Horn Coffee Makers",
           "Capsule Coffee Makers",
