@@ -26,12 +26,12 @@ export const InputsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 415px;
+  width: 335px;
 `;
 
 export const InputWrap = styled.div`
   position: relative;
-  width: 383px;
+  width: 335px;
 `;
 
 export const Input = styled(Field)`
@@ -123,8 +123,8 @@ export const TogglePasswordButton = styled.button`
   background-color: transparent;
   border: none;
   position: absolute;
-  top: 20px;
-  right: 0px;
+  top: 13px;
+  right: 15px;
   padding: 0;
 `;
 
@@ -167,8 +167,8 @@ export const ErrorIcon = styled(AiOutlineExclamationCircle)`
   width: 18px;
   height: 18px;
   position: absolute;
-  top: 20px;
-  right: 24px;
+  top: 13px;
+  right: 15px;
 
   @media screen and (min-width: 768px) {
     width: 20px;
@@ -181,8 +181,8 @@ export const SuccessIcon = styled(AiOutlineCheckCircle)`
   width: 18px;
   height: 18px;
   position: absolute;
-  top: 20px;
-  right: 24px;
+  top: 13px;
+  right: 15px;
 
   @media screen and (min-width: 768px) {
     width: 20px;

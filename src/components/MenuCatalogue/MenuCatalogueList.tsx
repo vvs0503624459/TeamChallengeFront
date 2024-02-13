@@ -28,8 +28,6 @@ const MenuCatalogueList = () => {
     return state.catalogue.catalogueList;
   });
 
-  // console.log("catalogueList", catalogue);
-
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -37,7 +35,6 @@ const MenuCatalogueList = () => {
     setSelectedCategory(category);
     setIsOpen(true); // Open the modal when a category is selected
   };
-  // Ваш тип GoodsType
 
   // Код в компоненті MenuCatalogueList
   const goodsData =

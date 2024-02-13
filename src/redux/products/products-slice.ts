@@ -7,6 +7,7 @@ import { DeviceIdState, initialStateProductType } from "../types/initialEntity";
 const initialState: initialStateProductType = {
   productsList: [],
   product: null,
+  isLoading: false,
 };
 
 export const productsSlice = createSlice({
@@ -18,6 +19,7 @@ export const productsSlice = createSlice({
     builder
       .addCase(getMainDevises.fulfilled, (state, action) => {
         state.productsList = action.payload;
+        state.isLoading = false;
       })
       .addCase(getDevises.fulfilled, (state, action) => {
         state.productsList = action.payload;
