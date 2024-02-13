@@ -1,4 +1,4 @@
-import Modal from "../Modal/Modal";
+import OtherModal from "../Modal/OtherModal";
 import MenuCatalogueList from "./MenuCatalogueList";
 
 import { ModalProps } from '../../types/modalsEntity';
@@ -6,7 +6,7 @@ import { ModalProps } from '../../types/modalsEntity';
 const style = {
   position: "absolute",
   top: "41%",
-  left: "18%",
+  left: "19%",
   transform: "translate(-50%, -50%)",
   borderRadius: "0px 12px",
   background: "var(--Primary-white, #fff)",
@@ -19,14 +19,14 @@ const style = {
 const HeaderCatalogueModal = ({ isOpen, handleClose }: ModalProps) => {
   // const visibles = false;
   return (
-    <Modal
+    <OtherModal
       isOpen={isOpen}
       handleClose={handleClose}
       style={style}
       // visible={visibles}
     >
       <MenuCatalogueList />
-    </Modal>
+    </OtherModal>
   );
 };
 export default HeaderCatalogueModal;

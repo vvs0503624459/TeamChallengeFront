@@ -18,6 +18,7 @@ export type AuthUserState = {
 export type initialStateProductType = {
   productsList: MainProductState[];
   product: DeviceIdState | null;
+  isLoading: boolean;
 };
 
 export type MainProductState = {
