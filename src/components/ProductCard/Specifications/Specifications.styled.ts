@@ -9,3 +9,9 @@ export const BriefWrap = styled.div`
   gap: 20px;
   margin-bottom: 32px;
 `;
+
+export const ButtonsBuyWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+`;
