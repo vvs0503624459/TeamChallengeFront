@@ -3,6 +3,7 @@ export type initialStateAuthType = {
   token: string;
   isLoggedIn: boolean;
   isRefreshing: boolean;
+  isSubscribed: boolean;
 };
 
 export type AuthUserState = {
@@ -17,6 +18,7 @@ export type AuthUserState = {
 export type initialStateProductType = {
   productsList: MainProductState[];
   product: DeviceIdState | null;
+  isLoading: boolean;
 };
 
 export type MainProductState = {

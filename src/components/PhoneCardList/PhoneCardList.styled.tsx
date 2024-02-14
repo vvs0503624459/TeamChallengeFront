@@ -33,7 +33,7 @@ export const SliderItem = styled(SwiperSlide)`
 export const CardList = styled.ul`
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 10px;
 `;
 
 export const CardItem = styled.li`

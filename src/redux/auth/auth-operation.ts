@@ -85,3 +85,28 @@ export const signUp = createAsyncThunk(
       },
   );
   
+  // export const subscribeEmail = createAsyncThunk(
+  //   'auth/subscribe',
+  //   async (credentials: AuthUserState, thunkAPI) => {
+  //       try {
+  //        await axios.post('/auth/subscribe', credentials);
+  //           toast.success('You are subscribed for newsletter');
+  //       } catch (error) {
+  //         toast.error('Something went wrong. Try again');
+  //         return thunkAPI.rejectWithValue(error);
+  //       }
+  //     },
+  // );
+
+  // export const passwordVerify = createAsyncThunk(
+  //   'auth/passwordVerify',
+  //   async (credentials: AuthUserState, thunkAPI) => {
+  //       try {
+  //        await axios.post('/token/password/verify', credentials);
+  //           toast.success('You are subscribed for newsletter');
+  //       } catch (error) {
+  //         toast.error('Something went wrong. Try again');
+  //         return thunkAPI.rejectWithValue(error);
+  //       }
+  //     },
+  // );

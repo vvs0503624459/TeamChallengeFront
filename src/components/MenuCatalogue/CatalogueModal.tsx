@@ -1,16 +1,16 @@
-import Modal from "../Modal/Modal";
+import OtherModal from "../Modal/OtherModal";
 
 import { ShowAllCatalogue } from "../IconComponents/IconsCatalogue";
 import {
   CatalogueList,
   CatalogueBrandTitle,
-  CatalogueBrandText,
+  // CatalogueBrandText,
   CatalogueBrandButton,
 } from "./CatalogueModal.styled";
 
 const style = {
   position: "absolute",
-  top: "38.5%",
+  top: "35%",
   left: "64%",
   transform: "translate(-50%, -50%)",
   borderRadius: "12px",
@@ -19,33 +19,49 @@ const style = {
   width: "920px",
   height: "356px",
 };
-export type GoodsType = NonNullable<{ brand: string; model: [string] }[]>;
+
+export type GoodsType = NonNullable<
+  {
+    nameOfGroup: string;
+    hashtagsOfName: {
+      catalogue: string;
+      catalogueGroupSpecifications: [
+        {
+          title: string;
+          hashTagsOfTitle: {
+            brand: string;
+            catalogue: string;
+          };
+        }
+      ];
+    };
+  }[]
+>;
 // export type GoodsType = { brand: string; model: string[] }[];
 
 type Props = {
-  goods: GoodsType;
+  groupSpecifications: GoodsType;
   isOpen: boolean;
   handleClose: () => void;
 };
 
-const CatalogueModal = ({ goods, isOpen, handleClose }: Props) => {
-  const visibles = false; //close btn prop
+const CatalogueModal = ({
+  groupSpecifications,
+  isOpen,
+  handleClose,
+}: Props) => {
+  // const visibles = false; //close btn prop
 
   return (
-    <Modal
-      isOpen={isOpen}
-      handleClose={handleClose}
-      visible={visibles}
-      style={style}
-    >
-      <CatalogueList>
-        {goods.map(({ brand, model }) => (
-          <li key={brand}>
-            <CatalogueBrandTitle>{brand}</CatalogueBrandTitle>
+    <OtherModal isOpen={isOpen} handleClose={handleClose} style={style}>
+      {/* <CatalogueList>
+        {groupSpecifications.map(({ nameOfGroup, catalogueGroupSpecifications }) => (
+          <li key={nameOfGroup}>
+            <CatalogueBrandTitle>{nameOfGroup}</CatalogueBrandTitle>
             <ul>
-              {model.map((modelName) => (
-                <CatalogueBrandText key={modelName}>
-                  {modelName}
+              {catalogueGroupSpecifications.map(({title}) => (
+                <CatalogueBrandText key={title}>
+                  {title}
                 </CatalogueBrandText>
               ))}
             </ul>
@@ -55,8 +71,19 @@ const CatalogueModal = ({ goods, isOpen, handleClose }: Props) => {
             </CatalogueBrandButton>
           </li>
         ))}
+      </CatalogueList> */}
+      <CatalogueList>
+        {groupSpecifications.map(({ nameOfGroup }) => (
+          <li key={nameOfGroup}>
+            <CatalogueBrandTitle>{nameOfGroup}</CatalogueBrandTitle>
+            <CatalogueBrandButton>
+              <ShowAllCatalogue />
+              Show All
+            </CatalogueBrandButton>
+          </li>
+        ))}
       </CatalogueList>
-    </Modal>
+    </OtherModal>
   );
 };
 export default CatalogueModal;

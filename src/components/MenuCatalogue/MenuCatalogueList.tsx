@@ -1,5 +1,5 @@
-import MENU_CATEGORIES from "../../data/menucatalogue.json";
-import { Icons } from "../IconComponents/Icons";
+// import MENU_CATEGORIES from "../../data/menucatalogue.json";
+// import { Icons } from "../IconComponents/Icons";
 
 import CatalogueModal from "./CatalogueModal";
 
@@ -8,7 +8,7 @@ import {
   MenuItem,
   TextDiv,
   MenuTitle,
-  MenuButton,
+  // MenuButton,
 } from "./MenuCatalogue.styled";
 import { getCatalogue } from "../../redux/catalogue/catalogue-operation";
 import { CatalogueState } from "../../redux/types/initialEntity";
@@ -28,8 +28,6 @@ const MenuCatalogueList = () => {
     return state.catalogue.catalogueList;
   });
 
-  console.log("catalogueList", catalogue);
-
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -37,25 +35,24 @@ const MenuCatalogueList = () => {
     setSelectedCategory(category);
     setIsOpen(true); // Open the modal when a category is selected
   };
-  // Ваш тип GoodsType
 
   // Код в компоненті MenuCatalogueList
   const goodsData =
     (selectedCategory &&
-      (MENU_CATEGORIES.find((category) => category.id === selectedCategory)
-        ?.goods as GoodsType)) ||
+      (catalogue.find((category) => category.id === selectedCategory)
+        ?.groupSpecifications as GoodsType)) ||
     [];
   return (
     <div>
       <MenuList>
-        {MENU_CATEGORIES.map(({ id, icon, title, right }) => (
-          <MenuItem key={id}>
-            <Icons name={icon} />
+        {catalogue.map(({ id, title }) => (
+          <MenuItem key={id} onClick={() => handleToggleTitle(id)}>
+            {/* <Icons name={icon} /> */}
             <TextDiv>
               <MenuTitle>{title}</MenuTitle>
-              <MenuButton onClick={() => handleToggleTitle(id)}>
+              {/* <MenuButton>
                 <Icons name={right} />
-              </MenuButton>
+              </MenuButton> */}
             </TextDiv>
           </MenuItem>
         ))}
@@ -64,7 +61,7 @@ const MenuCatalogueList = () => {
         <CatalogueModal
           isOpen={isOpen}
           handleClose={() => setIsOpen(false)} // Close the modal
-          goods={goodsData}
+          groupSpecifications={goodsData}
         />
       ) : null}
     </div>
@@ -72,3 +69,4 @@ const MenuCatalogueList = () => {
 };
 
 export default MenuCatalogueList;
+
