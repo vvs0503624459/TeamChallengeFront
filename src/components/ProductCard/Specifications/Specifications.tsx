@@ -1,8 +1,9 @@
+import { AddToCart } from "@/components/AddToCart/AddToCart";
 import { useProduct } from "../../../redux/hooks/usePeoduct";
 import { BriefSpecification } from "./BriefSpecification/BriefSpecification";
-import { ButtonsBuy } from "./ButtonsBuy/ButtonsBuy";
-import { BriefWrap, SpecificationsWrap } from "./Specifications.styled";
+import { BriefWrap, ButtonsBuyWrap, SpecificationsWrap } from "./Specifications.styled";
 import { SpecificationsList } from "./SpecificationsList/SpecificationsList";
+import { BuyToCredit } from "@/components/BuyToCredit/BuyToCredit";
 
 const Specifications = () => {
   const { currentProduct } = useProduct();
@@ -13,7 +14,10 @@ const Specifications = () => {
         <SpecificationsWrap>
           <BriefWrap>
             <BriefSpecification />
-            <ButtonsBuy />
+            <ButtonsBuyWrap>
+              <AddToCart />
+              <BuyToCredit />
+            </ButtonsBuyWrap>
           </BriefWrap>
           <SpecificationsList product={currentProduct} />
         </SpecificationsWrap>

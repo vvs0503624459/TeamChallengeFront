@@ -45,9 +45,9 @@ export const getDeviсesByID = createAsyncThunk<DeviceIdState, InPayload>(
 
 // export const editProductFavorite = createAsyncThunk<DeviceIdState>(
 //   "water/editWater",
-//   async (_, thunkAPI) => {
+//   async (id, thunkAPI) => {
 //     try {
-//       const { data } = await axios.patch(`api/waternotes/${_id}`, { favorite: true });
+//       const { data } = await axios.patch(`api/waternotes/${id}`, { favorite: true });
 //       return data;
 //     } catch (error) {
 //       return thunkAPI.rejectWithValue(error);
