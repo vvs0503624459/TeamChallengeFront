@@ -27,8 +27,8 @@ export const ItemStyled = styled.li`
 
   & p {
     color: ${(props) => props.theme.PrimaryBlack};
+    font-family: "InterMedium";
     font-size: 20px;
-    font-weight: 500;
     line-height: calc(24 / 20);
   }
 `;
@@ -44,8 +44,8 @@ export const PropertyWrap = styled.div`
   & p {
     flex-basis: 406px;
     color: ${(props) => props.theme.TritiaryPurpleGray};
+    font-family: "InterMedium";
     font-size: 16px;
-    font-weight: 500;
     line-height: calc(24 / 16);
   }
 `;

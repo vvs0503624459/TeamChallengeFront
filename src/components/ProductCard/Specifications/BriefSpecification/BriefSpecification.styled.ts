@@ -25,8 +25,8 @@ export const BriefImage = styled.img`
 
 export const BriefTitle = styled.p`
   color: ${(propps) => propps.theme.PrimaryBlack};
+  font-family: "InterMedium";
   font-size: 20px;
-  font-weight: 500;
   line-height: 26px;
   letter-spacing: 0;
   text-align: left;
@@ -61,6 +61,7 @@ export const Property = styled.div`
 
   & p {
     color: ${(propps) => propps.theme.TritiaryPurpleGray};
+    font-family: "InterRegular";
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0;
@@ -69,6 +70,6 @@ export const Property = styled.div`
 
   & :last-child {
     color: ${(propps) => propps.theme.PrimaryBlack};
-    font-weight: 600;
+    font-family: "InterSemiBold";
   }
 `;

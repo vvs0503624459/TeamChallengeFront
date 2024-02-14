@@ -34,8 +34,8 @@ export const PriceContainer = styled.div`
 export const OldPrice = styled.p`
   height: 20px;
   color: ${(propps) => propps.theme.TritiaryPurpleGray};
+  font-family: "InterMedium";
   font-size: 14px;
-  font-weight: 500;
   line-height: 20px;
   letter-spacing: 0;
   text-align: left;
@@ -46,8 +46,8 @@ export const OldPrice = styled.p`
 export const Price = styled.p`
   height: 36px;
   color: ${(propps) => propps.theme.PrimaryBlack};
+  font-family: "InterMedium";
   font-size: 28px;
-  font-weight: 500;
   line-height: 36px;
   letter-spacing: 0;
   text-align: left;
@@ -55,8 +55,8 @@ export const Price = styled.p`
 
 export const OnCreditText = styled.p`
   color: ${(propps) => propps.theme.TritiaryPurpleGray};
+  font-family: "InterMedium";
   font-size: 14px;
-  font-weight: 500;
   line-height: 20px;
   letter-spacing: 0;
   text-align: left;
@@ -64,8 +64,8 @@ export const OnCreditText = styled.p`
 
 export const OnCreditPrice = styled.p`
   color: ${(propps) => propps.theme.PrimaryBlack};
+  font-family: "InterMedium";
   font-size: 22px;
-  font-weight: 500;
   line-height: 28px;
   letter-spacing: 0;
   text-align: left;
@@ -80,8 +80,8 @@ export const Discount = styled.div`
 
   & p {
     color: ${(propps) => propps.theme.PrimaryWhite};
+    font-family: "InterRegular";
     font-size: 12px;
-    font-weight: 400;
     line-height: 18px;
     letter-spacing: 0;
     text-align: center;
@@ -102,10 +102,8 @@ export const AddToCartBtn = styled.button`
 
   & p {
     color: ${(propps) => propps.theme.PrimaryWhite};
-    font-family: Inter;
+    font-family: "InterSemiBold";
     font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
     line-height: calc(24 / 16);
   }
 
@@ -135,10 +133,8 @@ export const BuyToCredittBtn = styled.button`
 
   & p {
     color: ${(propps) => propps.theme.PrimaryBrightPurple};
-    font-family: Inter;
+    font-family: "InterSemiBold";
     font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
     line-height: calc(24 / 16);
   }
 
@@ -160,24 +156,7 @@ export const IconsWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-`;
-
-export const HartButton = styled.button`
-  border: none;
-  background-color: transparent;
-`;
-
-export const HartIcon = styled.svg`
-  width: 24px;
-  height: 24px;
-  fill: ${(propps) => propps.theme.SecondaryExoticPink};
-`;
-
-export const CompareIcon = styled.svg`
-  width: 24px;
-  height: 24px;
-  fill: ${(propps) => propps.theme.SecondaryCalmOrange};
+  gap: 12px;
 `;
 
 export const ChevronRightIcon = styled.svg`
