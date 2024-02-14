@@ -24,8 +24,8 @@ export const Modal = styled.div`
 
   & p {
     color: ${(props) => props.theme.PrimaryWhite};
+    font-family: "InterRegular";
     font-size: 14px;
-    font-weight: 400;
     line-height: calc(16 / 14);
     border: none;
   }

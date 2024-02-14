@@ -10,12 +10,85 @@ import {
 } from "./BriefSpecification.styled";
 import iconsSprite from "@/assets/iconsSprite.svg";
 import noImage from "@/assets/no-image.png";
+import { DeviceIdState } from "@/redux/types/initialEntity";
 
 export const BriefSpecification = () => {
   const { currentProduct } = useProduct();
-  console.log("product", currentProduct);
+  // console.log("product", currentProduct);
 
   const { title } = currentProduct!;
+
+  const onScreenDiagonal = (currentProduct: DeviceIdState) => {
+    return (
+      <p>
+        {
+          currentProduct.specificationGroups
+            .find((item) => item.title === "Display")
+            ?.specifications.find((property) => property.title === "Screen diagonal")?.value
+        }
+      </p>
+    );
+  };
+
+  const onMainCamera = (currentProduct: DeviceIdState) => {
+    return (
+      <p>
+        {
+          currentProduct.specificationGroups
+            .find((item) => item.title === "Main camera")
+            ?.specifications.find((property) => property.title === "Main camera")?.value
+        }
+      </p>
+    );
+  };
+
+  const onProcessor = (currentProduct: DeviceIdState) => {
+    return (
+      <p>
+        {
+          currentProduct.specificationGroups
+            .find((item) => item.title === "Processor")
+            ?.specifications.find((property) => property.title === "Processor")?.value
+        }
+      </p>
+    );
+  };
+
+  const onFrontCamera = (currentProduct: DeviceIdState) => {
+    return (
+      <p>
+        {
+          currentProduct.specificationGroups
+            .find((item) => item.title === "Front camera")
+            ?.specifications.find((property) => property.title === "Front camera")?.value
+        }
+      </p>
+    );
+  };
+
+  const onNumberOfCores = (currentProduct: DeviceIdState) => {
+    return (
+      <p>
+        {
+          currentProduct.specificationGroups
+            .find((item) => item.title === "Processor")
+            ?.specifications.find((property) => property.title === "Number of cores")?.value
+        }
+      </p>
+    );
+  };
+
+  const onBatteryCapacity = (currentProduct: DeviceIdState) => {
+    return (
+      <p>
+        {
+          currentProduct.specificationGroups
+            .find((item) => item.title === "Battery capacity")
+            ?.specifications.find((property) => property.title === "Battery capacity")?.value
+        }
+      </p>
+    );
+  };
 
   return (
     <>
@@ -26,7 +99,7 @@ export const BriefSpecification = () => {
             alt={title}
           />
           <BriefContainer>
-            <BriefTitle>{currentProduct.title}</BriefTitle>
+            <BriefTitle>{title}</BriefTitle>
             <BriefPropertiesContainer>
               <PropertyWrap>
                 <Property>
@@ -35,13 +108,7 @@ export const BriefSpecification = () => {
                   </svg>
                   <div>
                     <p>Screen diagonal</p>
-                    <p>
-                      {
-                        // currentProduct.specificationGroups[3] &&
-                        // currentProduct.specificationGroups[3].specifications[0] &&
-                        currentProduct?.specificationGroups[3]?.specifications[0]?.value
-                      }
-                    </p>
+                    {onScreenDiagonal(currentProduct)}
                   </div>
                 </Property>
                 <Property>
@@ -50,11 +117,7 @@ export const BriefSpecification = () => {
                   </svg>
                   <div>
                     <p>Main camera</p>
-                    <p>
-                      {currentProduct.specificationGroups[7] &&
-                        currentProduct.specificationGroups[7].specifications[0] &&
-                        currentProduct.specificationGroups[7].specifications[0].value}
-                    </p>
+                    {onMainCamera(currentProduct)}
                   </div>
                 </Property>
               </PropertyWrap>
@@ -65,11 +128,7 @@ export const BriefSpecification = () => {
                   </svg>
                   <div>
                     <p>Processor</p>
-                    <p>
-                      {currentProduct.specificationGroups[4] &&
-                        currentProduct.specificationGroups[4].specifications[0] &&
-                        currentProduct.specificationGroups[4].specifications[0].value}
-                    </p>
+                    {onProcessor(currentProduct)}
                   </div>
                 </Property>
                 <Property>
@@ -78,7 +137,7 @@ export const BriefSpecification = () => {
                   </svg>
                   <div>
                     <p>Battery capacity</p>
-                    <p>6,7"</p>
+                    {onBatteryCapacity(currentProduct)}
                   </div>
                 </Property>
               </PropertyWrap>
@@ -89,11 +148,7 @@ export const BriefSpecification = () => {
                   </svg>
                   <div>
                     <p>Front camera</p>
-                    <p>
-                      {currentProduct.specificationGroups[8] &&
-                        currentProduct.specificationGroups[8].specifications[0] &&
-                        currentProduct.specificationGroups[8].specifications[0].value}
-                    </p>
+                    {onFrontCamera(currentProduct)}
                   </div>
                 </Property>
                 <Property>
@@ -102,11 +157,7 @@ export const BriefSpecification = () => {
                   </svg>
                   <div>
                     <p>Number of cores</p>
-                    <p>
-                      {currentProduct.specificationGroups[4] &&
-                        currentProduct.specificationGroups[4].specifications[1] &&
-                        currentProduct.specificationGroups[4].specifications[1].value}
-                    </p>
+                    {onNumberOfCores(currentProduct)}
                   </div>
                 </Property>
               </PropertyWrap>

@@ -12,12 +12,14 @@ export const lightTheme = {
   TritiaryLightGray: "#E0E4F0",
 
   //button color
-  TritiaryLavander: "#DACCFF",
   PrimaryBrightPurple: "#5826DA",
   SecondaryExoticPink: "#E8467C",
-  TritiaryLightestGray: "#F2F4FA",
   SecondaryToxicGreen: "#26DAC4",
   SecondaryCalmOrange: "#FA7E47",
+  TritiaryLavander: "#DACCFF",
+  TritiaryLightestGray: "#F2F4FA",
+  TritiaryLightestExoticPink: "#FFDFEA",
+  TritiaryLightestCalmOrange: "#FFE4D8",
 
   //hover-focus
 
