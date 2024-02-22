@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-export const ButtonsBuyWrap = styled.div`
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-`;
-
 export const BtnWrap = styled.div`
   width: 540px;
   height: 96px;
