@@ -12,3 +12,9 @@ export const BriefWrap = styled.div`
   gap: 60px;
   margin-bottom: 70px;
 `;
+
+export const ButtonsBuyWrap = styled.div`
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+`;
