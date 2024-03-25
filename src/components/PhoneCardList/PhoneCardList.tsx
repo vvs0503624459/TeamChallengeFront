@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { toggleLike } from "@/redux/products/likeReducer";
 import { addProductToCart } from "@/redux/products/cartReducer";
 import { DevicesState } from "../../redux/types/initialEntity";
 // import phone from "../../data/phone.json";
+import { useToggle } from "@/redux/hooks/useToggle";
 
 import StarRating from "../StarRating/StarRating";
 import CartModal from "../CartModal/CartModal";
@@ -38,13 +38,14 @@ type PhoneCardListProps = {
 };
 
 const PhoneCardList: React.FC<PhoneCardListProps> = ({ devices }) => {
-  const [isOpenCartModal, setIsOpenCartModal] = useState(false);
+  const { isOpen, open, close } = useToggle();
+
   const isLiked = useAppSelector((state) => state.productsLikeState ?? false);
   const dispatch = useAppDispatch();
 
   const handleToggleCartModal = (id: string) => {
     dispatch(addProductToCart({ id }));
-    setIsOpenCartModal(true);
+    open();
   };
 
   const newArray = devices.slice(0, 5);
@@ -99,10 +100,7 @@ const PhoneCardList: React.FC<PhoneCardListProps> = ({ devices }) => {
             )
           )}
       </CardList>
-      <CartModal
-        isOpen={isOpenCartModal}
-        handleClose={() => setIsOpenCartModal(false)}
-      />
+      <CartModal isOpen={isOpen} handleClose={close} />
     </>
   );
 };
