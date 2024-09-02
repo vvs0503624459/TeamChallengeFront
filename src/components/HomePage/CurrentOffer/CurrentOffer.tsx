@@ -1,4 +1,4 @@
-import PageTitle from "../../PageTitle/PageTitle";
+import PageTitle from "../../../shared/titles/PageTitle/PageTitle";
 import { Section } from "../../Container/Container.styled";
 
 import Offer1 from "../../../assets/offer-1.png";

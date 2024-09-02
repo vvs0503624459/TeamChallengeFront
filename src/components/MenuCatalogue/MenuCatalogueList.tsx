@@ -23,6 +23,7 @@ const MenuCatalogueList = () => {
   const dispatch = useAppDispatch();
   const { isOpen, open, close } = useToggle();
 
+
   useEffect(() => {
     dispatch(getCatalogue());
   }, [dispatch]);
@@ -31,18 +32,20 @@ const MenuCatalogueList = () => {
     return state.catalogue.catalogueList;
   });
 
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const handleToggleTitle = (category: string) => {
     setSelectedCategory(category);
-    open(); // Open the modal when a category is selected
+    setIsOpen(true); // Open the modal when a category is selected
   };
+  // Ваш тип GoodsType
 
   // Код в компоненті MenuCatalogueList
   const goodsData =
     (selectedCategory &&
-      (catalogue.find((category) => category.id === selectedCategory)
-        ?.groupSpecifications as GoodsType)) ||
+      (MENU_CATEGORIES.find((category) => category.id === selectedCategory)
+        ?.goods as GoodsType)) ||
     [];
   return (
     <div>

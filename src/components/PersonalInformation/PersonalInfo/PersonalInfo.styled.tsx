@@ -3,69 +3,21 @@
 import { Form, Field } from "formik";
 import styled, { css } from "styled-components";
 
-export const PersonalInfoWrap = styled.div`
-  display: flex;
-  padding: 24px 40px;
-  flex-direction: column;
-  align-items: flex-start;
-  border-radius: 12px;
-  border: 1px solid var(--Tritiary-light-gray, #e0e4f0);
-`;
-export const PersonalInfoDiv = styled.div`
-  display: flex;
-  padding-bottom: 24px;
-  width: 100%;
-  border-bottom: 1px solid var(--Tritiary-light-gray, #e0e4f0);
-  align-items: center;
-  justify-content: space-between;
-`;
+
+// export const PersonalInfoDiv = styled.div`
+//   // display: flex;
+//   padding-bottom: 24px;
+//   width: 100%;
+//   border-bottom: 1px solid var(--Tritiary-light-gray, #e0e4f0);
+//   // align-items: center;
+//   // justify-content: space-between;
+// `;
 
 export const PersonalInfoContactDiv = styled.div`
   padding-top: 24px;
   width: 100%;
 `;
-export const PersonalInfoTitle = styled.h3`
-  margin-bottom: 12px;
-  color: var(--Primary-black, #1e1d21);
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 26px; /* 130% */
-`;
 
-export const PersonalButtonEdit = styled.button`
-  background-color: transparent;
-  border: none;
-  // color: var(--Primary-bright-purple, #5826DA);
-
-  color: var(--Primary-black, #1e1d21);
-  font-family: Inter;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 150% */
-`;
-
-export const PersonalInfoNameText = styled.p`
-  margin-bottom: 4px;
-  color: var(--Tritiary-purple-gray, #69657b);
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px; /* 114.286% */
-`;
-
-export const PersonalInfoNameTitle = styled.h4`
-  margin-bottom: 4px;
-  color: var(--Primary-black, #1e1d21);
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px; /* 150% */
-`;
 
 export const PersonalInfoNameButton = styled.button`
   padding: 0;

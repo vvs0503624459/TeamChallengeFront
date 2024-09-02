@@ -86,7 +86,7 @@ const Header = () => {
             <OpenModalButton onClick={handleToggleUserModal}>
               <User />
             </OpenModalButton>
-            <IconsLink to="/">
+            <IconsLink to="/user">
               <Compare />
             </IconsLink>
             <IconsLink to="/#">

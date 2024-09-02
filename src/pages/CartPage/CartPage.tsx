@@ -1,4 +1,4 @@
-import PageTitle from "../../components/PageTitle/PageTitle";
+import PageTitle from "../../shared/titles/PageTitle/PageTitle";
 import CartTopInfo from "../../components/CartModal/CartTopInfo";
 import CartCenterInfo from "../../components/CartModal/CartCenterInfo";
 // import PhoneCardList from "../../components/PhoneCardList/PhoneCardList";
