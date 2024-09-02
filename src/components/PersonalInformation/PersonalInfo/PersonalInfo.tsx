@@ -2,26 +2,29 @@ import user from "../../../data/user.json";
 // import { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { CheckDone, CancelDone } from "../../IconComponents/IconsCatalogue";
+// import { CheckDone, CancelDone } from "../../IconComponents/IconsCatalogue";
+import EditButton from "@/shared/buttons/EditButton";
+import UserInfoTitle from "@/shared/titles/UserInfoTitle/UserInfoTitle";
 
 import {
   PersonalInfoWrap,
-  PersonalInfoDiv,
-  PersonalInfoContactDiv,
-  PersonalInfoTitle,
-  PersonalButtonEdit,
-  PersonalInfoNameText,
+  PersonalContactBorder,
+  PersonalContactItem,
+  PersonalInfoLabel,
   PersonalInfoNameTitle,
+} from "../UserInfo.styled";
+
+import {
+  PersonalInfoContactDiv,
   PersonalContactList,
-  PersonalContactItemOne,
   PersonalContactItemTwo,
   PersonalInfoNameButton,
   AuthForm,
   InputsWrapper,
   InputWrap,
   Input,
-  CheckButtonList,
-  CheckButton,
+  // CheckButtonList,
+  // CheckButton,
 } from "./PersonalInfo.styled";
 
 interface MyFormValues {
@@ -89,10 +92,8 @@ const PersonalInfo = () => {
 
   return (
     <PersonalInfoWrap>
-      <PersonalInfoDiv>
-        <div>
-          <PersonalInfoTitle>Personal information</PersonalInfoTitle>
-
+      <PersonalContactBorder>
+          <UserInfoTitle title="Personal information" />
           <Formik
             initialValues={initialValues}
             validationSchema={schema}
@@ -124,7 +125,7 @@ const PersonalInfo = () => {
                     />
                   </InputWrap>
                 </InputsWrapper>
-                <CheckButtonList>
+                {/* <CheckButtonList>
                   <li>
                     <CheckButton>
                       <CheckDone />
@@ -135,37 +136,36 @@ const PersonalInfo = () => {
                       <CancelDone />
                     </CheckButton>
                   </li>
-                </CheckButtonList>
+                </CheckButtonList> */}
+              <EditButton label="Edit" />
               </AuthForm>
             )}
           </Formik>
-        </div>
-        <PersonalButtonEdit>Edit</PersonalButtonEdit>
-      </PersonalInfoDiv>
+      </PersonalContactBorder>
 
       <PersonalInfoContactDiv>
-        <PersonalInfoTitle>Contact information</PersonalInfoTitle>
+        <UserInfoTitle title="Contact information" />
         <PersonalContactList>
-          <PersonalContactItemOne>
+          <PersonalContactItem>
             <div>
-              <PersonalInfoNameText>Email address</PersonalInfoNameText>
+              <PersonalInfoLabel>Email address</PersonalInfoLabel>
               <PersonalInfoNameTitle>{emails}</PersonalInfoNameTitle>
               <PersonalInfoNameButton>Not verified</PersonalInfoNameButton>
             </div>
             <div>
-              <PersonalButtonEdit>Verify</PersonalButtonEdit>
-              <PersonalButtonEdit>Edit</PersonalButtonEdit>
+              <EditButton label="Verify" />
+              <EditButton label="Edit" />
             </div>
-          </PersonalContactItemOne>
+          </PersonalContactItem>
           <PersonalContactItemTwo>
             <div>
-              <PersonalInfoNameText>Last name</PersonalInfoNameText>
+              <PersonalInfoLabel>Last name</PersonalInfoLabel>
               <PersonalInfoNameTitle>{numbers}</PersonalInfoNameTitle>
               <PersonalInfoNameButton>Not verified</PersonalInfoNameButton>
             </div>
             <div>
-              <PersonalButtonEdit>Verify</PersonalButtonEdit>
-              <PersonalButtonEdit>Edit</PersonalButtonEdit>
+              <EditButton label="Verify" />
+              <EditButton label="Edit" />
             </div>
           </PersonalContactItemTwo>
         </PersonalContactList>

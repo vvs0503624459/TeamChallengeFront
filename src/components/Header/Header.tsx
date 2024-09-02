@@ -4,6 +4,8 @@ import { Container } from "../Container/Container.styled";
 import ChangeModal from "../ChangeModal/ChangeModal";
 import HeaderCatalogueModal from "../MenuCatalogue/HeaderCatalogueModal";
 
+import { useToggle } from "@/redux/hooks/useToggle";
+
 import {
   Logo,
   Compare,
@@ -32,31 +34,28 @@ const style = {
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import { useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 // import { initialStateAuthType } from '../../redux/types/initialEntity';
 const Header = () => {
-  const navigate = useNavigate()
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isOpenModalHeader, setIsOpenModalHeader] = useState(false);
+  const navigate = useNavigate();
 
-    const isLogged = useAppSelector((state) => {
+  const { isOpen, open, close } = useToggle();
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const isLogged = useAppSelector((state) => {
     return state.auth.isLoggedIn;
   });
 
   const handleToggleUserModal = () => {
-    if(isLogged){
+    if (isLogged) {
       setIsOpenModal(false);
-      navigate('/user')
-    }else{
+      navigate("/user");
+    } else {
       setIsOpenModal(true);
     }
   };
   const handleCloseUserModal = () => {
     setIsOpenModal((state) => !state);
-  };
-
-  const handleToggleHeaderModal = () => {
-    setIsOpenModalHeader((state) => !state);
   };
 
   const Likes = useAppSelector((state) => state.productsLikeState ?? false);
@@ -74,7 +73,7 @@ const Header = () => {
               <Logo />
             </LogoLink>
             {/* <Link to="/home"> */}
-            <CatalogueButton onClick={handleToggleHeaderModal}>
+            <CatalogueButton onClick={open}>
               <Catalogue />
               <CatalogueBtnText>Catalogue</CatalogueBtnText>
             </CatalogueButton>
@@ -87,7 +86,7 @@ const Header = () => {
             <OpenModalButton onClick={handleToggleUserModal}>
               <User />
             </OpenModalButton>
-            <IconsLink to="/">
+            <IconsLink to="/user">
               <Compare />
             </IconsLink>
             <IconsLink to="/#">
@@ -111,10 +110,7 @@ const Header = () => {
         </HeaderInnerWrapper>
 
         <ChangeModal isOpen={isOpenModal} handleClose={handleCloseUserModal} />
-        <HeaderCatalogueModal
-          isOpen={isOpenModalHeader}
-          handleClose={handleToggleHeaderModal}
-        />
+        <HeaderCatalogueModal isOpen={isOpen} handleClose={close} />
       </Container>
     </HeaderWrapper>
   );

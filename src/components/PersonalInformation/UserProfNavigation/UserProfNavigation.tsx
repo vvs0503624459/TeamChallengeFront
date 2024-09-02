@@ -20,13 +20,8 @@ const UserProfNavigation = () => {
         </PersonalNavLink>
       </PersonalNavItem>
       <PersonalNavItem>
-        <PersonalNavLink to="reviews" state={{ from: location }}>
+        <PersonalNavLink to="addresses" state={{ from: location }}>
         Addresses
-        </PersonalNavLink>
-      </PersonalNavItem>
-      <PersonalNavItem>
-        <PersonalNavLink to="accessories" state={{ from: location }}>
-        Feedback
         </PersonalNavLink>
       </PersonalNavItem>
     </PersonalNavList>

@@ -15,10 +15,14 @@ import { CatalogueState } from "../../redux/types/initialEntity";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
+import { useToggle } from "@/redux/hooks/useToggle";
+
 import { GoodsType } from "./CatalogueModal";
 
 const MenuCatalogueList = () => {
   const dispatch = useAppDispatch();
+  const { isOpen, open, close } = useToggle();
+
 
   useEffect(() => {
     dispatch(getCatalogue());
@@ -35,12 +39,13 @@ const MenuCatalogueList = () => {
     setSelectedCategory(category);
     setIsOpen(true); // Open the modal when a category is selected
   };
+  // Ваш тип GoodsType
 
   // Код в компоненті MenuCatalogueList
   const goodsData =
     (selectedCategory &&
-      (catalogue.find((category) => category.id === selectedCategory)
-        ?.groupSpecifications as GoodsType)) ||
+      (MENU_CATEGORIES.find((category) => category.id === selectedCategory)
+        ?.goods as GoodsType)) ||
     [];
   return (
     <div>
@@ -60,7 +65,7 @@ const MenuCatalogueList = () => {
       {isOpen ? (
         <CatalogueModal
           isOpen={isOpen}
-          handleClose={() => setIsOpen(false)} // Close the modal
+          handleClose={close}
           groupSpecifications={goodsData}
         />
       ) : null}
@@ -69,4 +74,3 @@ const MenuCatalogueList = () => {
 };
 
 export default MenuCatalogueList;
-

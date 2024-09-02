@@ -32,6 +32,9 @@ const PersonalInfo = lazy(
 const SigninSecurity = lazy(
   () => import("./components/PersonalInformation/SigninSecurity/SigninSecurity")
 );
+const UserProfAddresses = lazy(
+  () => import("./components/PersonalInformation/UserProfAddresses/UserProfAddresses")
+);
 
 const CookiePolicy = lazy(() => import("./pages/CookiePolicy/CookiePolicy"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy/PrivacyPolicy"));
@@ -77,8 +80,7 @@ function App() {
               <Route path="/user" element={<UserProfile />}>
                 <Route path="personalinfo" element={<PersonalInfo />} />
                 <Route path="signin&security" element={<SigninSecurity />} />
-                {/* <Route path="reviews" element={<ReviewsQuestion />} />
-            <Route path="accessories" element={<Accessories />} /> */}
+                <Route path="addresses" element={<UserProfAddresses />} />
               </Route>
             </>
             {/* )} */}
