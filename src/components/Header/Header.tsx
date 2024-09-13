@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import { Container } from "../Container/Container.styled";
+import { Container } from "../../shared/Container/Container.styled";
 
 import ChangeModal from "../ChangeModal/ChangeModal";
 import HeaderCatalogueModal from "../MenuCatalogue/HeaderCatalogueModal";
@@ -11,7 +11,7 @@ import {
   User,
   Cart,
   Catalogue,
-} from "../IconComponents/IconsCatalogue";
+} from "../../shared/IconsCatalogue";
 import SearchBar from "../SearchBar/SearchBar";
 import {
   HeaderInnerWrapper,

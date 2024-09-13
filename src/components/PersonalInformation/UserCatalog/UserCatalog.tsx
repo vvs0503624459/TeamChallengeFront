@@ -2,7 +2,7 @@
 import user from "../../../data/user.json";
 // import Select from 'react-select';
 
-import { Section } from "../../Container/Container.styled";
+import { Section } from "../../../shared/Container/Container.styled";
 import {
   BigUser,
   SliderRight,
@@ -14,7 +14,7 @@ import {
   MyWallet,
   Bonus,
   HelpCenter,
-} from "../../IconComponents/IconsCatalogue";
+} from "../../../shared/IconsCatalogue";
 import {
   UserWrapper,
   UserDiv,

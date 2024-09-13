@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { addProductToCart } from "../../../redux/products/cartReducer";
 import CartModal from "../../CartModal/CartModal";
-import { Cart } from "../../IconComponents/IconsCatalogue";
+import { Cart } from "../../../shared/IconsCatalogue.tsx";
 import {
   CardItem,
   MainProdImageDiv,

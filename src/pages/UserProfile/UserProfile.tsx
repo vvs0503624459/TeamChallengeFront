@@ -4,7 +4,7 @@ import UserProfNavigation from "../../components/PersonalInformation/UserProfNav
 import {
   MainSection,
   Container,
-} from "../../components/Container/Container.styled";
+} from "../../shared/Container/Container.styled";
 
 import { UserWrapperPage } from "./UserProfile.styled";
 

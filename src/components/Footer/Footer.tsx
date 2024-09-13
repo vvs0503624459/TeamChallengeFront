@@ -4,8 +4,8 @@ import {
   FooterInstagram,
   FooterTwitter,
   FooterFacebook,
-} from "../IconComponents/IconsCatalogue";
-import { Container } from "../Container/Container.styled";
+} from "../../shared/IconsCatalogue";
+import { Container } from "../../shared/Container/Container.styled";
 import {
   FooterWrapper,
   FooterContainer,

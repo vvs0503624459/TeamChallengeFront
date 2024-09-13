@@ -1,6 +1,6 @@
 
-import PageTitle from "../../PageTitle/PageTitle";
-import {Section} from "../../Container/Container.styled";
+import PageTitle from "../../../shared/PageTitle/PageTitle";
+import {Section} from "../../../shared/Container/Container.styled";
 
 import Samsung from "../../../assets/samsung.png";
 import Apple from "../../../assets/apple.png";

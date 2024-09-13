@@ -6,7 +6,7 @@ import * as Yup from "yup";
 // import FormError from "../FormError/FormError";
 import {
     FooterMail
-} from '../IconComponents/IconsCatalogue';
+} from '../../shared/IconsCatalogue';
 import {
   SubDiv,
   SubTextDiv,

@@ -1,5 +1,5 @@
-import PageTitle from "../../PageTitle/PageTitle";
-import { Section } from "../../Container/Container.styled";
+import PageTitle from "../../../shared/PageTitle/PageTitle";
+import { Section } from "../../../shared/Container/Container.styled";
 
 import Offer1 from "../../../assets/offer-1.png";
 import Offer2 from "../../../assets/offer-2.png";
