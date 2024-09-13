@@ -15,7 +15,7 @@ import {
   IconThumbsUp,
   IconThumbsVector,
   TagReply,
-} from "../../IconComponents/IconsCatalogue";
+} from "../../../shared/IconsCatalogue";
 type Props = {
   // id: string | undefined;
   questions: Question[] | null;

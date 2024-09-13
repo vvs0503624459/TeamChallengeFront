@@ -23,7 +23,7 @@ import {
   ReviewAside,
   ReviewQuestionsWrap,
 } from "./ReviewsQuestion.styled";
-import { ReviewStar, QuestionTag, ShowAllImages } from "../../IconComponents/IconsCatalogue";
+import { ReviewStar, QuestionTag, ShowAllImages } from "../../../shared/IconsCatalogue";
 import ReviewFilter from "./ReviewFilter";
 import Reviews from "./Reviews";
 import Questions, { Question } from "./Questions";

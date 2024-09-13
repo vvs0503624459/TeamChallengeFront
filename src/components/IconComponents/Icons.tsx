@@ -9,7 +9,7 @@ import {
   IconWashing,
   IconPercentage,
   IconRight,
-} from "./IconsCatalogue";
+} from "../../shared/IconsCatalogue";
 
 import {Button} from './Icons.styled';
 

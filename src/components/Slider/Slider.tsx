@@ -2,7 +2,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css";
 
-import { SliderRight, SliderLeft } from "../IconComponents/IconsCatalogue";
+import { SliderRight, SliderLeft } from "../../shared/IconsCatalogue";
 import SliderOne from "../../assets/slider1.png";
 import SliderTwo from "../../assets/slider2.png";
 import SliderTree from "../../assets/slider3.png";

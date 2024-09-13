@@ -8,7 +8,7 @@ import MenuCatalogue from "@/components/MenuCatalogue/MenuCatalogue";
 import CurrentOffer from "@/components/HomePage/CurrentOffer/CurrentOffer";
 import BrandList from "@/components/HomePage/BrandList/BrandList";
 import PhoneCardList from "@/components/PhoneCardList/PhoneCardList";
-import PageTitle from "@/components/PageTitle/PageTitle";
+import PageTitle from "@/shared/PageTitle/PageTitle";
 import Loader from "@/components/Loader/Loader";
 
 import {
@@ -16,13 +16,13 @@ import {
   GarantProcent,
   GarantShield,
   GarantLayers,
-} from "@/components/IconComponents/IconsCatalogue";
+} from "@/shared/IconsCatalogue";
 
 import {
   MainSection,
   Section,
   Container,
-} from "@/components/Container/Container.styled";
+} from "@/shared/Container/Container.styled";
 
 import { useTranslation } from "react-i18next";
 

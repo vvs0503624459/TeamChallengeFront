@@ -1,4 +1,4 @@
-import PageTitle from "../../components/PageTitle/PageTitle";
+import PageTitle from "../../shared/PageTitle/PageTitle";
 import CartTopInfo from "../../components/CartModal/CartTopInfo";
 import CartCenterInfo from "../../components/CartModal/CartCenterInfo";
 // import PhoneCardList from "../../components/PhoneCardList/PhoneCardList";
@@ -6,7 +6,7 @@ import CartCenterInfo from "../../components/CartModal/CartCenterInfo";
 import {
   MainSection,
   Container,
-} from "../../components/Container/Container.styled";
+} from "../../shared/Container/Container.styled";
 
 const CartPage = () => {
   return (

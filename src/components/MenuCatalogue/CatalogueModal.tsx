@@ -1,6 +1,6 @@
 import OtherModal from "../Modal/OtherModal";
 
-import { ShowAllCatalogue } from "../IconComponents/IconsCatalogue";
+import { ShowAllCatalogue } from "../../shared/IconsCatalogue";
 import {
   CatalogueList,
   CatalogueBrandTitle,

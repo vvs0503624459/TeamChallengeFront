@@ -1,4 +1,4 @@
-import { Search } from "../IconComponents/IconsCatalogue";
+import { Search } from "../../shared/IconsCatalogue";
 import SearchInput from "./SearchInput/SearchInput";
 // import { useState } from "react";
 // import SearchResultsList from "./SearchResults/SearchResultsList";

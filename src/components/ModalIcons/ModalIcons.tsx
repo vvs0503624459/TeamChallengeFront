@@ -1,13 +1,13 @@
-import { signInWithGooglePopup } from "../../utils/firebase.utils";
+// import { signInWithGooglePopup } from "../../utils/firebase.utils";
 
-import { Google, Facebook } from "../IconComponents/IconsCatalogue";
+import { Google, Facebook } from "../../shared/IconsCatalogue";
 
 import { ModalIconList, ModalIconButton } from "./ModalIcons.styled";
 
 const ModalIcons = () => {
   const logGoogleUser = async () => {
-    const response = await signInWithGooglePopup();
-    console.log(response);
+    // const response = await signInWithGooglePopup();
+    // console.log(response);
   };
 
   return (
