@@ -7,7 +7,7 @@ import { DevicesState } from "../../redux/types/initialEntity";
 
 import StarRating from "../StarRating/StarRating";
 import CartModal from "../CartModal/CartModal";
-import { Like, Compare, Cart, NotLike } from "../IconComponents/IconsCatalogue";
+import { Like, Compare, Cart, NotLike } from "../../assets/Icons";
 import {
   // SliderContainer,
   // SliderItem,

@@ -11,7 +11,7 @@ import {
   User,
   Cart,
   Catalogue,
-} from "../IconComponents/IconsCatalogue";
+} from "../../assets/Icons";
 import SearchBar from "../SearchBar/SearchBar";
 import {
   HeaderInnerWrapper,
@@ -93,16 +93,11 @@ const Header = () => {
             <IconsLink to="/#">
               <NotLike />
               <LikesCounter
-                // likesCount={Object.keys(Likes).length ? true : false}
-                likesCount={
-                  Object.values(Likes).filter((value) => value === true).length
-                    ? true
-                    : false
-                }
-              >
-                {/* {Object.keys(Likes).length} */}
-                {Object.values(Likes).filter((value) => value === true).length}
-              </LikesCounter>
+  likesCount={Object.values(Likes).filter((value) => value === true).length > 0}
+>
+  {Object.values(Likes).filter((value) => value === true).length}
+</LikesCounter>
+
             </IconsLink>
             <IconsLink to="/cart">
               <Cart style={style} />

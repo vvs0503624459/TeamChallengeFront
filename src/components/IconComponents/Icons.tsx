@@ -9,9 +9,7 @@ import {
   IconWashing,
   IconPercentage,
   IconRight,
-} from "./IconsCatalogue";
-
-import {Button} from './Icons.styled';
+} from "../../assets/Icons";
 
 import { forwardRef } from "react";
 
@@ -41,9 +39,9 @@ export const Icons = forwardRef<HTMLButtonElement, Props>(
     };
 
     return (
-      <Button ref={ref} style={style}>
+      <button ref={ref} style={style}>
         {obj[name]}
-      </Button>
+      </button>
     );
   }
 );

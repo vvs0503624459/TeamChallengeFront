@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Modal from "../Modal/Modal";
+import Modal from "../../shared/Modal/Modal";
 import SignupForm from "../SignupForm/SignupForm";
 import SigninForm from "../SigninForm/SigninForm";
 

@@ -2,7 +2,7 @@ import user from "../../../data/user.json";
 // import { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { CheckDone, CancelDone } from "../../IconComponents/IconsCatalogue";
+import { CheckDone, CancelDone } from "../../../assets/Icons";
 
 import {
   PersonalInfoWrap,

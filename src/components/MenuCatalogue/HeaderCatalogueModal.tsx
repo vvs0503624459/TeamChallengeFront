@@ -1,4 +1,4 @@
-import OtherModal from "../Modal/OtherModal";
+import OtherModal from "../../shared/Modal/OtherModal";
 import MenuCatalogueList from "./MenuCatalogueList";
 
 import { ModalProps } from '../../types/modalsEntity';

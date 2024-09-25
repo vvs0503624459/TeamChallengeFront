@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-interface LikesProps {
-  likesCount: boolean;
-}
 export const HeaderWrapper = styled.div`
   position: sticky;
   top: 0;
@@ -46,7 +43,10 @@ export const IconsLink = styled(Link)`
   font-size: 24px;
   position: relative;
 `;
-export const LikesCounter = styled.span<LikesProps>`
+
+export const LikesCounter = styled.span.withConfig({
+  shouldForwardProp: (prop) => prop !== "likesCount", // Не передавати likesCount в DOM
+})<{ likesCount: boolean }>`
   background-color: #5826da;
   font-family: Inter;
   font-weight: 600;
@@ -59,11 +59,11 @@ export const LikesCounter = styled.span<LikesProps>`
   color: white;
   width: 16px;
   height: 16px;
-  // padding: 0 auto;
   text-align: center;
   line-height: 16px;
-  display: ${(props) => (props.likesCount ? "block" : "none")};
+  display: ${({ likesCount }) => (likesCount ? "block" : "none")};
 `;
+
 
 export const CatalogueBtnText = styled.div`
   color: #fff;

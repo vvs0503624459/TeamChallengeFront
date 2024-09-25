@@ -1,0 +1,425 @@
+@import '../../utils/themes.scss';
+
+@media (max-width: 1440px) {
+    
+}
+
+  @media (max-width: 768px) {
+   
+}
+  @media (max-width: 320px) {
+      
+}
+
+.footer {
+    padding: 100px 0px 20px 0px;
+    background-color: $PrimaryBlack;
+  
+    @media (max-width: 1440px) {
+      padding: 80px 0px 20px 0px;
+    }
+  
+    @media (max-width: 768px) {
+      padding: 40px 0;
+    }
+    @media (max-width: 320px) {
+        padding: 32px 0 32px 0;
+    }
+};
+
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    @media (max-width: 1440px) {
+    
+    }
+  
+    @media (max-width: 768px) {
+        gap: 40px;
+    }
+    @media (max-width: 320px) {
+        
+    }
+};
+
+.info-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media (max-width: 1440px) {
+    }
+    @media (max-width: 768px) {
+        flex-direction: row;
+        gap: 70px;
+    }
+    @media (max-width: 320px) {
+        flex-direction: column-reverse;
+        gap: 36px;
+    }
+};
+
+.footer-text{
+    margin-top: 16px;
+    margin-bottom: 20px;
+    width: 176px;
+    color: $TritiaryGray;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 130% */
+
+    @media screen and (max-width: 768px) {
+
+    }
+    
+    @media screen and (max-width: 1440px) {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+};
+
+.footer-icon-list{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+};
+
+.footer-information-wrapper {
+    display: flex;
+    gap: 64px;
+    flex-direction: row;
+  
+    @media (max-width: 1440px) {
+      // Стилі для середніх екранів
+    }
+  
+    @media (max-width: 768px) {
+      // Стилі для мобільних екранів
+    }
+  
+    @media (max-width: 320px) {
+      gap: 12px;
+      flex-direction: column;
+      justify-content: center;
+      padding: 12px 0;
+      border-top: 1px solid $TritiaryGray;
+      border-bottom: 1px solid $TritiaryGray;
+    }
+  
+    .information-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .information-list-title {
+      margin-bottom: 24px;
+      color: $TritiaryLightGray;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+  
+      @media (max-width: 768px) {
+        margin-bottom: 0px;
+      }
+    }
+  
+    .information-list {
+      display: flex;
+      gap: 16px;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+  
+      &.open {
+        max-height: 500px; // Відкрити список
+      }
+  
+      &.closed {
+        max-height: 0; // Закрити список
+      }
+    }
+  
+    .information-item {
+      color: $TritiaryGray;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+  
+      &:focus {
+        outline: none;
+      }
+  
+      svg {
+        transition: transform 0.3s ease;
+      }
+  
+      &.open svg {
+        transform: rotate(90deg);
+      }
+    }
+  
+    // Для десктопної версії (ширина екрану > 768px)
+    @media (min-width: 768px) {
+      .information-list {
+        max-height: none; // Завжди розгорнуті списки
+        overflow: visible;
+        justify-content: normal;
+      }
+  
+      button {
+        display: none; // Приховуємо кнопку
+      }
+    }
+  }
+  
+// .footer-list-wrapper{
+//     display: flex;
+//     gap: 64px;
+//     flex-direction: row;
+    
+//     @media (max-width: 1440px) {
+
+//     }
+  
+//     @media (max-width: 768px) {
+
+//     }
+//     @media (max-width: 320px) {
+//         gap: 12px;
+//         flex-direction: column;
+//         justify-content: center;
+//         padding: 12px 0;
+//         border-top: 1px solid $TritiaryGray;
+//         border-bottom: 1px solid $TritiaryGray;
+//     }
+// };
+
+// .footer-list-titles{
+//     margin-bottom: 24px;
+//     color: $TritiaryLightGray;
+//     font-family: Inter;
+//     font-size: 16px;
+//     font-style: normal;
+//     font-weight: 600;
+//     line-height: 24px; /* 150% */
+// };
+
+// .footer-list{
+//     display: flex;
+//     gap: 16px;
+//     flex-direction: column;
+//     justify-content: center;
+// };
+
+.sub-div{
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+  
+    border-radius: 12px;
+    border: 1px solid $TritiaryLightestGray;
+
+    @media screen and (max-width: 768px) {
+
+    }
+    
+    @media screen and (max-width: 1440px) {
+        padding: 20px;
+        gap: 20px;
+        align-items: flex-start;
+    }
+};
+
+.sub-div-text{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+};
+
+.sub-title{
+    color: $TritiaryLightestGray;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+
+    @media screen and (max-width: 768px) {
+
+    }
+    
+    @media screen and (max-width: 1440px) {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 26px; /* 130% */
+    }
+};
+
+.sub-text{
+    color: $TritiaryGray;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+
+    @media screen and (max-width: 768px) {
+
+    }
+    
+    @media screen and (max-width: 1440px) {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+    }
+};
+
+.sub-form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+};
+
+.sub-input{
+    display: flex;
+    width: 100%;
+    padding: 13px 16px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    border: 1px solid $TritiaryLightestGray;
+    
+    transition: border-color $animationCubicBezier;
+    
+    
+    // &:hover,
+    // &:focus {
+    // color: ${({ theme }) => theme.modalText};
+    // background-color: ${({ theme }) => theme.modalBg};
+    // border: 1px solid ${({ theme }) => theme.modalBtnBorderHover};
+    // }
+};
+
+.button{
+    display: flex;
+    // width: 100%;
+    padding: 12px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    border: none;
+    background: $PrimaryBrightPurple;
+  
+    color: $PrimaryWhite;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+  
+    transition: background-color $animationCubicBezier;
+  
+    &:hover,
+    &:focus {
+      background-color: $SecondaryDarkPurple;
+    }
+    @media screen and (max-width: 768px) {
+
+    }
+    
+    @media screen and (max-width: 1440px) {
+        // width: 280px;
+    }
+};
+
+
+.policy-wrapper{
+    display: flex;
+    /* gap: 60px; */
+    // margin-top: 60px;
+    justify-content: space-between;
+    @media (max-width: 1440px) {
+        
+    }
+  
+    @media (max-width: 768px) {
+        align-items: center;
+        justify-content: space-between;
+    }
+    @media (max-width: 320px) {
+        margin-top: 0px;
+        gap: 10px;
+        flex-direction: column-reverse;
+    }
+};
+
+.policy-text{
+    color: $TritiaryGray;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 114.286% */
+};
+
+.policy-list{
+    display: flex;
+    gap: 60px;
+    @media (max-width: 1440px) {
+
+    }
+  
+    @media (max-width: 768px) {
+
+    }
+    @media (max-width: 320px) {
+        gap: 10px;
+    }
+};
+
+.policy-item{
+
+};
+
+.policy-link{
+    color: $TritiaryGray;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 114.286% */
+    @media (max-width: 1440px) {
+
+      }
+    
+      @media (max-width: 768px) {
+
+      }
+      @media (max-width: 320px) {
+
+      }
+};

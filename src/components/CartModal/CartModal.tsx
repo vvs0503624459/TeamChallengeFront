@@ -1,5 +1,5 @@
-import Modal from "../Modal/Modal";
-import PageTitle from "../PageTitle/PageTitle";
+import Modal from "../../shared/Modal/Modal";
+import PageTitle from "../../shared/PageTitle/PageTitle";
 import CartTopInfo from "./CartTopInfo";
 import CartCenterInfo from "./CartCenterInfo";
 

@@ -14,7 +14,7 @@ import {
   MyWallet,
   Bonus,
   HelpCenter,
-} from "../../IconComponents/IconsCatalogue";
+} from "../../../assets/Icons";
 import {
   UserWrapper,
   UserDiv,

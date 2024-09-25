@@ -1,5 +1,5 @@
 
-import PageTitle from "../../PageTitle/PageTitle";
+import PageTitle from "../../../shared/PageTitle/PageTitle";
 import {Section} from "../../Container/Container.styled";
 
 import Samsung from "../../../assets/samsung.png";

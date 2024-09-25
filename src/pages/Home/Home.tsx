@@ -8,7 +8,7 @@ import MenuCatalogue from "@/components/MenuCatalogue/MenuCatalogue";
 import CurrentOffer from "@/components/HomePage/CurrentOffer/CurrentOffer";
 import BrandList from "@/components/HomePage/BrandList/BrandList";
 import PhoneCardList from "@/components/PhoneCardList/PhoneCardList";
-import PageTitle from "@/components/PageTitle/PageTitle";
+import PageTitle from "@/shared/PageTitle/PageTitle";
 import Loader from "@/components/Loader/Loader";
 
 import {
@@ -16,7 +16,7 @@ import {
   GarantProcent,
   GarantShield,
   GarantLayers,
-} from "@/components/IconComponents/IconsCatalogue";
+} from "@/assets/Icons";
 
 import {
   MainSection,

@@ -5,7 +5,7 @@ import {
   IconThumbsDown,
   IconThumbsUp,
   IconThumbsVector,
-} from "../../IconComponents/IconsCatalogue";
+} from "../../../assets/Icons";
 import StarRating from "../../StarRating/StarRating";
 import { Review } from "./ReviewsQuestion";
 import {
